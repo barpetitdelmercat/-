@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bar Petit del Mercat | El Original del Mercat</title>
+
+  <meta
+    name="description"
+    content="Bar Petit del Mercat. El original del Mercat. Bocadillo de ternera en salsa y pollo estilo Faisán."
+  >
+
+  <meta name="theme-color" content="#17120d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #17120d;
+      --bg-soft: #211910;
+      --cream: #f4ead7;
+      --cream-dark: #d4c5ac;
+      --light: #f1e7d3;
+      --wood: #5d351e;
+      --wood-light: #8a5730;
+      --gold: #e3a82b;
+      --gold-light: #f2c35d;
+      --dark: #17120d;
+      --border: rgba(244,234,215,.13);
+      --max-width: 1280px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: .35s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    header.scrolled {
+      background: rgba(23,18,13,.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-color: var(--border);
+    }
+
+    nav {
+      width: min(calc(100% - 48px), var(--max-width));
+      height: 92px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      z-index: 1002;
+    }
+
+    .brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      line-height: 1.05;
+    }
+
+    .brand-name strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .brand-name span {
+      display: block;
+      margin-top: 6px;
+
+      color: var(--gold);
+
+      font-size: .62rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      color: rgba(244,234,215,.74);
+      font-size: .77rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-button {
+      border: 1px solid rgba(227,168,43,.55);
+      padding: 12px 20px;
+    }
+
+    .nav-button:hover {
+      background: var(--gold);
+      color: var(--dark) !important;
+    }
+
+    .mobile-button {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .mobile-button span {
+      display: block;
+
+      width: 27px;
+      height: 1px;
+
+      background: var(--cream);
+
+      margin: 7px auto;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: flex-end;
+
+      background:
+        radial-gradient(
+          circle at 78% 42%,
+          rgba(227,168,43,.16),
+          transparent 30%
+        ),
+        linear-gradient(
+          115deg,
+          #17120d 0%,
+          #1e160f 55%,
+          #2b1c10 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: .14;
+
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 115px,
+          rgba(255,255,255,.035) 116px
+        );
+    }
+
+    .hero-circle {
+      position: absolute;
+
+      width: 650px;
+      height: 650px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(227,168,43,.17);
+
+      right: -170px;
+      bottom: -200px;
+    }
+
+    .hero-circle::before,
+    .hero-circle::after {
+      content: "";
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(227,168,43,.1);
+    }
+
+    .hero-circle::before {
+      inset: 90px;
+    }
+
+    .hero-circle::after {
+      inset: 180px;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: auto;
+
+      padding: 190px 0 85px;
+
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+
+      gap: 70px;
+      align-items: end;
+    }
+
+    .small-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      margin-bottom: 26px;
+
+      color: var(--gold);
+
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+    }
+
+    .small-title::before {
+      content: "";
+
+      width: 40px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 900px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(4.4rem, 9vw, 9rem);
+      font-weight: 500;
+
+      letter-spacing: -.055em;
+      line-height: .82;
+    }
+
+    .hero h1 span {
+      display: block;
+
+      color: var(--gold);
+
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 580px;
+
+      margin-top: 37px;
+
+      color: var(--cream-dark);
+
+      font-size: 1.07rem;
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      margin-top: 42px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 54px;
+
+      padding: 0 26px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--gold);
+
+      font-size: .7rem;
+
+      text-transform: uppercase;
+      letter-spacing: .13em;
+
+      transition: .25s;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .button-primary:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border-color: rgba(244,234,215,.25);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--cream);
+
+      transform: translateY(-2px);
+    }
+
+    .hero-detail {
+      padding-left: 38px;
+
+      border-left: 1px solid var(--border);
+    }
+
+    .hero-number {
+      color: var(--gold);
+
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+
+      line-height: 1;
+    }
+
+    .hero-detail p {
+      max-width: 320px;
+
+      margin-top: 20px;
+
+      color: var(--cream-dark);
+
+      font-size: .92rem;
+      font-weight: 300;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================
+       MOVING BAR
+    ========================================= */
+
+    .moving-bar {
+      overflow: hidden;
+
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .moving-track {
+      display: flex;
+
+      width: max-content;
+
+      animation: moveText 25s linear infinite;
+    }
+
+    .moving-text {
+      padding: 19px 35px;
+
+      white-space: nowrap;
+
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+
+    .moving-text::after {
+      content: "◆";
+
+      margin-left: 70px;
+
+      font-size: .5rem;
+      vertical-align: middle;
+    }
+
+    @keyframes moveText {
+
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+
+    }
+
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    .container {
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: auto;
+    }
+
+    .section-small {
+      margin-bottom: 22px;
+
+      color: var(--gold);
+
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.8rem, 5.6vw, 5.7rem);
+      font-weight: 500;
+
+      letter-spacing: -.035em;
+      line-height: .98;
+    }
+
+    .section-title em {
+      color: var(--gold);
+
+      font-weight: 500;
+    }
+
+
+    /* =========================================
+       INTRO
+    ========================================= */
+
+    .intro {
+      padding: 140px 0;
+
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+
+      gap: 100px;
+    }
+
+    .intro .section-small {
+      color: #9a681d;
+    }
+
+    .intro-content {
+      max-width: 800px;
+    }
+
+    .intro-content p {
+      max-width: 660px;
+
+      margin-top: 38px;
+
+      color: #5f5245;
+
+      font-size: 1.1rem;
+
+      line-height: 1.9;
+    }
+
+    .signature {
+      margin-top: 45px;
+
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      font-size: .73rem;
+
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    .signature::before {
+      content: "";
+
+      width: 60px;
+      height: 1px;
+
+      background: #9a681d;
+    }
+
+
+    /* =========================================
+       SPECIALITIES
+    ========================================= */
+
+    .specialities {
+      padding: 140px 0;
+    }
+
+    .specialities-header {
+      margin-bottom: 80px;
+
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 50px;
+    }
+
+    .specialities-header p {
+      max-width: 400px;
+
+      color: var(--cream-dark);
+
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+    .food {
+      min-height: 560px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .food:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .food:nth-child(even) .food-image {
+      order: 2;
+    }
+
+    .food-image {
+      min-height: 500px;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(227,168,43,.2),
+          transparent 36%
+        ),
+        linear-gradient(
+          145deg,
+          #3b2515,
+          #1b140e
+        );
+    }
+
+    .food-image::before {
+      content: "";
+
+      position: absolute;
+      inset: 12%;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(227,168,43,.18);
+    }
+
+    .food-image::after {
+      content: "";
+
+      position: absolute;
+
+      width: 70%;
+      height: 32%;
+
+      left: 15%;
+      top: 34%;
+
+      border-radius: 100px 20px 100px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #db9a3c 0%,
+          #a96428 35%,
+          #6d351e 37%,
+          #8c4a27 57%,
+          #c47c31 59%,
+          #e09b43 100%
+        );
+
+      transform: rotate(-5deg);
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.4),
+        inset 0 5px 15px rgba(255,255,255,.08);
+    }
+
+    .food-image.chicken::after {
+      transform: rotate(5deg);
+
+      background:
+        linear-gradient(
+          180deg,
+          #e5ae53 0%,
+          #bc782f 35%,
+          #9d602d 37%,
+          #d09245 57%,
+          #d59b4d 59%,
+          #e9bb68 100%
+        );
+    }
+
+    .food-number {
+      position: absolute;
+
+      top: 35px;
+      left: 35px;
+
+      z-index: 3;
+
+      color: var(--gold);
+
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+    }
+
+    .food-content {
+      padding: 80px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .food-tag {
+      margin-bottom: 22px;
+
+      color: var(--gold);
+
+      font-size: .67rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+    }
+
+    .food-content h3 {
+      max-width: 530px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.5rem, 4vw, 4.4rem);
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .food-content p {
+      max-width: 480px;
+
+      margin-top: 28px;
+
+      color: var(--cream-dark);
+
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+    .food-line {
+      width: 80px;
+      height: 1px;
+
+      margin-top: 38px;
+
+      background: var(--gold);
+    }
+
+
+    /* =========================================
+       MENU
+    ========================================= */
+
+    .menu {
+      padding: 140px 0;
+
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .menu .section-small {
+      color: #9a681d;
+    }
+
+    .menu-header {
+      margin-bottom: 80px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+      align-items: end;
+    }
+
+    .menu-header p {
+      max-width: 500px;
+
+      color: #66594c;
+
+      line-height: 1.8;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+
+      border-top: 1px solid rgba(23,18,13,.16);
+      border-left: 1px solid rgba(23,18,13,.16);
+    }
+
+    .menu-item {
+      min-height: 280px;
+
+      padding: 40px;
+
+      border-right: 1px solid rgba(23,18,13,.16);
+      border-bottom: 1px solid rgba(23,18,13,.16);
+
+      transition: .3s;
+    }
+
+    .menu-item:hover {
+      background: #ead9bd;
+    }
+
+    .menu-number {
+      color: #9a681d;
+
+      font-size: .67rem;
+
+      letter-spacing: .15em;
+    }
+
+    .menu-item h3 {
+      margin-top: 65px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .menu-item p {
+      margin-top: 15px;
+
+      color: #756657;
+
+      font-size: .88rem;
+
+      line-height: 1.6;
+    }
+
+    .soon {
+      display: inline-block;
+
+      margin-top: 24px;
+      padding-bottom: 5px;
+
+      border-bottom: 1px solid #9a681d;
+
+      color: #9a681d;
+
+      font-size: .64rem;
+
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+
+    /* =========================================
+       PHILOSOPHY
+    ========================================= */
+
+    .philosophy {
+      position: relative;
+      overflow: hidden;
+
+      padding: 160px 0;
+    }
+
+    .philosophy::after {
+      content: "PETIT";
+
+      position: absolute;
+
+      right: -20px;
+      bottom: -80px;
+
+      color: rgba(244,234,215,.025);
+
+      font-family: "Playfair Display", serif;
+      font-size: 22vw;
+
+      line-height: 1;
+
+      pointer-events: none;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 110px;
+      align-items: center;
+    }
+
+    .big-quote {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.5rem,4.4vw,4.8rem);
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+    .big-quote em {
+      color: var(--gold);
+    }
+
+    .philosophy-content {
+      max-width: 520px;
+    }
+
+    .philosophy-content p {
+      margin-bottom: 24px;
+
+      color: var(--cream-dark);
+
+      font-weight: 300;
+
+      line-height: 1.9;
+    }
+
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery {
+      min-height: 620px;
+
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+    }
+
+    .gallery-main,
+    .gallery-small {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-main {
+      background:
+        linear-gradient(
+          rgba(23,18,13,.1),
+          rgba(23,18,13,.45)
+        ),
+        linear-gradient(
+          135deg,
+          #704427,
+          #26190f
+        );
+    }
+
+    .gallery-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .gallery-small:first-child {
+      background:
+        linear-gradient(
+          135deg,
+          #b27b36,
+          #49301c
+        );
+    }
+
+    .gallery-small:last-child {
+      background:
+        linear-gradient(
+          135deg,
+          #322117,
+          #8d592d
+        );
+    }
+
+    .gallery-label {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: rgba(244,234,215,.35);
+
+      font-size: .67rem;
+
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+
+    /* =========================================
+       CTA
+    ========================================= */
+
+    .final-section {
+      padding: 130px 0;
+
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .final-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 60px;
+    }
+
+    .final-section h2 {
+      max-width: 850px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(3rem,6vw,6.5rem);
+      font-weight: 500;
+
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+
+    .final-section .button {
+      min-width: 180px;
+
+      border-color: var(--dark);
+    }
+
+    .final-section .button:hover {
+      background: var(--dark);
+      color: var(--cream);
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      padding: 70px 0 35px;
+
+      background: #100c09;
+    }
+
+    .footer-top {
+      padding-bottom: 70px;
+
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+
+      gap: 70px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .footer-brand img {
+      width: 105px;
+
+      margin-bottom: 25px;
+    }
+
+    .footer-brand h3 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+
+      color: var(--gold);
+
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 22px;
+
+      color: var(--cream);
+
+      font-size: .68rem;
+      font-weight: 500;
+
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+    .footer-column a,
+    .footer-column span {
+      display: block;
+
+      margin: 11px 0;
+
+      color: #8e8274;
+
+      font-size: .87rem;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: #685f55;
+
+      font-size: .7rem;
+    }
+
+
+    /* =========================================
+       SCROLL ANIMATIONS
+    ========================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(35px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    /* =========================================
+       TABLET
+    ========================================= */
+
+    @media(max-width:900px) {
+
+      nav {
+        height: 78px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name strong {
+        font-size: .9rem;
+      }
+
+      .mobile-button {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 0;
+
+        background: var(--bg);
+
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 28px;
+
+        transform: translateX(100%);
+
+        transition: transform .4s;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        font-family: "Playfair Display", serif;
+
+        font-size: 2rem;
+
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      .nav-button {
+        border: 0;
+        padding: 0;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+
+        padding-top: 150px;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem,18vw,7rem);
+      }
+
+      .hero-detail {
+        max-width: 430px;
+      }
+
+      .intro-grid,
+      .menu-header,
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .specialities-header {
+        display: block;
+      }
+
+      .specialities-header p {
+        margin-top: 30px;
+      }
+
+      .food {
+        grid-template-columns: 1fr;
+      }
+
+      .food:nth-child(even) .food-image {
+        order: initial;
+      }
+
+      .food-content {
+        padding: 65px 35px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        min-height: 430px;
+      }
+
+      .gallery-side {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 280px;
+      }
+
+      .final-content {
+        display: block;
+      }
+
+      .final-section .button {
+        margin-top: 40px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1/-1;
+      }
+
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media(max-width:600px) {
+
+      nav,
+      .container,
+      .hero-container {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      .brand-name span {
+        display: none;
+      }
+
+      .hero-container {
+        padding-bottom: 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.6rem,19vw,5.8rem);
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .intro,
+      .specialities,
+      .menu,
+      .philosophy {
+        padding: 95px 0;
+      }
+
+      .food-image {
+        min-height: 360px;
+      }
+
+      .food-content {
+        padding: 55px 25px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-item {
+        min-height: 220px;
+      }
+
+      .menu-item h3 {
+        margin-top: 45px;
+      }
+
+      .gallery-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px 250px;
+      }
+
+      .final-section {
+        padding: 90px 0;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header id="header">
+
+  <nav>
+
+    <a href="#inicio" class="brand">
+
+      <img
+        src="logo.png.png"
+        alt="Logo Bar Petit del Mercat"
+      >
+
+      <div class="brand-name">
+
+        <strong>
+          Bar Petit del Mercat
+        </strong>
+
+        <span>
+          El original del Mercat
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <button
+      class="mobile-button"
+      id="mobileButton"
+      aria-label="Abrir menú"
+    >
+
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <ul
+      class="nav-links"
+      id="navLinks"
+    >
+
+      <li>
+        <a href="#especialidades">
+          Especialidades
+        </a>
+      </li>
+
+      <li>
+        <a href="#carta">
+          Carta
+        </a>
+      </li>
+
+      <li>
+        <a href="#historia">
+          El Petit
+        </a>
+      </li>
+
+      <li>
+        <a href="#galeria">
+          Galería
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#carta"
+          class="nav-button"
+        >
+          Ver carta
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section
+  class="hero"
+  id="inicio"
+>
+
+  <div class="hero-circle"></div>
+
+
+  <div class="hero-container">
+
+
+    <div>
+
+      <div class="small-title">
+        Bar Petit del Mercat
+      </div>
+
+
+      <h1>
+
+        EL ORIGINAL
+
+        <span>
+          DEL MERCAT.
+        </span>
+
+      </h1>
+
+
+      <p class="hero-description">
+
+        Una historia de barrio servida entre pan.
+        Nuestro bocadillo de ternera en salsa representa
+        el sabor y la personalidad del Petit del Mercat.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#carta"
+          class="button button-primary"
+        >
+          Descubrir la carta
+        </a>
+
+
+        <a
+          href="#historia"
+          class="button button-secondary"
+        >
+          Conocer el Petit
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-detail">
+
+      <div class="hero-number">
+        01
+      </div>
+
+      <p>
+
+        Ternera cocinada en salsa y servida
+        en bocadillo.
+
+        Nuestra especialidad y una de las señas
+        de identidad del Bar Petit del Mercat.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MOVING BAR
+========================================= -->
+
+<div class="moving-bar">
+
+  <div class="moving-track">
+
+    <div class="moving-text">
+      El original del Mercat
+    </div>
+
+    <div class="moving-text">
+      Ternera en salsa
+    </div>
+
+    <div class="moving-text">
+      Pollo estilo Faisán
+    </div>
+
+    <div class="moving-text">
+      Bar Petit del Mercat
+    </div>
+
+
+    <div class="moving-text">
+      El original del Mercat
+    </div>
+
+    <div class="moving-text">
+      Ternera en salsa
+    </div>
+
+    <div class="moving-text">
+      Pollo estilo Faisán
+    </div>
+
+    <div class="moving-text">
+      Bar Petit del Mercat
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================
+     HISTORY
+========================================= -->
+
+<section
+  class="intro"
+  id="historia"
+>
+
+  <div class="container intro-grid">
+
+
+    <div class="section-small reveal">
+
+      El Petit
+
+    </div>
+
+
+    <div class="intro-content reveal">
+
+
+      <h2 class="section-title">
+
+        Una historia que se
+
+        <em>
+          come entre pan.
+        </em>
+
+      </h2>
+
+
+      <p>
+
+        Bar Petit del Mercat conserva el carácter
+        de los bares de mercado de toda la vida:
+        cocina reconocible, trato cercano y sabores
+        que forman parte del día a día.
+
+        Una identidad tradicional que se renueva
+        sin perder aquello que la hace especial.
+
+      </p>
+
+
+      <div class="signature">
+
+        Bar Petit del Mercat
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SPECIALITIES
+========================================= -->
+
+<section
+  class="specialities"
+  id="especialidades"
+>
+
+  <div class="container">
+
+
+    <div class="specialities-header">
+
+
+      <div class="reveal">
+
+        <div class="section-small">
+
+          Nuestras especialidades
+
+        </div>
+
+
+        <h2 class="section-title">
+
+          Los clásicos
+
+          <br>
+
+          <em>
+            del Petit.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <p class="reveal">
+
+        Dos bocadillos con personalidad propia.
+        Recetas que forman parte de la identidad
+        de nuestra casa.
+
+      </p>
+
+
+    </div>
+
+
+
+    <!-- TERNERA -->
+
+    <article class="food reveal">
+
+
+      <div class="food-image">
+
+        <span class="food-number">
+          01
+        </span>
+
+      </div>
+
+
+      <div class="food-content">
+
+
+        <div class="food-tag">
+
+          El original del Mercat
+
+        </div>
+
+
+        <h3>
+
+          Bocadillo de
+
+          <br>
+
+          ternera en salsa
+
+        </h3>
+
+
+        <p>
+
+          La especialidad de la casa.
+
+          Ternera cocinada en salsa y servida
+          en pan, dando lugar al bocadillo
+          que representa al Petit del Mercat.
+
+        </p>
+
+
+        <div class="food-line"></div>
+
+
+      </div>
+
+
+    </article>
+
+
+
+    <!-- POLLO -->
+
+    <article class="food reveal">
+
+
+      <div class="food-image chicken">
+
+        <span class="food-number">
+          02
+        </span>
+
+      </div>
+
+
+      <div class="food-content">
+
+
+        <div class="food-tag">
+
+          Un clásico de la casa
+
+        </div>
+
+
+        <h3>
+
+          Bocadillo de
+
+          <br>
+
+          pollo estilo Faisán
+
+        </h3>
+
+
+        <p>
+
+          Otra de las especialidades del Petit.
+
+          Un bocadillo con personalidad propia
+          que acompaña a nuestro clásico
+          de ternera en salsa.
+
+        </p>
+
+
+        <div class="food-line"></div>
+
+
+      </div>
+
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DIGITAL MENU
+========================================= -->
+
+<section
+  class="menu"
+  id="carta"
+>
+
+  <div class="container">
+
+
+    <div class="menu-header">
+
+
+      <div class="reveal">
+
+        <div class="section-small">
+
+          Carta digital
+
+        </div>
+
+
+        <h2 class="section-title">
+
+          La carta,
+
+          <br>
+
+          <em>
+            a tu manera.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <p class="reveal">
+
+        Estamos preparando la nueva carta digital
+        del Bar Petit del Mercat.
+
+        Muy pronto podrás consultar desde aquí
+        nuestros productos y precios, también
+        directamente desde las mesas mediante
+        QR y NFC.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="menu-grid reveal">
+
+
+      <div class="menu-item">
+
+        <span class="menu-number">
+          01
+        </span>
+
+        <h3>
+          Bocadillos
+        </h3>
+
+        <p>
+          Nuestros clásicos y especialidades de la casa.
+        </p>
+
+        <span class="soon">
+          Próximamente
+        </span>
+
+      </div>
+
+
+
+      <div class="menu-item">
+
+        <span class="menu-number">
+          02
+        </span>
+
+        <h3>
+          Tapas
+        </h3>
+
+        <p>
+          Para compartir, acompañar o disfrutar a tu manera.
+        </p>
+
+        <span class="soon">
+          Próximamente
+        </span>
+
+      </div>
+
+
+
+      <div class="menu-item">
+
+        <span class="menu-number">
+          03
+        </span>
+
+        <h3>
+          Platos
+        </h3>
+
+        <p>
+          Propuestas para completar nuestra carta.
+        </p>
+
+        <span class="soon">
+          Próximamente
+        </span>
+
+      </div>
+
+
+
+      <div class="menu-item">
+
+        <span class="menu-number">
+          04
+        </span>
+
+        <h3>
+          Bebidas
+        </h3>
+
+        <p>
+          Refrescos, agua y otras opciones.
+        </p>
+
+        <span class="soon">
+          Próximamente
+        </span>
+
+      </div>
+
+
+
+      <div class="menu-item">
+
+        <span class="menu-number">
+          05
+        </span>
+
+        <h3>
+          Cervezas
+        </h3>
+
+        <p>
+          Para acompañar los sabores del Petit.
+        </p>
+
+        <span class="soon">
+          Próximamente
+        </span>
+
+      </div>
+
+
+
+      <div class="menu-item">
+
+        <span class="menu-number">
+          06
+        </span>
+
+        <h3>
+          Cafés
+        </h3>
+
+        <p>
+          El final de siempre para una visita al mercado.
+        </p>
+
+        <span class="soon">
+          Próximamente
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PHILOSOPHY
+========================================= -->
+
+<section class="philosophy">
+
+  <div class="container philosophy-grid">
+
+
+    <div class="big-quote reveal">
+
+      No queremos dejar de ser
+      un bar de barrio.
+
+      Queremos ser
+
+      <em>
+        el nuestro.
+      </em>
+
+    </div>
+
+
+    <div class="philosophy-content reveal">
+
+
+      <div class="section-small">
+
+        Nuestra esencia
+
+      </div>
+
+
+      <p>
+
+        Modernizar no significa borrar lo anterior.
+
+        El Petit mantiene la esencia cercana y familiar
+        de un bar de mercado, trasladándola también
+        a una experiencia más actual.
+
+      </p>
+
+
+      <p>
+
+        Cocina sencilla, recetas reconocibles y dos
+        especialidades que hablan por nosotros:
+        la ternera en salsa y el pollo estilo Faisán.
+
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     GALLERY
+========================================= -->
+
+<section
+  class="gallery"
+  id="galeria"
+>
+
+
+  <div class="gallery-main">
+
+    <div class="gallery-label">
+
+      Próximamente · Fotografía del Petit
+
+    </div>
+
+  </div>
+
+
+  <div class="gallery-side">
+
+
+    <div class="gallery-small">
+
+      <div class="gallery-label">
+
+        Especialidades
+
+      </div>
+
+    </div>
+
+
+    <div class="gallery-small">
+
+      <div class="gallery-label">
+
+        El Mercat
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL CTA
+========================================= -->
+
+<section class="final-section">
+
+
+  <div class="container final-content">
+
+
+    <h2 class="reveal">
+
+      El original
+
+      <br>
+
+      del Mercat.
+
+    </h2>
+
+
+    <a
+      href="#carta"
+      class="button reveal"
+    >
+
+      Ver la carta
+
+    </a>
+
+
+  </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+
+  <div class="container">
+
+
+    <div class="footer-top">
+
+
+      <div class="footer-brand">
+
+
+        <img
+          src="logo.png.png"
+          alt="Logo Bar Petit del Mercat"
+        >
+
+
+        <h3>
+
+          Bar Petit del Mercat
+
+        </h3>
+
+
+        <p>
+
+          El original del Mercat.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+
+        <h4>
+          Explorar
+        </h4>
+
+
+        <a href="#inicio">
+          Inicio
+        </a>
+
+        <a href="#especialidades">
+          Especialidades
+        </a>
+
+        <a href="#carta">
+          Carta
+        </a>
+
+        <a href="#historia">
+          El Petit
+        </a>
+
+        <a href="#galeria">
+          Galería
+        </a>
+
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+
+        <h4>
+          Información
+        </h4>
+
+
+        <span>
+          Dirección próximamente
+        </span>
+
+        <span>
+          Horario próximamente
+        </span>
+
+        <span>
+          Contacto próximamente
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+
+      <span>
+
+        ©
+        <span id="year"></span>
+
+        Bar Petit del Mercat
+
+      </span>
+
+
+      <span>
+
+        Sant Boi de Llobregat
+
+      </span>
+
+
+    </div>
+
+
+  </div>
+
+
+</footer>
+
+
+
+<script>
+
+
+  /* HEADER */
+
+  const header =
+    document.getElementById("header");
+
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      if (window.scrollY > 30) {
+
+        header.classList.add("scrolled");
+
+      } else {
+
+        header.classList.remove("scrolled");
+
+      }
+
+    }
+  );
+
+
+
+  /* MOBILE MENU */
+
+  const mobileButton =
+    document.getElementById("mobileButton");
+
+  const navLinks =
+    document.getElementById("navLinks");
+
+
+  mobileButton.addEventListener(
+    "click",
+    () => {
+
+      navLinks.classList.toggle("open");
+
+      document.body.classList.toggle(
+        "menu-open"
+      );
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          navLinks.classList.remove("open");
+
+          document.body.classList.remove(
+            "menu-open"
+          );
+
+        }
+      );
+
+    });
+
+
+
+  /* SCROLL ANIMATIONS */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: .12
+      }
+
+    );
+
+
+  revealElements.forEach(
+    element => {
+
+      observer.observe(element);
+
+    }
+  );
+
+
+
+  /* AUTOMATIC YEAR */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+</script>
+
+
+</body>
+</html>
