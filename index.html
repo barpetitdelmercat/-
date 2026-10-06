@@ -6,21 +6,18 @@
 
 <title>Bar Petit del Mercat | El Original del Mercat</title>
 
-<meta name="description"
-content="Bar Petit del Mercat. El original del Mercat. Bocadillo de ternera en salsa y pollo estilo Faisán en Sant Boi de Llobregat.">
-
+<meta name="description" content="Bar Petit del Mercat. El original del Mercat. Bocadillo de ternera en salsa y pollo estilo Faisán en Sant Boi de Llobregat.">
 <meta name="theme-color" content="#15100b">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================
+/* ==============================
    VARIABLES
-========================= */
+============================== */
 
 :root{
     --dark:#14100c;
@@ -28,7 +25,6 @@ content="Bar Petit del Mercat. El original del Mercat. Bocadillo de ternera en s
     --cream:#f4ead7;
     --cream2:#cdbfa8;
     --paper:#efe4d0;
-    --paper2:#e2d1b4;
     --gold:#e3a82b;
     --gold2:#f3c45c;
     --wood:#60381f;
@@ -36,9 +32,9 @@ content="Bar Petit del Mercat. El original del Mercat. Bocadillo de ternera en s
     --max:1280px;
 }
 
-/* =========================
+/* ==============================
    RESET
-========================= */
+============================== */
 
 *{
     margin:0;
@@ -71,8 +67,8 @@ button{
 }
 
 img{
-    max-width:100%;
     display:block;
+    max-width:100%;
 }
 
 ::selection{
@@ -85,9 +81,9 @@ img{
     margin:auto;
 }
 
-/* =========================
+/* ==============================
    LOADER
-========================= */
+============================== */
 
 .loader{
     position:fixed;
@@ -106,6 +102,7 @@ img{
 .loader.hide{
     opacity:0;
     visibility:hidden;
+    pointer-events:none;
 }
 
 .loader img{
@@ -114,6 +111,7 @@ img{
 }
 
 @keyframes pulse{
+
     0%,100%{
         opacity:.45;
         transform:scale(.96);
@@ -123,31 +121,37 @@ img{
         opacity:1;
         transform:scale(1);
     }
+
 }
 
-/* =========================
+/* ==============================
    PROGRESS
-========================= */
+============================== */
 
 .progress{
     position:fixed;
     left:0;
     top:0;
+
     height:2px;
     width:0;
-    z-index:10000;
+
     background:var(--gold);
+
+    z-index:10000;
 }
 
-/* =========================
+/* ==============================
    HEADER
-========================= */
+============================== */
 
 header{
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
+
     z-index:1000;
 
     transition:.35s;
@@ -156,14 +160,17 @@ header{
 }
 
 header.scrolled{
-    background:rgba(20,16,12,.9);
+    background:rgba(20,16,12,.91);
     backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
     border-color:var(--line);
 }
 
 nav{
     width:min(calc(100% - 48px),var(--max));
     height:90px;
+
     margin:auto;
 
     display:flex;
@@ -174,25 +181,37 @@ nav{
 .logo{
     display:flex;
     align-items:center;
+
     gap:14px;
 
     position:relative;
+
     z-index:1002;
 
     cursor:pointer;
     user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
 .logo img{
     width:58px;
     height:58px;
+
     object-fit:contain;
+
+    pointer-events:none;
+}
+
+.logo-text{
+    pointer-events:none;
 }
 
 .logo strong{
     display:block;
 
     font-family:"Playfair Display",serif;
+
     font-size:1rem;
     font-weight:600;
 }
@@ -205,6 +224,7 @@ nav{
     color:var(--gold);
 
     font-size:.58rem;
+
     letter-spacing:.19em;
     text-transform:uppercase;
 }
@@ -214,6 +234,7 @@ nav{
 
     display:flex;
     align-items:center;
+
     gap:30px;
 }
 
@@ -221,6 +242,7 @@ nav{
     color:rgba(244,234,215,.72);
 
     font-size:.68rem;
+
     letter-spacing:.12em;
     text-transform:uppercase;
 
@@ -241,6 +263,7 @@ nav{
     background:none;
 
     position:relative;
+
     z-index:1002;
 
     cursor:pointer;
@@ -257,9 +280,82 @@ nav{
     background:var(--cream);
 }
 
-/* =========================
+/* ==============================
+   GENERAL TYPOGRAPHY
+============================== */
+
+.section-label{
+    margin-bottom:22px;
+
+    color:var(--gold);
+
+    font-size:.65rem;
+
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.big-title{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(3rem,5.8vw,6rem);
+
+    font-weight:500;
+
+    line-height:.97;
+
+    letter-spacing:-.04em;
+}
+
+.big-title em{
+    color:var(--gold);
+    font-weight:500;
+}
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+.reveal-left{
+    opacity:0;
+
+    transform:translateX(-55px);
+
+    transition:.9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal-left.visible{
+    opacity:1;
+    transform:none;
+}
+
+.reveal-right{
+    opacity:0;
+
+    transform:translateX(55px);
+
+    transition:.9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal-right.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* ==============================
    HERO
-========================= */
+============================== */
 
 .hero{
     min-height:100vh;
@@ -271,17 +367,17 @@ nav{
     align-items:center;
 
     background:
-    radial-gradient(
-        circle at 78% 45%,
-        rgba(227,168,43,.18),
-        transparent 27%
-    ),
-    linear-gradient(
-        120deg,
-        #14100c 0%,
-        #1e160e 62%,
-        #342110 100%
-    );
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(227,168,43,.18),
+            transparent 27%
+        ),
+        linear-gradient(
+            120deg,
+            #14100c 0%,
+            #1e160e 62%,
+            #342110 100%
+        );
 }
 
 .hero-grid{
@@ -291,15 +387,15 @@ nav{
     opacity:.09;
 
     background-image:
-    linear-gradient(
-        rgba(255,255,255,.07) 1px,
-        transparent 1px
-    ),
-    linear-gradient(
-        90deg,
-        rgba(255,255,255,.07) 1px,
-        transparent 1px
-    );
+        linear-gradient(
+            rgba(255,255,255,.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.07) 1px,
+            transparent 1px
+        );
 
     background-size:120px 120px;
 }
@@ -316,6 +412,8 @@ nav{
     border-radius:50%;
 
     border:1px solid rgba(227,168,43,.18);
+
+    animation:slowRotate 30s linear infinite;
 }
 
 .hero-ring::before,
@@ -337,17 +435,29 @@ nav{
     inset:210px;
 }
 
+@keyframes slowRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
 .hero-inner{
     position:relative;
+
     z-index:2;
 
     width:min(calc(100% - 48px),var(--max));
+
     margin:auto;
 
     padding:150px 0 80px;
 
     display:grid;
+
     grid-template-columns:1.35fr .65fr;
+
     gap:70px;
 
     align-items:end;
@@ -356,6 +466,7 @@ nav{
 .eyebrow{
     display:flex;
     align-items:center;
+
     gap:14px;
 
     margin-bottom:25px;
@@ -363,7 +474,9 @@ nav{
     color:var(--gold);
 
     font-size:.66rem;
+
     letter-spacing:.23em;
+
     text-transform:uppercase;
 }
 
@@ -382,9 +495,11 @@ nav{
     font-family:"Playfair Display",serif;
 
     font-size:clamp(4.5rem,9.5vw,9.7rem);
+
     font-weight:500;
 
     line-height:.81;
+
     letter-spacing:-.06em;
 }
 
@@ -404,6 +519,7 @@ nav{
     color:var(--cream2);
 
     font-size:1.05rem;
+
     font-weight:300;
 
     line-height:1.85;
@@ -412,6 +528,7 @@ nav{
 .hero-actions{
     display:flex;
     flex-wrap:wrap;
+
     gap:12px;
 
     margin-top:38px;
@@ -423,13 +540,16 @@ nav{
     padding:0 25px;
 
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
 
     border:1px solid var(--gold);
 
     font-size:.67rem;
+
     letter-spacing:.14em;
+
     text-transform:uppercase;
 
     transition:.3s;
@@ -442,6 +562,7 @@ nav{
 
 .btn-main:hover{
     background:var(--gold2);
+
     border-color:var(--gold2);
 
     transform:translateY(-3px);
@@ -467,6 +588,7 @@ nav{
     color:var(--gold);
 
     font-family:"Playfair Display",serif;
+
     font-size:4rem;
 }
 
@@ -478,17 +600,19 @@ nav{
     color:var(--cream2);
 
     font-size:.9rem;
+
     line-height:1.8;
 }
 
-/* =========================
+/* ==============================
    MARQUEE
-========================= */
+============================== */
 
 .marquee{
     overflow:hidden;
 
     background:var(--gold);
+
     color:var(--dark);
 }
 
@@ -506,7 +630,9 @@ nav{
     white-space:nowrap;
 
     font-family:"Playfair Display",serif;
+
     font-size:1.04rem;
+
     font-style:italic;
 }
 
@@ -516,97 +642,35 @@ nav{
     margin-left:70px;
 
     font-size:.45rem;
+
     vertical-align:middle;
 }
 
 @keyframes marquee{
+
     to{
         transform:translateX(-50%);
     }
+
 }
 
-/* =========================
-   GENERAL
-========================= */
-
-.section-label{
-    margin-bottom:22px;
-
-    color:var(--gold);
-
-    font-size:.65rem;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-}
-
-.big-title{
-    font-family:"Playfair Display",serif;
-
-    font-size:clamp(3rem,5.8vw,6rem);
-    font-weight:500;
-
-    line-height:.97;
-    letter-spacing:-.04em;
-}
-
-.big-title em{
-    color:var(--gold);
-
-    font-weight:500;
-}
-
-.reveal{
-    opacity:0;
-    transform:translateY(45px);
-
-    transition:
-    opacity .9s ease,
-    transform .9s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:none;
-}
-
-.reveal-left{
-    opacity:0;
-    transform:translateX(-55px);
-
-    transition:.9s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal-left.visible{
-    opacity:1;
-    transform:none;
-}
-
-.reveal-right{
-    opacity:0;
-    transform:translateX(55px);
-
-    transition:.9s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal-right.visible{
-    opacity:1;
-    transform:none;
-}
-
-/* =========================
-   VISUAL INTRO
-========================= */
+/* ==============================
+   INTRO
+============================== */
 
 .visual-intro{
     padding:140px 0;
 
     background:var(--paper);
+
     color:var(--dark);
 }
 
 .visual-intro-top{
     display:grid;
+
     grid-template-columns:.75fr 1.25fr;
+
     gap:90px;
 
     margin-bottom:80px;
@@ -624,6 +688,7 @@ nav{
     color:#635548;
 
     font-size:1.06rem;
+
     line-height:1.9;
 }
 
@@ -631,45 +696,57 @@ nav{
     height:650px;
 
     display:grid;
+
     grid-template-columns:1.2fr .8fr;
+
     gap:16px;
 }
 
 .photo-main,
 .photo-small{
     position:relative;
-    overflow:hidden;
 
+    overflow:hidden;
+}
+
+.photo-main{
     background:
-    linear-gradient(
-        135deg,
-        #7c4a27,
-        #26170e
-    );
+        radial-gradient(
+            circle at 40% 35%,
+            rgba(227,168,43,.2),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #7c4a27,
+            #26170e
+        );
 }
 
 .photo-side{
     display:grid;
+
     grid-template-rows:1fr 1fr;
+
     gap:16px;
 }
 
-.photo-side .photo-small:first-child{
+.photo-small:first-child{
     background:
-    linear-gradient(
-        135deg,
-        #b57a35,
-        #50301a
-    );
+        linear-gradient(
+            135deg,
+            #b57a35,
+            #50301a
+        );
 }
 
-.photo-side .photo-small:last-child{
+.photo-small:last-child{
     background:
-    linear-gradient(
-        135deg,
-        #382319,
-        #906032
-    );
+        linear-gradient(
+            135deg,
+            #382319,
+            #906032
+        );
 }
 
 .photo-label{
@@ -677,13 +754,16 @@ nav{
     inset:0;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     color:rgba(255,255,255,.4);
 
     font-size:.6rem;
+
     letter-spacing:.18em;
+
     text-transform:uppercase;
 }
 
@@ -706,30 +786,32 @@ nav{
     opacity:1;
 }
 
-/* =========================
-   BEEF FEATURE
-========================= */
+/* ==============================
+   BEEF
+============================== */
 
 .beef{
     min-height:100vh;
 
     position:relative;
+
     overflow:hidden;
 
     display:flex;
+
     align-items:center;
 
     background:
-    radial-gradient(
-        circle at 70% 50%,
-        rgba(227,168,43,.22),
-        transparent 25%
-    ),
-    linear-gradient(
-        110deg,
-        #14100c,
-        #291a10
-    );
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(227,168,43,.22),
+            transparent 25%
+        ),
+        linear-gradient(
+            110deg,
+            #14100c,
+            #291a10
+        );
 }
 
 .beef-word{
@@ -741,6 +823,7 @@ nav{
     color:rgba(255,255,255,.025);
 
     font-family:"Playfair Display",serif;
+
     font-size:20vw;
 
     pointer-events:none;
@@ -748,7 +831,9 @@ nav{
 
 .beef-grid{
     display:grid;
+
     grid-template-columns:.9fr 1.1fr;
+
     gap:100px;
 
     align-items:center;
@@ -766,6 +851,7 @@ nav{
 
 .beef-note{
     margin-top:38px;
+
     padding-left:20px;
 
     border-left:2px solid var(--gold);
@@ -773,7 +859,9 @@ nav{
     color:var(--gold2);
 
     font-family:"Playfair Display",serif;
+
     font-size:1.2rem;
+
     font-style:italic;
 }
 
@@ -795,6 +883,7 @@ nav{
     transform:translate(-50%,-50%);
 
     border:1px solid rgba(227,168,43,.18);
+
     border-radius:50%;
 }
 
@@ -802,9 +891,11 @@ nav{
     content:"";
 
     position:absolute;
+
     inset:65px;
 
     border:1px solid rgba(227,168,43,.11);
+
     border-radius:50%;
 }
 
@@ -820,15 +911,15 @@ nav{
     border-radius:100px 25px 100px 25px;
 
     background:
-    linear-gradient(
-        180deg,
-        #e0a348 0%,
-        #a76629 34%,
-        #6c341e 36%,
-        #8f4825 58%,
-        #c47b30 60%,
-        #e4a64d 100%
-    );
+        linear-gradient(
+            180deg,
+            #e0a348 0%,
+            #a76629 34%,
+            #6c341e 36%,
+            #8f4825 58%,
+            #c47b30 60%,
+            #e4a64d 100%
+        );
 
     box-shadow:0 40px 100px rgba(0,0,0,.45);
 
@@ -838,6 +929,7 @@ nav{
 }
 
 @keyframes floatSandwich{
+
     0%,100%{
         transform:rotate(-7deg) translateY(0);
     }
@@ -845,14 +937,16 @@ nav{
     50%{
         transform:rotate(-5deg) translateY(-18px);
     }
+
 }
 
-/* =========================
-   CHICKEN - DIFFERENT DESIGN
-========================= */
+/* ==============================
+   CHICKEN
+============================== */
 
 .chicken{
     background:var(--gold);
+
     color:var(--dark);
 
     overflow:hidden;
@@ -862,6 +956,7 @@ nav{
     min-height:760px;
 
     display:grid;
+
     grid-template-columns:1fr 1fr;
 }
 
@@ -870,14 +965,14 @@ nav{
 
     position:relative;
 
-    background:
-    linear-gradient(
-        135deg,
-        #392316,
-        #7f5028
-    );
-
     overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #392316,
+            #7f5028
+        );
 }
 
 .chicken-visual::before{
@@ -891,6 +986,7 @@ nav{
     color:rgba(255,255,255,.08);
 
     font-family:"Playfair Display",serif;
+
     font-size:15rem;
 }
 
@@ -906,14 +1002,14 @@ nav{
     border-radius:90px 25px 90px 25px;
 
     background:
-    linear-gradient(
-        180deg,
-        #e8b45b 0%,
-        #bd792f 35%,
-        #9c602d 37%,
-        #d29446 58%,
-        #e3ae58 100%
-    );
+        linear-gradient(
+            180deg,
+            #e8b45b 0%,
+            #bd792f 35%,
+            #9c602d 37%,
+            #d29446 58%,
+            #e3ae58 100%
+        );
 
     box-shadow:0 40px 90px rgba(0,0,0,.4);
 
@@ -924,7 +1020,9 @@ nav{
     padding:100px;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
 }
 
@@ -946,21 +1044,25 @@ nav{
     line-height:1.9;
 }
 
-/* =========================
+/* ==============================
    MENU
-========================= */
+============================== */
 
 .menu-section{
     padding:145px 0;
 
     background:var(--paper);
+
     color:var(--dark);
 }
 
 .menu-header{
     display:flex;
+
     justify-content:space-between;
+
     align-items:end;
+
     gap:60px;
 
     margin-bottom:70px;
@@ -980,6 +1082,7 @@ nav{
 
 .menu-tabs{
     display:flex;
+
     flex-wrap:wrap;
 
     margin-bottom:35px;
@@ -991,6 +1094,7 @@ nav{
     padding:17px 23px;
 
     border:0;
+
     background:none;
 
     color:#746453;
@@ -998,19 +1102,24 @@ nav{
     cursor:pointer;
 
     font-size:.7rem;
+
     letter-spacing:.12em;
+
     text-transform:uppercase;
 
     border-bottom:2px solid transparent;
+
+    transition:.2s;
 }
 
 .menu-tab.active{
     color:#8f5c16;
+
     border-color:#8f5c16;
 }
 
 .menu-content{
-    min-height:300px;
+    min-height:280px;
 
     border-top:1px solid rgba(0,0,0,.12);
 }
@@ -1021,11 +1130,29 @@ nav{
 
 .menu-panel.active{
     display:block;
+
+    animation:panelIn .45s ease;
+}
+
+@keyframes panelIn{
+
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
 }
 
 .menu-product{
     display:grid;
+
     grid-template-columns:1fr auto;
+
     gap:30px;
 
     padding:28px 0;
@@ -1035,7 +1162,9 @@ nav{
 
 .menu-product h3{
     font-family:"Playfair Display",serif;
+
     font-size:1.45rem;
+
     font-weight:500;
 }
 
@@ -1051,12 +1180,13 @@ nav{
     color:#936019;
 
     font-family:"Playfair Display",serif;
-    font-size:1.2rem;
+
+    font-size:1.1rem;
 }
 
-/* =========================
-   HISTORY
-========================= */
+/* ==============================
+   STORY
+============================== */
 
 .story{
     padding:150px 0;
@@ -1064,7 +1194,9 @@ nav{
 
 .story-grid{
     display:grid;
+
     grid-template-columns:.8fr 1.2fr;
+
     gap:100px;
 
     align-items:center;
@@ -1076,11 +1208,16 @@ nav{
     position:relative;
 
     background:
-    linear-gradient(
-        145deg,
-        #85552f,
-        #281a10
-    );
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(227,168,43,.2),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #85552f,
+            #281a10
+        );
 }
 
 .story-photo::after{
@@ -1090,13 +1227,16 @@ nav{
     inset:0;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     color:rgba(255,255,255,.35);
 
     font-size:.6rem;
+
     letter-spacing:.2em;
+
     text-transform:uppercase;
 }
 
@@ -1116,18 +1256,21 @@ nav{
     color:var(--gold);
 
     font-family:"Playfair Display",serif;
+
     font-size:1.2rem;
+
     font-style:italic;
 }
 
-/* =========================
+/* ==============================
    REVIEWS
-========================= */
+============================== */
 
 .reviews{
     padding:140px 0;
 
     background:var(--paper);
+
     color:var(--dark);
 }
 
@@ -1136,17 +1279,14 @@ nav{
 }
 
 .reviews-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    gap:50px;
-
     margin-bottom:65px;
 }
 
 .review-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
@@ -1188,13 +1328,15 @@ nav{
     color:#8d7964;
 
     font-size:.6rem;
+
     letter-spacing:.15em;
+
     text-transform:uppercase;
 }
 
-/* =========================
+/* ==============================
    VISIT
-========================= */
+============================== */
 
 .visit{
     padding:145px 0;
@@ -1202,7 +1344,9 @@ nav{
 
 .visit-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:80px;
 }
 
@@ -1212,7 +1356,9 @@ nav{
 
 .visit-row{
     display:grid;
+
     grid-template-columns:150px 1fr;
+
     gap:20px;
 
     padding:25px 0;
@@ -1228,7 +1374,9 @@ nav{
     color:var(--gold);
 
     font-size:.62rem;
+
     letter-spacing:.16em;
+
     text-transform:uppercase;
 }
 
@@ -1240,41 +1388,46 @@ nav{
     min-height:540px;
 
     position:relative;
+
     overflow:hidden;
 
     background:
-    linear-gradient(
-        135deg,
-        #d7c4a5,
-        #ad9674
-    );
+        linear-gradient(
+            135deg,
+            #d7c4a5,
+            #ad9674
+        );
 }
 
 .map::before{
     content:"";
 
     position:absolute;
+
     inset:-20%;
 
     transform:rotate(18deg);
 
     background:
-    repeating-linear-gradient(
-        90deg,
-        transparent 0,
-        transparent 70px,
-        rgba(60,43,27,.15) 71px,
-        rgba(60,43,27,.15) 74px
-    );
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 70px,
+            rgba(60,43,27,.15) 71px,
+            rgba(60,43,27,.15) 74px
+        );
 }
 
 .map-center{
     position:absolute;
+
     inset:0;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     flex-direction:column;
 
     color:var(--dark);
@@ -1295,6 +1448,7 @@ nav{
 
 .map-center strong{
     font-family:"Playfair Display",serif;
+
     font-size:1.7rem;
 }
 
@@ -1304,29 +1458,31 @@ nav{
     color:#665544;
 }
 
-/* =========================
+/* ==============================
    FINAL
-========================= */
+============================== */
 
 .final{
     min-height:75vh;
 
     position:relative;
+
     overflow:hidden;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     text-align:center;
 
     background:
-    radial-gradient(
-        circle,
-        rgba(227,168,43,.16),
-        transparent 34%
-    ),
-    #0d0a07;
+        radial-gradient(
+            circle,
+            rgba(227,168,43,.16),
+            transparent 34%
+        ),
+        #0d0a07;
 }
 
 .final::before{
@@ -1344,6 +1500,7 @@ nav{
 
 .final-inner{
     position:relative;
+
     z-index:2;
 }
 
@@ -1357,6 +1514,7 @@ nav{
     font-family:"Playfair Display",serif;
 
     font-size:clamp(3rem,6vw,6rem);
+
     font-weight:500;
 }
 
@@ -1366,13 +1524,15 @@ nav{
     color:var(--gold);
 
     font-family:"Playfair Display",serif;
+
     font-size:1.25rem;
+
     font-style:italic;
 }
 
-/* =========================
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 footer{
     padding:60px 0 30px;
@@ -1382,8 +1542,11 @@ footer{
 
 .footer-main{
     display:flex;
+
     justify-content:space-between;
+
     align-items:flex-end;
+
     gap:50px;
 
     padding-bottom:50px;
@@ -1399,13 +1562,17 @@ footer{
 
 .footer-logo strong{
     font-family:"Playfair Display",serif;
+
     font-size:1.3rem;
+
     font-weight:500;
 }
 
 .footer-links{
     display:flex;
+
     flex-wrap:wrap;
+
     gap:25px;
 }
 
@@ -1413,7 +1580,9 @@ footer{
     color:#827568;
 
     font-size:.7rem;
+
     letter-spacing:.1em;
+
     text-transform:uppercase;
 }
 
@@ -1423,7 +1592,9 @@ footer{
 
 .footer-bottom{
     display:flex;
+
     justify-content:space-between;
+
     gap:30px;
 
     padding-top:28px;
@@ -1433,45 +1604,60 @@ footer{
     font-size:.68rem;
 }
 
-/* =========================
+/* ==============================
    SECRET DEDICATION
-========================= */
+============================== */
 
 .secret{
     position:fixed;
+
     inset:0;
 
-    z-index:20000;
-
-    background:
-    radial-gradient(
-        circle at center,
-        rgba(227,168,43,.12),
-        transparent 35%
-    ),
-    rgba(10,7,5,.97);
-
-    backdrop-filter:blur(12px);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    z-index:50000;
 
     padding:25px;
 
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(227,168,43,.14),
+            transparent 35%
+        ),
+        rgba(8,6,4,.97);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
     opacity:0;
+
     visibility:hidden;
 
-    transition:.6s;
+    pointer-events:none;
+
+    transition:
+        opacity .6s ease,
+        visibility .6s ease;
 }
 
 .secret.show{
     opacity:1;
+
     visibility:visible;
+
+    pointer-events:auto;
 }
 
 .secret-card{
-    width:min(720px,100%);
+    width:min(740px,100%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
 
     position:relative;
 
@@ -1479,11 +1665,13 @@ footer{
 
     text-align:center;
 
-    border:1px solid rgba(227,168,43,.25);
+    border:1px solid rgba(227,168,43,.28);
 
     background:#14100c;
 
-    transform:scale(.92) translateY(30px);
+    box-shadow:0 40px 120px rgba(0,0,0,.6);
+
+    transform:scale(.9) translateY(35px);
 
     transition:.7s cubic-bezier(.2,.8,.2,1);
 }
@@ -1496,6 +1684,7 @@ footer{
     content:"";
 
     position:absolute;
+
     inset:12px;
 
     border:1px solid rgba(227,168,43,.08);
@@ -1504,7 +1693,7 @@ footer{
 }
 
 .secret-logo{
-    width:100px;
+    width:105px;
 
     margin:0 auto 28px;
 }
@@ -1512,17 +1701,20 @@ footer{
 .secret-small{
     color:var(--gold);
 
-    font-size:.62rem;
+    font-size:.61rem;
+
     letter-spacing:.24em;
+
     text-transform:uppercase;
 }
 
 .secret-card h2{
-    margin-top:20px;
+    margin-top:22px;
 
     font-family:"Playfair Display",serif;
 
-    font-size:clamp(2.3rem,5vw,4rem);
+    font-size:clamp(2.3rem,5vw,4.1rem);
+
     font-weight:500;
 
     line-height:1.05;
@@ -1535,7 +1727,7 @@ footer{
 }
 
 .secret-text{
-    max-width:550px;
+    max-width:570px;
 
     margin:30px auto 0;
 
@@ -1544,51 +1736,108 @@ footer{
     line-height:1.9;
 
     font-family:"Playfair Display",serif;
-    font-size:1.08rem;
+
+    font-size:1.06rem;
 }
 
 .secret-love{
-    margin-top:30px;
+    margin-top:32px;
 
     color:var(--cream);
 
     font-family:"Playfair Display",serif;
-    font-size:1.3rem;
+
+    font-size:1.32rem;
+
     font-style:italic;
+
+    line-height:1.6;
 }
 
 .secret-signature{
-    margin-top:38px;
+    margin-top:40px;
 
     color:var(--gold);
 
-    font-size:.65rem;
-    letter-spacing:.2em;
+    font-size:.64rem;
+
+    letter-spacing:.19em;
+
     text-transform:uppercase;
+
+    line-height:1.8;
 }
 
 .secret-close{
     position:absolute;
 
-    right:20px;
+    right:18px;
     top:15px;
 
-    width:42px;
-    height:42px;
+    width:45px;
+    height:45px;
 
     border:0;
-    background:none;
+
+    background:transparent;
 
     color:var(--cream);
 
-    font-size:1.5rem;
+    font-size:1.6rem;
 
     cursor:pointer;
+
+    z-index:5;
 }
 
-/* =========================
-   TOP
-========================= */
+/* ==============================
+   SECRET CLICK INDICATOR
+============================== */
+
+.secret-feedback{
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    transform:translate(-50%,20px);
+
+    z-index:40000;
+
+    padding:10px 16px;
+
+    background:rgba(20,16,12,.92);
+
+    border:1px solid rgba(227,168,43,.25);
+
+    color:var(--gold);
+
+    font-size:.6rem;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    pointer-events:none;
+}
+
+.secret-feedback.show{
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translate(-50%,0);
+}
+
+/* ==============================
+   TOP BUTTON
+============================== */
 
 .top{
     position:fixed;
@@ -1604,11 +1853,13 @@ footer{
     border:1px solid rgba(227,168,43,.4);
 
     background:rgba(20,16,12,.85);
+
     color:var(--gold);
 
     cursor:pointer;
 
     opacity:0;
+
     visibility:hidden;
 
     transition:.3s;
@@ -1616,17 +1867,19 @@ footer{
 
 .top.show{
     opacity:1;
+
     visibility:visible;
 }
 
 .top:hover{
     background:var(--gold);
+
     color:var(--dark);
 }
 
-/* =========================
+/* ==============================
    RESPONSIVE
-========================= */
+============================== */
 
 @media(max-width:950px){
 
@@ -1645,11 +1898,13 @@ footer{
 
     .nav-links{
         position:fixed;
+
         inset:0;
 
         background:var(--dark);
 
         flex-direction:column;
+
         justify-content:center;
 
         gap:28px;
@@ -1665,8 +1920,11 @@ footer{
 
     .nav-links a{
         font-family:"Playfair Display",serif;
+
         font-size:2rem;
+
         text-transform:none;
+
         letter-spacing:0;
     }
 
@@ -1680,6 +1938,8 @@ footer{
 
     .hero-inner{
         gap:55px;
+
+        padding-top:140px;
     }
 
     .hero-aside{
@@ -1688,6 +1948,7 @@ footer{
 
     .photo-layout{
         height:auto;
+
         grid-template-columns:1fr;
     }
 
@@ -1697,6 +1958,7 @@ footer{
 
     .photo-side{
         grid-template-columns:1fr 1fr;
+
         grid-template-rows:280px;
     }
 
@@ -1712,8 +1974,7 @@ footer{
         padding:80px 40px;
     }
 
-    .menu-header,
-    .reviews-top{
+    .menu-header{
         display:block;
     }
 
@@ -1727,6 +1988,7 @@ footer{
 
     .footer-main{
         align-items:flex-start;
+
         flex-direction:column;
     }
 
@@ -1745,11 +2007,15 @@ footer{
     }
 
     .logo strong{
-        font-size:.88rem;
+        font-size:.87rem;
     }
 
     .hero h1{
         font-size:clamp(3.6rem,19vw,5.8rem);
+    }
+
+    .hero-description{
+        font-size:.96rem;
     }
 
     .hero-actions{
@@ -1770,6 +2036,7 @@ footer{
 
     .photo-side{
         grid-template-columns:1fr;
+
         grid-template-rows:260px 260px;
     }
 
@@ -1778,8 +2045,8 @@ footer{
     }
 
     .sandwich-circle{
-        width:330px;
-        height:330px;
+        width:320px;
+        height:320px;
     }
 
     .chicken-visual{
@@ -1792,11 +2059,16 @@ footer{
 
     .menu-tabs{
         overflow-x:auto;
+
         flex-wrap:nowrap;
     }
 
     .menu-tab{
         white-space:nowrap;
+    }
+
+    .menu-product{
+        grid-template-columns:1fr;
     }
 
     .story-photo{
@@ -1805,6 +2077,7 @@ footer{
 
     .visit-row{
         grid-template-columns:1fr;
+
         gap:8px;
     }
 
@@ -1812,8 +2085,16 @@ footer{
         min-height:400px;
     }
 
+    .secret{
+        padding:12px;
+    }
+
     .secret-card{
-        padding:55px 25px;
+        padding:55px 24px 45px;
+    }
+
+    .secret-text{
+        font-size:.98rem;
     }
 
     .footer-bottom{
@@ -1827,31 +2108,50 @@ footer{
 
 <body>
 
-
-<!-- LOADER -->
+<!-- ==============================
+     LOADER
+============================== -->
 
 <div class="loader" id="loader">
-    <img src="logo.png.png" alt="Bar Petit del Mercat">
+
+<img src="logo.png.png"
+     alt="Bar Petit del Mercat">
+
 </div>
 
-<div class="progress" id="progress"></div>
+
+<div class="progress"
+     id="progress">
+</div>
 
 
-<!-- HEADER -->
+<!-- ==============================
+     HEADER
+============================== -->
 
 <header id="header">
 
 <nav>
 
-<div class="logo" id="secretLogo">
 
-    <img src="logo.png.png"
-         alt="Logo Bar Petit del Mercat">
+<div class="logo"
+     id="secretLogo"
+     title="Bar Petit del Mercat">
 
-    <div>
-        <strong>Bar Petit del Mercat</strong>
-        <small>El original del Mercat</small>
-    </div>
+<img src="logo.png.png"
+     alt="Logo Bar Petit del Mercat">
+
+<div class="logo-text">
+
+<strong>
+Bar Petit del Mercat
+</strong>
+
+<small>
+El original del Mercat
+</small>
+
+</div>
 
 </div>
 
@@ -1860,21 +2160,47 @@ footer{
         id="menuButton"
         aria-label="Abrir menú">
 
-    <span></span>
-    <span></span>
+<span></span>
+<span></span>
 
 </button>
 
 
-<ul class="nav-links" id="navLinks">
+<ul class="nav-links"
+    id="navLinks">
 
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#especialidades">Especialidades</a></li>
-    <li><a href="#carta">Carta</a></li>
-    <li><a href="#historia">Nuestra historia</a></li>
-    <li><a href="#visitanos">Visítanos</a></li>
+<li>
+<a href="#inicio">
+Inicio
+</a>
+</li>
+
+<li>
+<a href="#especialidades">
+Especialidades
+</a>
+</li>
+
+<li>
+<a href="#carta">
+Carta
+</a>
+</li>
+
+<li>
+<a href="#historia">
+Nuestra historia
+</a>
+</li>
+
+<li>
+<a href="#visitanos">
+Visítanos
+</a>
+</li>
 
 </ul>
+
 
 </nav>
 
@@ -1884,42 +2210,65 @@ footer{
 <main>
 
 
-<!-- HERO -->
+<!-- ==============================
+     HERO
+============================== -->
 
-<section class="hero" id="inicio">
+<section class="hero"
+         id="inicio">
 
 <div class="hero-grid"></div>
+
 <div class="hero-ring"></div>
 
+
 <div class="hero-inner">
+
 
 <div>
 
 <div class="eyebrow">
+
 Bar Petit del Mercat
+
 </div>
 
+
 <h1>
+
 EL ORIGINAL
-<em>DEL MERCAT.</em>
+
+<em>
+DEL MERCAT.
+</em>
+
 </h1>
 
+
 <p class="hero-description">
+
 Un bar de mercado con identidad propia.
 Sabores de siempre, una nueva imagen
 y una forma diferente de descubrir el Petit.
+
 </p>
+
 
 <div class="hero-actions">
 
 <a href="#carta"
    class="btn btn-main">
+
 Ver la carta
+
 </a>
+
 
 <a href="#especialidades"
    class="btn btn-line">
+
 Descubrir el Petit
+
 </a>
 
 </div>
@@ -1929,21 +2278,28 @@ Descubrir el Petit
 
 <div class="hero-aside">
 
-<span>01</span>
+<span>
+01
+</span>
 
 <p>
+
 Nuestro bocadillo de ternera en salsa:
 uno de los sabores que definen al Petit.
+
 </p>
 
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- MARQUEE -->
+<!-- ==============================
+     MARQUEE
+============================== -->
 
 <div class="marquee">
 
@@ -1964,18 +2320,24 @@ uno de los sabores que definen al Petit.
 </div>
 
 
-<!-- VISUAL INTRO -->
+<!-- ==============================
+     VISUAL INTRO
+============================== -->
 
 <section class="visual-intro">
 
 <div class="container">
 
+
 <div class="visual-intro-top">
+
 
 <div class="reveal-left">
 
 <div class="section-label">
+
 Dentro del Petit
+
 </div>
 
 </div>
@@ -1984,27 +2346,40 @@ Dentro del Petit
 <div class="reveal">
 
 <h2 class="big-title">
+
 Un rincón del Mercat
-con <em>personalidad propia.</em>
+con
+
+<em>
+personalidad propia.
+</em>
+
 </h2>
 
+
 <p>
+
 Un espacio cercano donde el producto,
 el mercado y las personas forman parte
 de la misma historia.
+
 </p>
 
 </div>
+
 
 </div>
 
 
 <div class="photo-layout">
 
+
 <div class="photo-main reveal-left">
 
 <span class="photo-label">
+
 Foto del Bar Petit del Mercat
+
 </span>
 
 </div>
@@ -2012,63 +2387,94 @@ Foto del Bar Petit del Mercat
 
 <div class="photo-side">
 
+
 <div class="photo-small reveal-right">
 
 <span class="photo-label">
+
 La barra
+
 </span>
 
 </div>
+
 
 <div class="photo-small reveal-right">
 
 <span class="photo-label">
+
 El Mercat
+
 </span>
 
 </div>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- BEEF -->
+<!-- ==============================
+     BEEF
+============================== -->
 
 <section class="beef"
          id="especialidades">
 
 <div class="beef-word">
+
 ORIGINAL
+
 </div>
 
+
 <div class="container beef-grid">
+
 
 <div class="beef-copy reveal-left">
 
 <div class="section-label">
+
 Nuestra especialidad
+
 </div>
 
+
 <h2 class="big-title">
+
 Carne en salsa.
+
 <br>
-<em>El original.</em>
+
+<em>
+El original.
+</em>
+
 </h2>
 
+
 <p>
+
 Ternera cocinada en salsa y servida entre pan.
 Una combinación sencilla que se ha convertido
 en una de las señas de identidad del Petit.
+
 </p>
 
+
 <div class="beef-note">
+
 El bocadillo de carne en salsa original del Mercat.
+
 </div>
+
 
 </div>
 
@@ -2081,16 +2487,21 @@ El bocadillo de carne en salsa original del Mercat.
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- CHICKEN -->
+<!-- ==============================
+     CHICKEN
+============================== -->
 
 <section class="chicken">
 
+
 <div class="chicken-grid">
+
 
 <div class="chicken-visual reveal-left">
 
@@ -2101,86 +2512,131 @@ El bocadillo de carne en salsa original del Mercat.
 
 <div class="chicken-copy reveal-right">
 
+
 <div class="section-label">
+
 Otro clásico del Petit
+
 </div>
 
+
 <h2 class="big-title">
+
 Pollo estilo
-<em>Faisán.</em>
+
+<em>
+Faisán.
+</em>
+
 </h2>
 
+
 <p>
+
 Otro de los bocadillos que forman parte
 de la casa. Una propuesta diferente,
 con personalidad propia y sabor a Petit.
+
 </p>
 
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- MENU -->
+<!-- ==============================
+     DIGITAL MENU
+============================== -->
 
 <section class="menu-section"
          id="carta">
 
 <div class="container">
 
+
 <div class="menu-header">
+
 
 <div class="reveal">
 
 <div class="section-label">
+
 Carta digital
+
 </div>
 
+
 <h2 class="big-title">
+
 ¿Qué te apetece
-<em>hoy?</em>
+
+<em>
+hoy?
+</em>
+
 </h2>
 
 </div>
 
 
 <p class="reveal">
+
 Aquí incorporaremos la carta completa.
 Podrás cambiar de categoría sin abandonar
 la página y consultar cómodamente los precios.
+
 </p>
+
 
 </div>
 
 
 <div class="menu-tabs reveal">
 
+
 <button class="menu-tab active"
         data-menu="bocadillos">
+
 Bocadillos
+
 </button>
+
 
 <button class="menu-tab"
         data-menu="tapas">
+
 Tapas
+
 </button>
+
 
 <button class="menu-tab"
         data-menu="platos">
+
 Platos
+
 </button>
+
 
 <button class="menu-tab"
         data-menu="bebidas">
+
 Bebidas
+
 </button>
+
 
 <button class="menu-tab"
         data-menu="cafes">
+
 Cafés
+
 </button>
+
 
 </div>
 
@@ -2191,15 +2647,25 @@ Cafés
 <div class="menu-panel active"
      id="bocadillos">
 
+
 <div class="menu-product">
 
 <div>
-<h3>Ternera en salsa</h3>
-<p>Especialidad de la casa.</p>
+
+<h3>
+Ternera en salsa
+</h3>
+
+<p>
+Especialidad de la casa.
+</p>
+
 </div>
 
 <span class="menu-price">
+
 Precio próximamente
+
 </span>
 
 </div>
@@ -2208,15 +2674,25 @@ Precio próximamente
 <div class="menu-product">
 
 <div>
-<h3>Pollo estilo Faisán</h3>
-<p>Uno de nuestros clásicos.</p>
+
+<h3>
+Pollo estilo Faisán
+</h3>
+
+<p>
+Uno de nuestros clásicos.
+</p>
+
 </div>
 
 <span class="menu-price">
+
 Precio próximamente
+
 </span>
 
 </div>
+
 
 </div>
 
@@ -2227,12 +2703,21 @@ Precio próximamente
 <div class="menu-product">
 
 <div>
-<h3>Nuestra selección de tapas</h3>
-<p>Muy pronto añadiremos la carta completa.</p>
+
+<h3>
+Nuestra selección de tapas
+</h3>
+
+<p>
+Muy pronto añadiremos la carta completa.
+</p>
+
 </div>
 
 <span class="menu-price">
+
 Próximamente
+
 </span>
 
 </div>
@@ -2246,12 +2731,21 @@ Próximamente
 <div class="menu-product">
 
 <div>
-<h3>Platos del Petit</h3>
-<p>Muy pronto añadiremos la carta completa.</p>
+
+<h3>
+Platos del Petit
+</h3>
+
+<p>
+Muy pronto añadiremos la carta completa.
+</p>
+
 </div>
 
 <span class="menu-price">
+
 Próximamente
+
 </span>
 
 </div>
@@ -2265,12 +2759,21 @@ Próximamente
 <div class="menu-product">
 
 <div>
-<h3>Bebidas</h3>
-<p>Refrescos, cervezas y otras opciones.</p>
+
+<h3>
+Bebidas
+</h3>
+
+<p>
+Refrescos, cervezas y otras opciones.
+</p>
+
 </div>
 
 <span class="menu-price">
+
 Próximamente
+
 </span>
 
 </div>
@@ -2284,12 +2787,21 @@ Próximamente
 <div class="menu-product">
 
 <div>
-<h3>Cafés</h3>
-<p>Consulta próximamente nuestra selección.</p>
+
+<h3>
+Cafés
+</h3>
+
+<p>
+Consulta próximamente nuestra selección.
+</p>
+
 </div>
 
 <span class="menu-price">
+
 Próximamente
+
 </span>
 
 </div>
@@ -2299,83 +2811,118 @@ Próximamente
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- STORY -->
+<!-- ==============================
+     STORY
+============================== -->
 
 <section class="story"
          id="historia">
 
 <div class="container story-grid">
 
-<div class="story-photo reveal-left"></div>
+
+<div class="story-photo reveal-left">
+</div>
 
 
 <div class="story-copy reveal-right">
 
+
 <div class="section-label">
+
 Nuestra historia
+
 </div>
 
+
 <h2 class="big-title">
+
 Hay historias que
 no empiezan en una web.
-<em>Empiezan detrás de una barra.</em>
+
+<em>
+Empiezan detrás de una barra.
+</em>
+
 </h2>
 
+
 <p>
+
 Este espacio estará dedicado a la historia
 real del Bar Petit del Mercat: cómo nació,
 quién está detrás y todo el esfuerzo que
 ha permitido que siga adelante.
+
 </p>
 
+
 <p>
+
 Porque detrás de cada plato, cada café
 y cada cliente hay una historia que merece
 ser contada.
+
 </p>
 
+
 <div class="story-sign">
+
 Bar Petit del Mercat
-</div>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- REVIEWS -->
+<!-- ==============================
+     REVIEWS
+============================== -->
 
 <section class="reviews">
 
 <div class="container">
 
-<div class="reviews-top">
 
-<div class="reveal">
+<div class="reviews-top reveal">
+
 
 <div class="section-label">
+
 Opiniones
+
 </div>
+
 
 <h2 class="big-title">
+
 Que hablen
-<em>ellos.</em>
+
+<em>
+ellos.
+</em>
+
 </h2>
 
-</div>
 
 </div>
 
 
 <div class="review-grid">
 
+
 <div class="review-card reveal">
 
 <div class="stars">
@@ -2383,8 +2930,10 @@ Que hablen
 </div>
 
 <p>
+
 Aquí añadiremos una reseña real
 de un cliente del Petit.
+
 </p>
 
 <small>
@@ -2401,8 +2950,10 @@ Google Reviews
 </div>
 
 <p>
+
 Aquí aparecerá otra opinión real
 sobre el bar, la comida o el servicio.
+
 </p>
 
 <small>
@@ -2419,8 +2970,10 @@ Google Reviews
 </div>
 
 <p>
+
 Las opiniones reales sustituirán estos
 textos cuando tengamos el enlace del negocio.
+
 </p>
 
 <small>
@@ -2429,37 +2982,52 @@ Google Reviews
 
 </div>
 
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- VISIT -->
+<!-- ==============================
+     VISIT
+============================== -->
 
 <section class="visit"
          id="visitanos">
 
 <div class="container visit-grid">
 
+
 <div>
+
 
 <div class="reveal">
 
 <div class="section-label">
+
 Visítanos
+
 </div>
 
+
 <h2 class="big-title">
+
 Nos vemos
-<em>en el Mercat.</em>
+
+<em>
+en el Mercat.
+</em>
+
 </h2>
 
 </div>
 
 
 <div class="visit-data reveal">
+
 
 <div class="visit-row">
 
@@ -2512,7 +3080,9 @@ Próximamente
 
 </div>
 
+
 </div>
+
 
 </div>
 
@@ -2524,23 +3094,30 @@ Próximamente
 <div class="map-pin"></div>
 
 <strong>
+
 Bar Petit del Mercat
+
 </strong>
 
 <span>
+
 Sant Boi de Llobregat
+
 </span>
 
 </div>
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- FINAL -->
+<!-- ==============================
+     FINAL
+============================== -->
 
 <section class="final">
 
@@ -2550,11 +3127,15 @@ Sant Boi de Llobregat
      alt="Bar Petit del Mercat">
 
 <h2>
+
 Bar Petit del Mercat
+
 </h2>
 
 <p>
+
 El original del Mercat.
+
 </p>
 
 </div>
@@ -2565,13 +3146,17 @@ El original del Mercat.
 </main>
 
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+============================== -->
 
 <footer>
 
 <div class="container">
 
+
 <div class="footer-main">
+
 
 <div class="footer-logo">
 
@@ -2579,7 +3164,9 @@ El original del Mercat.
      alt="Logo Petit del Mercat">
 
 <strong>
+
 Bar Petit del Mercat
+
 </strong>
 
 </div>
@@ -2609,85 +3196,141 @@ Visítanos
 
 </div>
 
+
 </div>
 
 
 <div class="footer-bottom">
 
 <span>
-© <span id="year"></span>
+
+©
+<span id="year"></span>
 Bar Petit del Mercat
+
 </span>
 
+
 <span>
+
 El original del Mercat
+
 </span>
 
 </div>
+
 
 </div>
 
 </footer>
 
 
-<!-- SECRET DEDICATION -->
+<!-- ==============================
+     SECRET DEDICATION
+============================== -->
 
 <div class="secret"
-     id="secret">
+     id="secret"
+     aria-hidden="true">
+
 
 <div class="secret-card">
+
 
 <button class="secret-close"
         id="secretClose"
         aria-label="Cerrar">
+
 ×
+
 </button>
 
 
 <img src="logo.png.png"
      class="secret-logo"
-     alt="Petit del Mercat">
+     alt="Bar Petit del Mercat">
 
 
 <div class="secret-small">
+
 Un mensaje especial del equipo de Nexora
+
 </div>
 
 
 <h2>
+
 Detrás del Petit hay
-<em>una mujer increíble.</em>
+
+<em>
+una mujer increíble.
+</em>
+
 </h2>
 
 
-<p class="secret-text">
+<div class="secret-text">
+
+<p>
 
 Esta web habla del Bar Petit del Mercat,
-pero detrás de este negocio hay algo mucho
-más importante que una marca.
+pero detrás de este negocio existe algo
+mucho más importante que una marca.
 
-Hay una madre luchadora que cada día saca
-este negocio adelante ella sola, con su esfuerzo,
-su constancia y una fuerza enorme.
+</p>
 
-Sabemos que mantener un negocio no siempre
-es fácil. Hay días largos, momentos complicados
-y muchísimo trabajo que muchas veces nadie ve.
+<br>
+
+<p>
+
+Hay una madre luchadora que cada día
+saca este negocio adelante ella sola,
+con su esfuerzo, su constancia y una
+fuerza enorme.
+
+</p>
+
+<br>
+
+<p>
+
+Sabemos que llevar un negocio no siempre
+es fácil. Hay días largos, momentos
+complicados y muchísimo trabajo que
+muchas veces nadie llega a ver.
+
+</p>
+
+<br>
+
+<p>
 
 Pero tú sigues ahí.
 
-Y precisamente por eso, el Petit no es solamente
-un bar. También es el reflejo de todo lo que has
-luchado para mantenerlo vivo.
+</p>
+
+<br>
+
+<p>
+
+Y precisamente por eso, el Petit no es
+solamente un bar. También es el reflejo
+de todo lo que has luchado para mantenerlo
+vivo y de todo lo que eres capaz de conseguir.
 
 </p>
+
+</div>
 
 
 <div class="secret-love">
 
-Eres muy fuerte, mamá.
+Eres una mujer muy fuerte, mamá.
+
 <br>
-Estoy muy orgulloso de ti y te quiero muchísimo.
+
+Estoy muy orgulloso de ti
+y te quiero muchísimo.
 
 </div>
 
@@ -2695,12 +3338,23 @@ Estoy muy orgulloso de ti y te quiero muchísimo.
 <div class="secret-signature">
 
 Con muchísimo cariño,
+
 <br><br>
+
 Asier · Equipo Nexora
 
 </div>
 
+
 </div>
+
+</div>
+
+
+<div class="secret-feedback"
+     id="secretFeedback">
+
+Un pequeño secreto...
 
 </div>
 
@@ -2708,37 +3362,35 @@ Asier · Equipo Nexora
 <button class="top"
         id="top"
         aria-label="Volver arriba">
+
 ↑
+
 </button>
 
 
 <script>
 
-/* =========================
+/* ==============================
    LOADER
-========================= */
+============================== */
 
-window.addEventListener(
-"load",
-()=>{
+window.addEventListener("load", function(){
 
-    setTimeout(
-    ()=>{
+    setTimeout(function(){
 
         document
         .getElementById("loader")
-        .classList.add("hide");
+        .classList
+        .add("hide");
 
-    },
-    700
-    );
+    }, 700);
 
 });
 
 
-/* =========================
-   HEADER + PROGRESS
-========================= */
+/* ==============================
+   ELEMENTS
+============================== */
 
 const header =
 document.getElementById("header");
@@ -2749,16 +3401,24 @@ document.getElementById("progress");
 const topButton =
 document.getElementById("top");
 
+const menuButton =
+document.getElementById("menuButton");
 
-window.addEventListener(
-"scroll",
-()=>{
+const navLinks =
+document.getElementById("navLinks");
 
-    const y =
+
+/* ==============================
+   SCROLL
+============================== */
+
+window.addEventListener("scroll", function(){
+
+    const scrollY =
     window.scrollY;
 
 
-    if(y > 30){
+    if(scrollY > 30){
 
         header
         .classList
@@ -2773,7 +3433,7 @@ window.addEventListener(
     }
 
 
-    if(y > 600){
+    if(scrollY > 600){
 
         topButton
         .classList
@@ -2788,31 +3448,29 @@ window.addEventListener(
     }
 
 
-    const max =
+    const maxScroll =
     document.documentElement.scrollHeight
     - window.innerHeight;
 
 
-    progress.style.width =
-    ((y / max) * 100) + "%";
+    if(maxScroll > 0){
+
+        const percentage =
+        (scrollY / maxScroll) * 100;
+
+        progress.style.width =
+        percentage + "%";
+
+    }
 
 });
 
 
-/* =========================
-   MOBILE NAVIGATION
-========================= */
+/* ==============================
+   MOBILE MENU
+============================== */
 
-const menuButton =
-document.getElementById("menuButton");
-
-const navLinks =
-document.getElementById("navLinks");
-
-
-menuButton.addEventListener(
-"click",
-()=>{
+menuButton.addEventListener("click", function(){
 
     navLinks
     .classList
@@ -2827,12 +3485,9 @@ menuButton.addEventListener(
 
 document
 .querySelectorAll(".nav-links a")
-.forEach(
-link=>{
+.forEach(function(link){
 
-    link.addEventListener(
-    "click",
-    ()=>{
+    link.addEventListener("click", function(){
 
         navLinks
         .classList
@@ -2847,23 +3502,22 @@ link=>{
 });
 
 
-/* =========================
+/* ==============================
    REVEAL ANIMATIONS
-========================= */
+============================== */
 
 const revealElements =
 document.querySelectorAll(
-".reveal,.reveal-left,.reveal-right"
+    ".reveal,.reveal-left,.reveal-right"
 );
 
 
-const observer =
+const revealObserver =
 new IntersectionObserver(
 
-entries=>{
+function(entries){
 
-    entries.forEach(
-    entry=>{
+    entries.forEach(function(entry){
 
         if(entry.isIntersecting){
 
@@ -2871,71 +3525,70 @@ entries=>{
             .classList
             .add("visible");
 
-            observer
+            revealObserver
             .unobserve(entry.target);
 
         }
 
-    );
+    });
 
 },
 
 {
-    threshold:.12
+    threshold:0.12
 }
 
 );
 
 
-revealElements.forEach(
-element=>{
+revealElements.forEach(function(element){
 
-    observer.observe(element);
+    revealObserver.observe(element);
 
 });
 
 
-/* =========================
-   MENU TABS
-========================= */
+/* ==============================
+   DIGITAL MENU
+============================== */
 
-const tabs =
+const menuTabs =
 document.querySelectorAll(".menu-tab");
 
-const panels =
+const menuPanels =
 document.querySelectorAll(".menu-panel");
 
 
-tabs.forEach(
-tab=>{
+menuTabs.forEach(function(tab){
 
-    tab.addEventListener(
-    "click",
-    ()=>{
+    tab.addEventListener("click", function(){
 
-        tabs.forEach(
-        item=>{
+        menuTabs.forEach(function(item){
+
             item.classList.remove("active");
+
         });
 
-        panels.forEach(
-        panel=>{
+
+        menuPanels.forEach(function(panel){
+
             panel.classList.remove("active");
+
         });
 
 
         tab.classList.add("active");
 
 
-        const target =
+        const panel =
         document.getElementById(
             tab.dataset.menu
         );
 
 
-        if(target){
+        if(panel){
 
-            target.classList.add("active");
+            panel.classList.add("active");
 
         }
 
@@ -2944,26 +3597,29 @@ tab=>{
 });
 
 
-/* =========================
-   BACK TO TOP
-========================= */
+/* ==============================
+   TOP BUTTON
+============================== */
 
-topButton.addEventListener(
-"click",
-()=>{
+topButton.addEventListener("click", function(){
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
 
 });
 
 
-/* =========================
-   SECRET MESSAGE
-   5 CLICKS ON LOGO
-========================= */
+/* ==========================================
+   SECRET DEDICATION
+
+   CLICK THE HEADER LOGO 5 TIMES
+   WITHIN 4 SECONDS
+========================================== */
 
 const secretLogo =
 document.getElementById("secretLogo");
@@ -2974,90 +3630,201 @@ document.getElementById("secret");
 const secretClose =
 document.getElementById("secretClose");
 
-let logoClicks = 0;
-let clickTimer;
+const secretFeedback =
+document.getElementById("secretFeedback");
 
 
-secretLogo.addEventListener(
-"click",
-()=>{
+let secretClicks = 0;
 
-    logoClicks++;
+let secretTimer = null;
 
-
-    clearTimeout(clickTimer);
+let feedbackTimer = null;
 
 
-    if(logoClicks >= 5){
+function openSecret(){
 
-        secret.classList.add("show");
+    secret.classList.add("show");
 
-        document.body.classList.add("lock");
-
-        logoClicks = 0;
-
-        return;
-
-    }
-
-
-    clickTimer =
-    setTimeout(
-    ()=>{
-
-        logoClicks = 0;
-
-    },
-    1800
+    secret.setAttribute(
+        "aria-hidden",
+        "false"
     );
 
-});
+    document.body
+    .classList
+    .add("lock");
+
+}
 
 
-secretClose.addEventListener(
-"click",
-()=>{
+function closeSecret(){
 
     secret.classList.remove("show");
 
-    document.body.classList.remove("lock");
+    secret.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body
+    .classList
+    .remove("lock");
+
+}
+
+
+function showSecretFeedback(){
+
+    secretFeedback
+    .classList
+    .add("show");
+
+
+    clearTimeout(feedbackTimer);
+
+
+    feedbackTimer =
+    setTimeout(function(){
+
+        secretFeedback
+        .classList
+        .remove("show");
+
+    }, 800);
+
+}
+
+
+secretLogo.addEventListener("click", function(event){
+
+    event.preventDefault();
+
+    event.stopPropagation();
+
+
+    secretClicks++;
+
+
+    /*
+    First click starts a four-second
+    countdown.
+    */
+
+    if(secretClicks === 1){
+
+        clearTimeout(secretTimer);
+
+
+        secretTimer =
+        setTimeout(function(){
+
+            secretClicks = 0;
+
+        }, 4000);
+
+    }
+
+
+    /*
+    Give a tiny hint after click 3.
+    */
+
+    if(secretClicks === 3){
+
+        showSecretFeedback();
+
+    }
+
+
+    /*
+    Five clicks = dedication.
+    */
+
+    if(secretClicks >= 5){
+
+        clearTimeout(secretTimer);
+
+        secretClicks = 0;
+
+        openSecret();
+
+    }
 
 });
 
+
+/*
+Also support rapid taps on touch screens.
+*/
+
+secretLogo.addEventListener(
+"touchend",
+function(event){
+
+    /*
+    The browser normally generates a click
+    after touchend, so we intentionally do
+    not increase the counter here.
+
+    This listener simply ensures the element
+    behaves as an interactive touch target.
+    */
+
+},
+{
+    passive:true
+}
+);
+
+
+/* CLOSE WITH X */
+
+secretClose.addEventListener(
+"click",
+function(event){
+
+    event.preventDefault();
+
+    event.stopPropagation();
+
+    closeSecret();
+
+});
+
+
+/* CLOSE BY CLICKING BACKGROUND */
 
 secret.addEventListener(
 "click",
-event=>{
+function(event){
 
     if(event.target === secret){
 
-        secret.classList.remove("show");
-
-        document.body.classList.remove("lock");
+        closeSecret();
 
     }
 
 });
 
+
+/* CLOSE WITH ESC */
 
 document.addEventListener(
 "keydown",
-event=>{
+function(event){
 
     if(event.key === "Escape"){
 
-        secret.classList.remove("show");
-
-        document.body.classList.remove("lock");
+        closeSecret();
 
     }
 
 });
 
 
-/* =========================
+/* ==============================
    YEAR
-========================= */
+============================== */
 
 document
 .getElementById("year")
