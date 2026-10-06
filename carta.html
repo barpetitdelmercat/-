@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <title>Carta | Bar Petit del Mercat</title>
 
-<meta name="description" content="Carta de Bar Petit del Mercat. Bocadillos, tapas, tortillas, desayunos, cafés y bebidas.">
-<meta name="theme-color" content="#17120e">
+<meta name="description" content="Carta digital de Bar Petit del Mercat. Bocadillos, tapas, tortillas, desayunos, cafés y bebidas.">
+<meta name="theme-color" content="#0d0b09">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,16 +15,23 @@
 
 <style>
 :root{
-    --dark:#17120e;
-    --dark2:#211811;
-    --paper:#f3eadb;
-    --paper2:#eadcc7;
-    --ink:#251c15;
-    --muted:#756657;
-    --gold:#a56c1b;
-    --gold2:#d09a3d;
-    --cream:#f6eddf;
-    --line:rgba(37,28,21,.15);
+    --bg:#0d0b09;
+    --bg2:#12100d;
+    --bg3:#18140f;
+    --card:#17130f;
+    --card2:#1d1812;
+
+    --gold:#c79342;
+    --gold2:#e0b568;
+    --gold-soft:rgba(199,147,66,.12);
+
+    --cream:#eee3d2;
+    --cream2:#c9bba7;
+    --muted:#948675;
+
+    --line:rgba(224,181,104,.16);
+    --line2:rgba(238,227,210,.08);
+
     --max:980px;
 }
 
@@ -49,8 +56,10 @@ body{
     margin:0;
     padding:0;
     overflow-x:hidden;
-    background:var(--paper);
-    color:var(--ink);
+    background:
+        radial-gradient(circle at 80% 5%,rgba(199,147,66,.06),transparent 25%),
+        var(--bg);
+    color:var(--cream);
     font-family:"DM Sans",sans-serif;
     -webkit-font-smoothing:antialiased;
 }
@@ -80,123 +89,121 @@ img{
     margin:0 auto;
 }
 
-/* ===========================
-   PORTADA
-=========================== */
+/* =========================================
+   HERO
+========================================= */
 
 .hero{
     position:relative;
     min-height:560px;
     overflow:hidden;
+    border-bottom:1px solid var(--line);
     background:
-        radial-gradient(circle at 82% 20%,rgba(208,154,61,.16),transparent 30%),
-        linear-gradient(135deg,#15100c 0%,#241910 70%,#332113 100%);
-    color:var(--cream);
+        radial-gradient(circle at 80% 25%,rgba(199,147,66,.13),transparent 28%),
+        radial-gradient(circle at 10% 100%,rgba(199,147,66,.05),transparent 30%),
+        linear-gradient(145deg,#090806,#15110d 55%,#21170e);
 }
 
 .hero::before{
     content:"";
     position:absolute;
-    width:550px;
-    height:550px;
-    right:-260px;
-    bottom:-330px;
-    border:1px solid rgba(208,154,61,.18);
+    width:580px;
+    height:580px;
+    right:-290px;
+    bottom:-320px;
+    border:1px solid rgba(224,181,104,.12);
     border-radius:50%;
 }
 
 .hero::after{
     content:"";
     position:absolute;
-    width:330px;
-    height:330px;
-    right:-150px;
-    bottom:-210px;
-    border:1px solid rgba(208,154,61,.11);
+    width:390px;
+    height:390px;
+    right:-200px;
+    bottom:-220px;
+    border:1px solid rgba(224,181,104,.08);
     border-radius:50%;
 }
 
 .topbar{
     position:relative;
-    z-index:2;
-    padding-top:28px;
+    z-index:5;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:20px;
+    padding-top:28px;
 }
 
 .brand{
     display:flex;
     align-items:center;
-    gap:13px;
+    gap:14px;
     min-width:0;
 }
 
 .brand img{
-    width:58px;
-    height:58px;
-    flex:0 0 58px;
+    width:62px;
+    height:62px;
+    flex:0 0 62px;
     object-fit:contain;
-}
-
-.brand-copy{
-    min-width:0;
 }
 
 .brand strong{
     display:block;
     font-family:"Playfair Display",serif;
-    font-size:1.05rem;
+    font-size:1.06rem;
     font-weight:500;
 }
 
 .brand small{
     display:block;
-    margin-top:4px;
-    color:#d6a552;
-    font-size:.56rem;
-    letter-spacing:.2em;
+    margin-top:5px;
+    color:var(--gold2);
+    font-size:.54rem;
+    letter-spacing:.21em;
     text-transform:uppercase;
 }
 
 .back{
+    flex:0 0 auto;
     padding:12px 17px;
-    border:1px solid rgba(246,237,223,.18);
-    color:rgba(246,237,223,.72);
-    font-size:.6rem;
-    letter-spacing:.15em;
+    border:1px solid rgba(238,227,210,.17);
+    color:var(--cream2);
+    font-size:.57rem;
+    letter-spacing:.16em;
     text-transform:uppercase;
     transition:.25s ease;
 }
 
 .back:hover{
-    border-color:#d6a552;
-    color:#d6a552;
+    border-color:var(--gold);
+    color:var(--gold2);
 }
 
 .hero-content{
     position:relative;
-    z-index:2;
-    padding:100px 0 90px;
+    z-index:3;
+    padding:100px 0 95px;
 }
 
 .eyebrow{
     display:flex;
     align-items:center;
-    gap:13px;
-    margin-bottom:23px;
-    color:#d6a552;
-    font-size:.61rem;
+    gap:14px;
+    margin-bottom:25px;
+    color:var(--gold2);
+    font-size:.58rem;
     letter-spacing:.23em;
     text-transform:uppercase;
 }
 
 .eyebrow::before{
     content:"";
-    width:35px;
+    width:38px;
     height:1px;
-    background:#d6a552;
+    background:var(--gold);
 }
 
 .hero h1{
@@ -210,25 +217,26 @@ img{
 
 .hero h1 em{
     display:block;
-    color:#d6a552;
+    color:var(--gold2);
     font-weight:500;
 }
 
 .hero-description{
-    max-width:510px;
-    margin:28px 0 0;
-    color:rgba(246,237,223,.65);
-    font-size:.97rem;
+    max-width:520px;
+    margin:30px 0 0;
+    color:var(--cream2);
+    font-size:.94rem;
     font-weight:300;
-    line-height:1.85;
+    line-height:1.9;
 }
 
-/* ===========================
+/* =========================================
    BUSCADOR
-=========================== */
+========================================= */
 
 .tools{
     padding:28px 0 18px;
+    background:var(--bg2);
 }
 
 .search{
@@ -236,48 +244,65 @@ img{
 }
 
 .search::before{
-    content:"⌕";
+    content:"";
     position:absolute;
-    left:19px;
+    left:20px;
     top:50%;
-    transform:translateY(-52%);
-    color:var(--gold);
-    font-family:"Playfair Display",serif;
-    font-size:1.4rem;
+    width:13px;
+    height:13px;
+    transform:translateY(-60%);
+    border:1px solid var(--gold);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.search::after{
+    content:"";
+    position:absolute;
+    left:32px;
+    top:53%;
+    width:7px;
+    height:1px;
+    transform:rotate(45deg);
+    background:var(--gold);
+    pointer-events:none;
 }
 
 .search input{
     width:100%;
-    height:58px;
-    padding:0 20px 0 52px;
+    height:59px;
+    padding:0 20px 0 55px;
     border:1px solid var(--line);
     border-radius:0;
     outline:none;
-    background:rgba(255,255,255,.22);
-    color:var(--ink);
-    font-size:.91rem;
+    background:#100e0b;
+    color:var(--cream);
+    font-size:.89rem;
+    transition:.25s ease;
 }
 
 .search input::placeholder{
-    color:#8b7c6d;
+    color:#776b5d;
 }
 
 .search input:focus{
-    border-color:rgba(165,108,27,.65);
+    border-color:rgba(224,181,104,.5);
+    background:#14110d;
 }
 
-/* ===========================
+/* =========================================
    CATEGORÍAS
-=========================== */
+========================================= */
 
 .category-bar{
     position:sticky;
     top:0;
     z-index:100;
+    border-top:1px solid var(--line2);
     border-bottom:1px solid var(--line);
-    background:rgba(243,234,219,.96);
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
+    background:rgba(13,11,9,.96);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 }
 
 .categories{
@@ -297,34 +322,36 @@ img{
     flex:0 0 auto;
     padding:18px 15px 16px;
     border:0;
-    border-bottom:2px solid transparent;
+    border-bottom:1px solid transparent;
     background:transparent;
-    color:#786958;
-    font-size:.58rem;
+    color:#827566;
+    font-size:.55rem;
     font-weight:600;
-    letter-spacing:.13em;
+    letter-spacing:.14em;
     text-transform:uppercase;
     white-space:nowrap;
     transition:.2s ease;
 }
 
-.category.active,
-.category:hover{
-    color:var(--gold);
+.category:hover,
+.category.active{
+    color:var(--gold2);
     border-bottom-color:var(--gold);
 }
 
-/* ===========================
+/* =========================================
    CARTA
-=========================== */
+========================================= */
 
 .menu{
-    padding:65px 0 110px;
+    padding:72px 0 110px;
+    background:
+        linear-gradient(180deg,#0d0b09 0%,#110e0b 55%,#0c0a08 100%);
 }
 
 .menu-section{
-    margin-bottom:90px;
-    scroll-margin-top:85px;
+    margin-bottom:95px;
+    scroll-margin-top:82px;
 }
 
 .section-head{
@@ -332,47 +359,46 @@ img{
     align-items:flex-end;
     justify-content:space-between;
     gap:20px;
-    margin-bottom:12px;
-    padding-bottom:22px;
-    border-bottom:1px solid rgba(37,28,21,.3);
+    margin-bottom:9px;
+    padding-bottom:23px;
+    border-bottom:1px solid rgba(224,181,104,.27);
 }
 
-.section-head-left small{
+.section-head small{
     display:block;
     margin-bottom:9px;
     color:var(--gold);
-    font-size:.55rem;
-    letter-spacing:.19em;
+    font-size:.52rem;
+    letter-spacing:.2em;
     text-transform:uppercase;
 }
 
 .section-head h2{
     margin:0;
     font-family:"Playfair Display",serif;
-    font-size:clamp(2.4rem,5vw,3.7rem);
+    font-size:clamp(2.5rem,5vw,3.8rem);
     font-weight:500;
     line-height:1;
     letter-spacing:-.035em;
 }
 
 .section-number{
-    color:rgba(37,28,21,.25);
+    color:rgba(224,181,104,.35);
     font-family:"Playfair Display",serif;
-    font-size:1.2rem;
+    font-size:1.1rem;
 }
 
-/* ===========================
-   PRODUCTOS
-=========================== */
+/* =========================================
+   PRODUCTO
+========================================= */
 
 .product{
-    position:relative;
     display:grid;
     grid-template-columns:minmax(0,1fr) auto;
-    gap:30px;
+    gap:25px;
     align-items:start;
     padding:20px 0;
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid var(--line2);
 }
 
 .product-main{
@@ -381,101 +407,113 @@ img{
 
 .product h3{
     margin:0;
+    color:#f0e6d8;
     font-family:"Playfair Display",serif;
-    font-size:1.18rem;
+    font-size:1.17rem;
     font-weight:500;
     line-height:1.35;
 }
 
 .price{
     padding-top:2px;
-    color:var(--gold);
+    color:var(--gold2);
     font-family:"Playfair Display",serif;
-    font-size:1.07rem;
+    font-size:1.04rem;
     white-space:nowrap;
 }
 
 .variants{
     display:flex;
     flex-wrap:wrap;
-    gap:9px 20px;
+    gap:7px 20px;
     margin-top:10px;
 }
 
 .variant{
-    color:#756657;
-    font-size:.73rem;
+    color:#9d8f7e;
+    font-size:.72rem;
 }
 
 .variant strong{
     margin-left:5px;
-    color:var(--gold);
+    color:var(--gold2);
     font-family:"Playfair Display",serif;
     font-size:.88rem;
     font-weight:500;
 }
 
-/* ===========================
+/* =========================================
    ESPECIALIDADES
-=========================== */
+========================================= */
 
 .special{
-    margin:16px 0;
-    padding:24px 22px;
-    border-top:1px solid rgba(165,108,27,.5);
-    border-bottom:1px solid rgba(165,108,27,.5);
-    background:rgba(208,154,61,.055);
+    position:relative;
+    margin:15px 0;
+    padding:25px 22px;
+    border:1px solid rgba(199,147,66,.24);
+    background:
+        linear-gradient(110deg,rgba(199,147,66,.09),rgba(199,147,66,.015));
+}
+
+.special::before{
+    content:"";
+    position:absolute;
+    left:-1px;
+    top:22px;
+    bottom:22px;
+    width:2px;
+    background:var(--gold);
 }
 
 .special-tag{
     display:block;
-    margin-bottom:7px;
+    margin-bottom:8px;
     color:var(--gold);
-    font-size:.52rem;
+    font-size:.5rem;
     font-weight:600;
-    letter-spacing:.18em;
+    letter-spacing:.2em;
     text-transform:uppercase;
 }
 
 .special h3{
-    font-size:1.35rem;
+    font-size:1.34rem;
 }
 
-/* ===========================
-   ALÉRGENOS EN PRODUCTOS
-=========================== */
+/* =========================================
+   ALÉRGENOS DE PRODUCTOS
+========================================= */
 
 .product-allergens{
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-    gap:7px;
+    gap:6px;
     margin-top:12px;
 }
 
 .allergen-badge{
-    min-width:34px;
-    height:25px;
+    min-width:31px;
+    height:24px;
     padding:0 7px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    border:1px solid rgba(165,108,27,.35);
-    color:#805315;
-    background:rgba(208,154,61,.08);
-    font-size:.54rem;
-    font-weight:700;
+    border:1px solid rgba(199,147,66,.3);
+    background:rgba(199,147,66,.07);
+    color:#d7aa62;
+    font-size:.5rem;
+    font-weight:600;
     letter-spacing:.03em;
 }
 
-.allergen-text{
-    color:#7d6d5c;
-    font-size:.66rem;
+.allergen-badge:hover{
+    border-color:var(--gold);
+    background:rgba(199,147,66,.13);
 }
 
-/* ===========================
+/* =========================================
    SIN RESULTADOS
-=========================== */
+========================================= */
 
 .no-results{
     display:none;
@@ -484,51 +522,54 @@ img{
 }
 
 .no-results h2{
-    margin:0;
+    margin:0 0 8px;
     font-family:"Playfair Display",serif;
     font-size:2.2rem;
     font-weight:500;
 }
 
 .no-results p{
+    margin:0;
     color:var(--muted);
 }
 
-/* ===========================
-   ALÉRGENOS INFO
-=========================== */
+/* =========================================
+   INFORMACIÓN ALÉRGENOS
+========================================= */
 
 .allergen-information{
     position:relative;
-    margin-top:40px;
-    padding:48px;
+    margin-top:50px;
+    padding:50px;
     overflow:hidden;
-    border:1px solid rgba(37,28,21,.17);
-    background:#eadcc7;
+    border:1px solid rgba(199,147,66,.23);
+    background:
+        radial-gradient(circle at 100% 0%,rgba(199,147,66,.09),transparent 35%),
+        #15110d;
 }
 
 .allergen-information::after{
-    content:"A";
+    content:"14";
     position:absolute;
-    right:-15px;
-    bottom:-70px;
-    color:rgba(37,28,21,.035);
+    right:-12px;
+    bottom:-65px;
+    color:rgba(224,181,104,.035);
     font-family:"Playfair Display",serif;
-    font-size:15rem;
+    font-size:14rem;
     pointer-events:none;
 }
 
 .allergen-kicker{
     color:var(--gold);
-    font-size:.55rem;
+    font-size:.52rem;
     letter-spacing:.2em;
     text-transform:uppercase;
 }
 
 .allergen-information h2{
-    margin:10px 0 18px;
+    margin:9px 0 18px;
     font-family:"Playfair Display",serif;
-    font-size:2.5rem;
+    font-size:2.55rem;
     font-weight:500;
     letter-spacing:-.03em;
 }
@@ -536,11 +577,11 @@ img{
 .allergen-information > p{
     position:relative;
     z-index:2;
-    max-width:720px;
+    max-width:730px;
     margin:0;
-    color:#665747;
-    font-size:.86rem;
-    line-height:1.8;
+    color:#a99b8a;
+    font-size:.83rem;
+    line-height:1.85;
 }
 
 .allergen-list{
@@ -548,35 +589,48 @@ img{
     z-index:2;
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:0 40px;
+    gap:0 45px;
     margin-top:30px;
 }
 
 .allergen-row{
     display:flex;
     align-items:center;
-    gap:13px;
+    gap:12px;
     padding:12px 0;
-    border-bottom:1px solid rgba(37,28,21,.1);
-    color:#625344;
-    font-size:.75rem;
+    border-bottom:1px solid var(--line2);
+    color:#a99b8a;
+    font-size:.73rem;
 }
 
 .allergen-row strong{
-    width:42px;
-    flex:0 0 42px;
-    color:var(--gold);
-    font-size:.65rem;
+    width:43px;
+    flex:0 0 43px;
+    color:var(--gold2);
+    font-size:.61rem;
 }
 
-/* ===========================
+/* =========================================
+   AVISO
+========================================= */
+
+.allergen-warning{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid rgba(199,147,66,.18);
+    color:#857868;
+    font-size:.7rem;
+    line-height:1.7;
+}
+
+/* =========================================
    FOOTER
-=========================== */
+========================================= */
 
 footer{
-    padding:60px 0;
-    background:#0d0907;
-    color:var(--cream);
+    padding:62px 0;
+    border-top:1px solid var(--line);
+    background:#080705;
 }
 
 .footer-inner{
@@ -599,33 +653,33 @@ footer{
 .footer-brand strong{
     display:block;
     font-family:"Playfair Display",serif;
-    font-size:1.05rem;
+    font-size:1.04rem;
     font-weight:500;
 }
 
 .footer-brand small{
     display:block;
     margin-top:5px;
-    color:#b4863e;
-    font-size:.55rem;
-    letter-spacing:.16em;
+    color:var(--gold);
+    font-size:.53rem;
+    letter-spacing:.17em;
     text-transform:uppercase;
 }
 
 .footer-link{
-    color:#817366;
-    font-size:.61rem;
-    letter-spacing:.13em;
+    color:#766a5d;
+    font-size:.58rem;
+    letter-spacing:.15em;
     text-transform:uppercase;
 }
 
 .footer-link:hover{
-    color:#d6a552;
+    color:var(--gold2);
 }
 
-/* ===========================
-   ARRIBA
-=========================== */
+/* =========================================
+   VOLVER ARRIBA
+========================================= */
 
 .top-button{
     position:fixed;
@@ -634,12 +688,12 @@ footer{
     z-index:150;
     width:46px;
     height:46px;
-    border:1px solid rgba(208,154,61,.4);
-    background:rgba(23,18,14,.93);
-    color:#d6a552;
+    border:1px solid rgba(199,147,66,.32);
+    background:rgba(13,11,9,.94);
+    color:var(--gold2);
     opacity:0;
     visibility:hidden;
-    transition:.25s ease;
+    transition:.25s;
 }
 
 .top-button.show{
@@ -647,9 +701,9 @@ footer{
     visibility:visible;
 }
 
-/* ===========================
+/* =========================================
    MÓVIL
-=========================== */
+========================================= */
 
 @media(max-width:650px){
 
@@ -682,7 +736,7 @@ footer{
     .brand strong{
         max-width:100%;
         overflow:hidden;
-        font-size:.84rem;
+        font-size:.82rem;
         white-space:nowrap;
         text-overflow:ellipsis;
     }
@@ -693,7 +747,7 @@ footer{
 
     .back{
         padding:10px 11px;
-        font-size:.51rem;
+        font-size:.49rem;
     }
 
     .hero-content{
@@ -705,7 +759,7 @@ footer{
     }
 
     .hero-description{
-        font-size:.9rem;
+        font-size:.88rem;
     }
 
     .tools{
@@ -718,49 +772,43 @@ footer{
 
     .category{
         padding:16px 13px 14px;
-        font-size:.55rem;
+        font-size:.52rem;
     }
 
     .menu{
-        padding-top:48px;
+        padding-top:50px;
         padding-bottom:80px;
     }
 
     .menu-section{
-        margin-bottom:68px;
+        margin-bottom:70px;
         scroll-margin-top:75px;
     }
 
     .section-head{
-        margin-bottom:6px;
         padding-bottom:18px;
     }
 
     .section-head h2{
-        font-size:2.35rem;
-    }
-
-    .section-number{
-        font-size:1rem;
+        font-size:2.3rem;
     }
 
     .product{
-        grid-template-columns:minmax(0,1fr) auto;
-        gap:15px;
+        gap:14px;
         padding:17px 0;
     }
 
     .product h3{
-        font-size:1.08rem;
+        font-size:1.06rem;
     }
 
     .price{
-        font-size:.98rem;
+        font-size:.96rem;
     }
 
     .variants{
         display:block;
-        margin-top:9px;
+        margin-top:8px;
     }
 
     .variant{
@@ -774,15 +822,15 @@ footer{
     }
 
     .special h3{
-        font-size:1.2rem;
+        font-size:1.19rem;
     }
 
     .allergen-information{
-        padding:32px 22px;
+        padding:33px 22px;
     }
 
     .allergen-information h2{
-        font-size:2rem;
+        font-size:2.05rem;
     }
 
     .allergen-list{
@@ -826,105 +874,92 @@ footer{
 
 <body>
 
-<!-- =====================================================
-     PORTADA
-===================================================== -->
-
 <header class="hero">
 
 <div class="container">
 
-    <div class="topbar">
+<div class="topbar">
 
-        <a href="index.html" class="brand">
+<a href="index.html" class="brand">
 
-            <img src="logo.png.png" alt="Bar Petit del Mercat">
+<img src="logo.png.png" alt="Bar Petit del Mercat">
 
-            <div class="brand-copy">
-                <strong>Bar Petit del Mercat</strong>
-                <small>El original del Mercat</small>
-            </div>
+<div>
+<strong>Bar Petit del Mercat</strong>
+<small>El original del Mercat</small>
+</div>
 
-        </a>
+</a>
 
-        <a href="index.html" class="back">
-            Volver al inicio
-        </a>
+<a href="index.html" class="back">
+Volver al inicio
+</a>
 
-    </div>
+</div>
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="eyebrow">
-            Bar Petit del Mercat
-        </div>
+<div class="eyebrow">
+Bar Petit del Mercat
+</div>
 
-        <h1>
-            Nuestra
-            <em>carta.</em>
-        </h1>
+<h1>
+Nuestra
+<em>carta.</em>
+</h1>
 
-        <p class="hero-description">
-            Bocadillos, tapas, tortillas, desayunos,
-            cafés y bebidas. Los sabores de siempre,
-            servidos en el corazón del Mercat.
-        </p>
+<p class="hero-description">
+Bocadillos, tapas, tortillas, desayunos, cafés y bebidas.
+Los sabores de siempre en el corazón del Mercat.
+</p>
 
-    </div>
+</div>
 
 </div>
 
 </header>
 
 
-<!-- =====================================================
-     BUSCADOR
-===================================================== -->
-
 <section class="tools">
 
 <div class="container">
 
-    <div class="search">
+<div class="search">
 
-        <input
-            id="searchInput"
-            type="search"
-            placeholder="Buscar en la carta..."
-            autocomplete="off"
-            aria-label="Buscar en la carta"
-        >
+<input
+id="searchInput"
+type="search"
+placeholder="Buscar en la carta..."
+autocomplete="off"
+aria-label="Buscar en la carta"
+>
 
-    </div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     CATEGORÍAS
-===================================================== -->
-
 <div class="category-bar">
 
 <div class="container">
 
-    <div class="categories">
+<div class="categories">
 
-        <button class="category active" data-section="bocadillos">Bocadillos</button>
-        <button class="category" data-section="tapas">Tapas</button>
-        <button class="category" data-section="tortillas">Tortillas</button>
-        <button class="category" data-section="desayunos">Desayunos</button>
-        <button class="category" data-section="cafes">Cafés</button>
-        <button class="category" data-section="refrescos">Refrescos</button>
-        <button class="category" data-section="zumos">Zumos</button>
-        <button class="category" data-section="cervezas">Cervezas</button>
-        <button class="category" data-section="vinos">Vinos</button>
-        <button class="category" data-section="copas">Copas</button>
-        <button class="category" data-section="chupitos">Chupitos</button>
+<button class="category active" data-section="bocadillos">Bocadillos</button>
+<button class="category" data-section="tapas">Tapas</button>
+<button class="category" data-section="tortillas">Tortillas</button>
+<button class="category" data-section="desayunos">Desayunos</button>
+<button class="category" data-section="cafes">Cafés</button>
+<button class="category" data-section="refrescos">Refrescos</button>
+<button class="category" data-section="zumos">Zumos</button>
+<button class="category" data-section="cervezas">Cervezas</button>
+<button class="category" data-section="vinos">Vinos</button>
+<button class="category" data-section="copas">Copas</button>
+<button class="category" data-section="chupitos">Chupitos</button>
 
-    </div>
+</div>
 
 </div>
 
@@ -936,486 +971,522 @@ footer{
 <div class="container">
 
 
-<!-- =====================================================
-     01 BOCADILLOS
-===================================================== -->
+<!-- BOCADILLOS -->
 
 <section class="menu-section" id="bocadillos">
 
 <div class="section-head">
-
-    <div class="section-head-left">
-        <small>Nuestra carta</small>
-        <h2>Bocadillos</h2>
-    </div>
-
-    <span class="section-number">01</span>
-
+<div>
+<small>Nuestra carta</small>
+<h2>Bocadillos</h2>
+</div>
+<span class="section-number">01</span>
 </div>
 
 
 <article class="product special" data-search="carne salsa bocadillo">
-
 <div class="product-main">
-
-    <span class="special-tag">
-        Especialidad de la casa
-    </span>
-
-    <h3>Bocadillo de carne en salsa</h3>
-
-    <div class="variants">
-        <span class="variant">Pequeño <strong>5,50 €</strong></span>
-        <span class="variant">Mediano <strong>6,80 €</strong></span>
-        <span class="variant">Grande <strong>8,70 €</strong></span>
-        <span class="variant">Súper <strong>16,00 €</strong></span>
-    </div>
-
+<span class="special-tag">Especialidad de la casa</span>
+<h3>Bocadillo de carne en salsa</h3>
+<div class="variants">
+<span class="variant">Pequeño <strong>5,50 €</strong></span>
+<span class="variant">Mediano <strong>6,80 €</strong></span>
+<span class="variant">Grande <strong>8,70 €</strong></span>
+<span class="variant">Súper <strong>16,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Apio">AP</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="bacon">
-
 <div class="product-main">
-
-    <h3>Bacon</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,20 €</strong></span>
-        <span class="variant">Grande <strong>6,75 €</strong></span>
-    </div>
-
+<h3>Bacon</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,20 €</strong></span>
+<span class="variant">Grande <strong>6,75 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="lomo">
-
 <div class="product-main">
-
-    <h3>Lomo</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,25 €</strong></span>
-        <span class="variant">Grande <strong>7,00 €</strong></span>
-    </div>
-
+<h3>Lomo</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,25 €</strong></span>
+<span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product special" data-search="pollo faisan faisán">
-
 <div class="product-main">
-
-    <span class="special-tag">
-        Especialidad de la casa
-    </span>
-
-    <h3>Bocadillo de pollo estilo Faisán</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>6,40 €</strong></span>
-        <span class="variant">Grande <strong>8,50 €</strong></span>
-    </div>
-
+<span class="special-tag">Especialidad de la casa</span>
+<h3>Bocadillo de pollo estilo Faisán</h3>
+<div class="variants">
+<span class="variant">Medio <strong>6,40 €</strong></span>
+<span class="variant">Grande <strong>8,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Mostaza">MOS</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="panceta">
-
 <div class="product-main">
-
-    <h3>Panceta</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,80 €</strong></span>
-        <span class="variant">Grande <strong>7,50 €</strong></span>
-    </div>
-
+<h3>Panceta</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,80 €</strong></span>
+<span class="variant">Grande <strong>7,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="salchicha pais país">
-
 <div class="product-main">
-
-    <h3>Salchicha del país</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,20 €</strong></span>
-        <span class="variant">Grande <strong>7,00 €</strong></span>
-    </div>
-
+<h3>Salchicha del país</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,20 €</strong></span>
+<span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="atun atún">
-
 <div class="product-main">
-
-    <h3>Atún</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>4,10 €</strong></span>
-        <span class="variant">Grande <strong>6,50 €</strong></span>
-    </div>
-
+<h3>Atún</h3>
+<div class="variants">
+<span class="variant">Medio <strong>4,10 €</strong></span>
+<span class="variant">Grande <strong>6,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Pescado">PE</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="chorizo">
-
 <div class="product-main">
-
-    <h3>Chorizo</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>4,00 €</strong></span>
-        <span class="variant">Grande <strong>5,00 €</strong></span>
-    </div>
-
+<h3>Chorizo</h3>
+<div class="variants">
+<span class="variant">Medio <strong>4,00 €</strong></span>
+<span class="variant">Grande <strong>5,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="fuet">
-
 <div class="product-main">
-
-    <h3>Fuet</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>4,00 €</strong></span>
-        <span class="variant">Grande <strong>6,00 €</strong></span>
-    </div>
-
+<h3>Fuet</h3>
+<div class="variants">
+<span class="variant">Medio <strong>4,00 €</strong></span>
+<span class="variant">Grande <strong>6,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="jamon serrano jamón">
-
 <div class="product-main">
-
-    <h3>Jamón serrano</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>4,00 €</strong></span>
-        <span class="variant">Grande <strong>6,00 €</strong></span>
-    </div>
-
+<h3>Jamón serrano</h3>
+<div class="variants">
+<span class="variant">Medio <strong>4,00 €</strong></span>
+<span class="variant">Grande <strong>6,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="jamon dulce jamón">
-
 <div class="product-main">
-
-    <h3>Jamón dulce</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>3,80 €</strong></span>
-        <span class="variant">Grande <strong>4,50 €</strong></span>
-    </div>
-
+<h3>Jamón dulce</h3>
+<div class="variants">
+<span class="variant">Medio <strong>3,80 €</strong></span>
+<span class="variant">Grande <strong>4,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="queso manchego">
-
 <div class="product-main">
-
-    <h3>Queso manchego</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>4,50 €</strong></span>
-        <span class="variant">Grande <strong>5,50 €</strong></span>
-    </div>
-
+<h3>Queso manchego</h3>
+<div class="variants">
+<span class="variant">Medio <strong>4,50 €</strong></span>
+<span class="variant">Grande <strong>5,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="salchichon salchichón">
-
 <div class="product-main">
-
-    <h3>Salchichón</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>3,70 €</strong></span>
-        <span class="variant">Grande <strong>5,50 €</strong></span>
-    </div>
-
+<h3>Salchichón</h3>
+<div class="variants">
+<span class="variant">Medio <strong>3,70 €</strong></span>
+<span class="variant">Grande <strong>5,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="tortilla espinacas">
-
 <div class="product-main">
-
-    <h3>Tortilla de espinacas</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,75 €</strong></span>
-        <span class="variant">Grande <strong>7,50 €</strong></span>
-    </div>
-
+<h3>Tortilla de espinacas</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,75 €</strong></span>
+<span class="variant">Grande <strong>7,50 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="pinchos">
-
 <div class="product-main">
-
-    <h3>Pinchos</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,20 €</strong></span>
-        <span class="variant">Grande <strong>7,00 €</strong></span>
-    </div>
-
+<h3>Pinchos</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,20 €</strong></span>
+<span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="pechuga pollo">
-
 <div class="product-main">
-
-    <h3>Pechuga de pollo</h3>
-
-    <div class="variants">
-        <span class="variant">Medio <strong>5,90 €</strong></span>
-        <span class="variant">Grande <strong>7,00 €</strong></span>
-    </div>
-
+<h3>Pechuga de pollo</h3>
+<div class="variants">
+<span class="variant">Medio <strong>5,90 €</strong></span>
+<span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="butifarra">
-<div class="product-main"><h3>Butifarra</h3></div>
+<div class="product-main">
+<h3>Butifarra</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
+</div>
+</div>
 <div class="price">7,50 €</div>
 </article>
 
+
 <article class="product" data-search="frankfurt">
-<div class="product-main"><h3>Frankfurt</h3></div>
+<div class="product-main">
+<h3>Frankfurt</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Mostaza">MOS</span>
+</div>
+</div>
 <div class="price">4,50 €</div>
 </article>
 
+
 <article class="product" data-search="mallorquin mallorquín">
-<div class="product-main"><h3>Mallorquín</h3></div>
+<div class="product-main">
+<h3>Mallorquín</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">7,00 €</div>
 </article>
+
 
 <article class="product" data-search="vegetal atun atún">
-<div class="product-main"><h3>Vegetal de atún</h3></div>
+<div class="product-main">
+<h3>Vegetal de atún</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Pescado">PE</span>
+</div>
+</div>
 <div class="price">7,00 €</div>
 </article>
+
 
 <article class="product" data-search="chistorra">
-<div class="product-main"><h3>Chistorra</h3></div>
+<div class="product-main">
+<h3>Chistorra</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
+</div>
+</div>
 <div class="price">7,00 €</div>
 </article>
 
+
 <article class="product" data-search="oreja bocadillo">
-<div class="product-main"><h3>Bocadillo de oreja</h3></div>
+<div class="product-main">
+<h3>Bocadillo de oreja</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
+</div>
 <div class="price">7,30 €</div>
 </article>
 
+
 <article class="product" data-search="bikini">
-<div class="product-main"><h3>Bikini</h3></div>
+<div class="product-main">
+<h3>Bikini</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">4,20 €</div>
 </article>
 
+
 <article class="product" data-search="bikini tortilla">
-<div class="product-main"><h3>Bikini de tortilla</h3></div>
+<div class="product-main">
+<h3>Bikini de tortilla</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">7,50 €</div>
 </article>
 
+
 <article class="product" data-search="trikini">
-<div class="product-main"><h3>Trikini</h3></div>
+<div class="product-main">
+<h3>Trikini</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">6,00 €</div>
 </article>
 
 </section>
 
 
-<!-- =====================================================
-     02 TAPAS
-===================================================== -->
+<!-- TAPAS -->
 
 <section class="menu-section" id="tapas">
 
 <div class="section-head">
-
-    <div class="section-head-left">
-        <small>Para compartir</small>
-        <h2>Tapas y raciones</h2>
-    </div>
-
-    <span class="section-number">02</span>
-
+<div>
+<small>Para compartir</small>
+<h2>Tapas y raciones</h2>
+</div>
+<span class="section-number">02</span>
 </div>
 
 
 <article class="product" data-search="ensaladilla alemana mostaza">
-
 <div class="product-main">
-
-    <h3>Ensaladilla alemana</h3>
-
-    <div class="variants">
-        <span class="variant">Media ración <strong>4,20 €</strong></span>
-        <span class="variant">Ración <strong>6,00 €</strong></span>
-    </div>
-
-    <div class="product-allergens">
-        <span class="allergen-badge" title="Mostaza">MOS</span>
-        <span class="allergen-text">Mostaza</span>
-    </div>
-
+<h3>Ensaladilla alemana</h3>
+<div class="variants">
+<span class="variant">Media ración <strong>4,20 €</strong></span>
+<span class="variant">Ración <strong>6,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Mostaza">MOS</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="ensaladilla rusa">
-
 <div class="product-main">
-
-    <h3>Ensaladilla rusa</h3>
-
-    <div class="variants">
-        <span class="variant">Media ración <strong>4,30 €</strong></span>
-        <span class="variant">Ración <strong>6,00 €</strong></span>
-    </div>
-
+<h3>Ensaladilla rusa</h3>
+<div class="variants">
+<span class="variant">Media ración <strong>4,30 €</strong></span>
+<span class="variant">Ración <strong>6,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Pescado">PE</span>
+</div>
+</div>
 </article>
 
 
-<article class="product special" data-search="pollo faisan faisán racion ración">
-
+<article class="product special" data-search="pollo estilo faisan faisán">
 <div class="product-main">
-
-    <span class="special-tag">Especialidad de la casa</span>
-
-    <h3>Pollo estilo Faisán</h3>
-
-    <div class="variants">
-        <span class="variant">Media ración <strong>6,70 €</strong></span>
-        <span class="variant">Ración <strong>9,00 €</strong></span>
-    </div>
-
+<span class="special-tag">Especialidad de la casa</span>
+<h3>Pollo estilo Faisán</h3>
+<div class="variants">
+<span class="variant">Media ración <strong>6,70 €</strong></span>
+<span class="variant">Ración <strong>9,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Mostaza">MOS</span>
+</div>
+</div>
 </article>
 
 
-<article class="product" data-search="oreja racion ración">
-
+<article class="product" data-search="oreja">
 <div class="product-main">
-
-    <h3>Oreja</h3>
-
-    <div class="variants">
-        <span class="variant">Media ración <strong>4,30 €</strong></span>
-        <span class="variant">Ración <strong>7,00 €</strong></span>
-    </div>
-
+<h3>Oreja</h3>
+<div class="variants">
+<span class="variant">Media ración <strong>4,30 €</strong></span>
+<span class="variant">Ración <strong>7,00 €</strong></span>
 </div>
-
+</div>
 </article>
 
 
-<article class="product special" data-search="carne salsa llevar">
-
+<article class="product special" data-search="carne salsa">
 <div class="product-main">
-
-    <span class="special-tag">Especialidad de la casa</span>
-
-    <h3>Carne en salsa</h3>
-
-    <div class="variants">
-        <span class="variant">Media ración <strong>7,50 €</strong></span>
-        <span class="variant">Para llevar <strong>13,00 €</strong></span>
-    </div>
-
+<span class="special-tag">Especialidad de la casa</span>
+<h3>Carne en salsa</h3>
+<div class="variants">
+<span class="variant">Media ración <strong>7,50 €</strong></span>
+<span class="variant">Para llevar <strong>13,00 €</strong></span>
 </div>
-
+<div class="product-allergens">
+<span class="allergen-badge" title="Apio">AP</span>
+</div>
+</div>
 </article>
 
 
 <article class="product" data-search="callos">
-<div class="product-main"><h3>Callos</h3></div>
+<div class="product-main">
+<h3>Callos</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
+</div>
+</div>
 <div class="price">9,00 €</div>
 </article>
 
+
 <article class="product" data-search="lomo huevo patatas">
-<div class="product-main"><h3>Lomo + huevo + patatas</h3></div>
+<div class="product-main">
+<h3>Lomo + huevo + patatas</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">10,00 €</div>
 </article>
+
 
 <article class="product" data-search="lomo patatas ensalada">
-<div class="product-main"><h3>Lomo + patatas + ensalada</h3></div>
+<div class="product-main">
+<h3>Lomo + patatas + ensalada</h3>
+</div>
 <div class="price">10,00 €</div>
 </article>
+
 
 <article class="product" data-search="pollo huevo patatas">
-<div class="product-main"><h3>Pollo + huevo + patatas</h3></div>
+<div class="product-main">
+<h3>Pollo + huevo + patatas</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">10,00 €</div>
 </article>
 
+
 <article class="product" data-search="patatas fritas">
-<div class="product-main"><h3>Patatas fritas</h3></div>
+<div class="product-main">
+<h3>Patatas fritas</h3>
+</div>
 <div class="price">4,50 €</div>
 </article>
 
+
 <article class="product" data-search="queso manchego">
-<div class="product-main"><h3>Queso manchego</h3></div>
+<div class="product-main">
+<h3>Queso manchego</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">5,50 €</div>
 </article>
 
 </section>
 
 
-<!-- =====================================================
-     03 TORTILLAS
-===================================================== -->
+<!-- TORTILLAS -->
 
 <section class="menu-section" id="tortillas">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Recién hechas</small>
 <h2>Tortillas</h2>
 </div>
@@ -1423,61 +1494,106 @@ footer{
 </div>
 
 <article class="product" data-search="tortilla patata">
-<div class="product-main"><h3>Tortilla de patata</h3></div>
+<div class="product-main">
+<h3>Tortilla de patata</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">7,00 €</div>
 </article>
 
 <article class="product" data-search="tortilla alcachofas">
-<div class="product-main"><h3>Tortilla de alcachofas</h3></div>
+<div class="product-main">
+<h3>Tortilla de alcachofas</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">7,50 €</div>
 </article>
 
 <article class="product" data-search="tortilla ajos tiernos">
-<div class="product-main"><h3>Tortilla de ajos tiernos</h3></div>
+<div class="product-main">
+<h3>Tortilla de ajos tiernos</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">7,50 €</div>
 </article>
 
 <article class="product" data-search="tortilla francesa">
-<div class="product-main"><h3>Tortilla francesa</h3></div>
+<div class="product-main">
+<h3>Tortilla francesa</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">6,50 €</div>
 </article>
 
 <article class="product" data-search="medio bocadillo tortilla patata">
-<div class="product-main"><h3>Medio bocadillo de tortilla de patata</h3></div>
+<div class="product-main">
+<h3>Medio bocadillo de tortilla de patata</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">5,50 €</div>
 </article>
 
 <article class="product" data-search="medio bocadillo tortilla francesa">
-<div class="product-main"><h3>Medio bocadillo de tortilla francesa</h3></div>
+<div class="product-main">
+<h3>Medio bocadillo de tortilla francesa</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">5,00 €</div>
 </article>
 
 <article class="product" data-search="pincho tortilla patata">
-<div class="product-main"><h3>Pincho de tortilla de patata</h3></div>
+<div class="product-main">
+<h3>Pincho de tortilla de patata</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">6,00 €</div>
 </article>
 
 <article class="product" data-search="pincho tortilla variada">
-<div class="product-main"><h3>Pincho de tortilla variada</h3></div>
+<div class="product-main">
+<h3>Pincho de tortilla variada</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">6,10 €</div>
 </article>
 
 <article class="product" data-search="medio pincho tortilla">
-<div class="product-main"><h3>Medio pincho de tortilla</h3></div>
+<div class="product-main">
+<h3>Medio pincho de tortilla</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Huevos">HU</span>
+</div>
+</div>
 <div class="price">3,50 €</div>
 </article>
 
 </section>
 
 
-<!-- =====================================================
-     04 DESAYUNOS
-===================================================== -->
+<!-- DESAYUNOS -->
 
 <section class="menu-section" id="desayunos">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Para empezar el día</small>
 <h2>Desayunos y tostadas</h2>
 </div>
@@ -1491,6 +1607,9 @@ footer{
 <span class="variant">Media <strong>0,80 €</strong></span>
 <span class="variant">Entera <strong>1,30 €</strong></span>
 </div>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+</div>
 </div>
 </article>
 
@@ -1501,21 +1620,44 @@ footer{
 <span class="variant">Media <strong>0,70 €</strong></span>
 <span class="variant">Entera <strong>1,20 €</strong></span>
 </div>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Soja">SO</span>
+</div>
 </div>
 </article>
 
 <article class="product" data-search="croissant">
-<div class="product-main"><h3>Croissant</h3></div>
+<div class="product-main">
+<h3>Croissant</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">1,80 €</div>
 </article>
 
 <article class="product" data-search="magdalena">
-<div class="product-main"><h3>Magdalena</h3></div>
+<div class="product-main">
+<h3>Magdalena</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Gluten">GL</span>
+<span class="allergen-badge" title="Huevos">HU</span>
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">1,70 €</div>
 </article>
 
 <article class="product" data-search="mantequilla">
-<div class="product-main"><h3>Mantequilla</h3></div>
+<div class="product-main">
+<h3>Mantequilla</h3>
+<div class="product-allergens">
+<span class="allergen-badge" title="Leche">LE</span>
+</div>
+</div>
 <div class="price">0,50 €</div>
 </article>
 
@@ -1527,14 +1669,12 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     05 CAFÉS
-===================================================== -->
+<!-- CAFÉS -->
 
 <section class="menu-section" id="cafes">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Café y bebidas calientes</small>
 <h2>Cafés</h2>
 </div>
@@ -1546,14 +1686,12 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     06 REFRESCOS
-===================================================== -->
+<!-- REFRESCOS -->
 
 <section class="menu-section" id="refrescos">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Bebidas frías</small>
 <h2>Refrescos y agua</h2>
 </div>
@@ -1565,14 +1703,12 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     07 ZUMOS
-===================================================== -->
+<!-- ZUMOS -->
 
 <section class="menu-section" id="zumos">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Zumos</small>
 <h2>Zumos</h2>
 </div>
@@ -1607,15 +1743,13 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     08 CERVEZAS
-===================================================== -->
+<!-- CERVEZAS -->
 
 <section class="menu-section" id="cervezas">
 
 <div class="section-head">
-<div class="section-head-left">
-<small>Cervezas</small>
+<div>
+<small>Selección de cervezas</small>
 <h2>Cervezas</h2>
 </div>
 <span class="section-number">08</span>
@@ -1626,14 +1760,12 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     09 VINOS
-===================================================== -->
+<!-- VINOS -->
 
 <section class="menu-section" id="vinos">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Vinos, cava y vermut</small>
 <h2>Vinos y vermut</h2>
 </div>
@@ -1645,14 +1777,12 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     10 COPAS
-===================================================== -->
+<!-- COPAS -->
 
 <section class="menu-section" id="copas">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Destilados</small>
 <h2>Copas</h2>
 </div>
@@ -1664,14 +1794,12 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     11 CHUPITOS
-===================================================== -->
+<!-- CHUPITOS -->
 
 <section class="menu-section" id="chupitos">
 
 <div class="section-head">
-<div class="section-head-left">
+<div>
 <small>Chupitos y licores</small>
 <h2>Chupitos</h2>
 </div>
@@ -1683,33 +1811,27 @@ footer{
 </section>
 
 
-<!-- SIN RESULTADOS -->
-
 <div class="no-results" id="noResults">
 <h2>No encontramos ese producto.</h2>
 <p>Prueba a buscarlo con otro nombre.</p>
 </div>
 
 
-<!-- =====================================================
-     INFORMACIÓN ALÉRGENOS
-===================================================== -->
+<!-- INFORMACIÓN ALÉRGENOS -->
 
 <section class="allergen-information" id="alergenos">
 
 <div class="allergen-kicker">
-Información importante
+Información sobre alérgenos
 </div>
 
-<h2>
-Alérgenos
-</h2>
+<h2>Alérgenos</h2>
 
 <p>
 Si tienes alguna alergia o intolerancia alimentaria,
 consulta con nuestro personal antes de realizar tu pedido.
-La composición de algunos productos puede variar según
-ingredientes, marcas o preparación.
+Los códigos situados debajo de los productos identifican
+los principales alérgenos indicados en esta carta.
 </p>
 
 <div class="allergen-list">
@@ -1786,15 +1908,18 @@ ingredientes, marcas o preparación.
 
 </div>
 
+<div class="allergen-warning">
+La presencia de alérgenos puede variar en función de la marca,
+ingredientes utilizados, preparación y posibles contaminaciones
+cruzadas. En caso de alergia o intolerancia, consulta siempre
+con el personal del establecimiento.
+</div>
+
 </section>
 
 </div>
 </main>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
@@ -1825,9 +1950,9 @@ Volver a la página principal
 
 
 <button
-    class="top-button"
-    id="topButton"
-    aria-label="Volver arriba"
+class="top-button"
+id="topButton"
+aria-label="Volver arriba"
 >
 ↑
 </button>
@@ -1835,134 +1960,159 @@ Volver a la página principal
 
 <script>
 
-/* =====================================================
-   DATOS DE PRODUCTOS
-===================================================== */
+/* =========================================
+   PRODUCTOS GENERADOS
+========================================= */
 
 const cafes = [
-    ["Café solo","1,50 €"],
-    ["Café cortado","1,60 €"],
-    ["Café con hielo","1,60 €"],
-    ["Americano","1,70 €"],
-    ["Café con leche","1,70 €"],
-    ["Cortado vegetal","1,70 €"],
-    ["Café bombón","1,80 €"],
-    ["Café con leche vegetal","1,80 €"],
-    ["Café biberón","2,00 €"],
-    ["Carajillo","2,00 €"],
-    ["Carajillo whisky","2,30 €"],
-    ["Trifásico","2,30 €"],
-    ["Trifásico whisky","2,60 €"],
-    ["ColaCao","2,60 €"],
-    ["Infusiones","1,80 €"]
+    ["Café solo","1,50 €",[]],
+    ["Café cortado","1,60 €",["LE"]],
+    ["Café con hielo","1,60 €",[]],
+    ["Americano","1,70 €",[]],
+    ["Café con leche","1,70 €",["LE"]],
+    ["Cortado vegetal","1,70 €",["SO"]],
+    ["Café bombón","1,80 €",["LE"]],
+    ["Café con leche vegetal","1,80 €",["SO"]],
+    ["Café biberón","2,00 €",["LE"]],
+    ["Carajillo","2,00 €",[]],
+    ["Carajillo whisky","2,30 €",[]],
+    ["Trifásico","2,30 €",["LE"]],
+    ["Trifásico whisky","2,60 €",["LE"]],
+    ["ColaCao","2,60 €",["LE","SO"]],
+    ["Infusiones","1,80 €",[]]
 ];
 
 const refrescos = [
-    ["Agua pequeña","1,20 €"],
-    ["Agua grande","2,00 €"],
-    ["Coca-Cola","2,50 €"],
-    ["Coca-Cola Zero","2,60 €"],
-    ["Fanta","2,50 €"],
-    ["Aquarius","2,60 €"],
-    ["Nestea","2,70 €"],
-    ["Bitter Kas","2,50 €"],
-    ["Tónica","2,40 €"],
-    ["Trinaranjus","2,50 €"],
-    ["Vichy","2,40 €"],
-    ["Vaso de leche","1,50 €"]
+    ["Agua pequeña","1,20 €",[]],
+    ["Agua grande","2,00 €",[]],
+    ["Coca-Cola","2,50 €",[]],
+    ["Coca-Cola Zero","2,60 €",[]],
+    ["Fanta","2,50 €",[]],
+    ["Aquarius","2,60 €",[]],
+    ["Nestea","2,70 €",[]],
+    ["Bitter Kas","2,50 €",[]],
+    ["Tónica","2,40 €",[]],
+    ["Trinaranjus","2,50 €",[]],
+    ["Vichy","2,40 €",[]],
+    ["Vaso de leche","1,50 €",["LE"]]
 ];
 
 const cervezas = [
-    ["Quinto Estrella","1,70 €"],
-    ["Quinto sin alcohol","2,00 €"],
-    ["Quinto Voll-Damm","2,10 €"],
-    ["Quinto clara","2,20 €"],
-    ["Mediana Estrella","2,40 €"],
-    ["Damm sin gluten","2,50 €"],
-    ["Mediana tostada 0,0","2,50 €"],
-    ["1906","2,60 €"],
-    ["Clara Free","2,70 €"],
-    ["Reposada Estrella Galicia","2,90 €"]
+    ["Quinto Estrella","1,70 €",["GL"]],
+    ["Quinto sin alcohol","2,00 €",["GL"]],
+    ["Quinto Voll-Damm","2,10 €",["GL"]],
+    ["Quinto clara","2,20 €",["GL"]],
+    ["Mediana Estrella","2,40 €",["GL"]],
+    ["Damm sin gluten","2,50 €",[]],
+    ["Mediana tostada 0,0","2,50 €",["GL"]],
+    ["1906","2,60 €",["GL"]],
+    ["Clara Free","2,70 €",["GL"]],
+    ["Reposada Estrella Galicia","2,90 €",["GL"]]
 ];
 
 const vinos = [
-    ["Copa Rioja","2,50 €"],
-    ["Copa Verdejo","2,60 €"],
-    ["Copa cava brut","3,00 €"],
-    ["Tinto de verano","3,50 €"],
-    ["Vermut Martini","3,50 €"]
+    ["Copa Rioja","2,50 €",["SU"]],
+    ["Copa Verdejo","2,60 €",["SU"]],
+    ["Copa cava brut","3,00 €",["SU"]],
+    ["Tinto de verano","3,50 €",["SU"]],
+    ["Vermut Martini","3,50 €",["SU"]]
 ];
 
 const copas = [
-    ["Copa Barrecha","1,80 €"],
-    ["Copa Anís del Mono","2,50 €"],
-    ["Copa María Brizard","2,50 €"],
-    ["Copa Pacharán","2,50 €"],
-    ["Copa Ponche Caballero","2,50 €"],
-    ["Copa Ron Pujol","2,50 €"],
-    ["Copa 103","2,60 €"],
-    ["Copa Licor 43","3,00 €"],
-    ["Copa Soberano","3,00 €"],
-    ["Copa Torres 5","3,00 €"],
-    ["Copa Veterano","3,00 €"],
-    ["Pacharán con hielo","3,00 €"],
-    ["Copa Baileys","4,00 €"],
-    ["Copa J&B","4,00 €"],
-    ["Copa Ballantine's","4,20 €"],
-    ["Copa Cardhu","5,00 €"],
-    ["Copa Jack Daniel's","6,00 €"],
-    ["Copa Macallan","7,50 €"],
-    ["Combinado especial","14,00 €"]
+    ["Copa Barrecha","1,80 €",[]],
+    ["Copa Anís del Mono","2,50 €",[]],
+    ["Copa María Brizard","2,50 €",[]],
+    ["Copa Pacharán","2,50 €",[]],
+    ["Copa Ponche Caballero","2,50 €",[]],
+    ["Copa Ron Pujol","2,50 €",[]],
+    ["Copa 103","2,60 €",[]],
+    ["Copa Licor 43","3,00 €",[]],
+    ["Copa Soberano","3,00 €",[]],
+    ["Copa Torres 5","3,00 €",[]],
+    ["Copa Veterano","3,00 €",[]],
+    ["Pacharán con hielo","3,00 €",[]],
+    ["Copa Baileys","4,00 €",["LE"]],
+    ["Copa J&B","4,00 €",[]],
+    ["Copa Ballantine's","4,20 €",[]],
+    ["Copa Cardhu","5,00 €",[]],
+    ["Copa Jack Daniel's","6,00 €",[]],
+    ["Copa Macallan","7,50 €",[]],
+    ["Combinado especial","14,00 €",[]]
 ];
 
 const chupitos = [
-    ["Chupito orujo blanco","1,85 €"],
-    ["Chupito orujo de hierbas","1,85 €"],
-    ["Chupito coñac","2,00 €"],
-    ["Chupito ron","2,00 €"],
-    ["Chupito Baileys","2,65 €"],
-    ["Chupito Ballantine's","2,75 €"],
-    ["Chupito J&B","2,75 €"],
-    ["Chupito Cardhu","3,50 €"],
-    ["Chupito Jack Daniel's","3,50 €"],
-    ["Chupito Macallan","5,50 €"],
-    ["Tubo de orujo de hierbas","3,00 €"]
+    ["Chupito orujo blanco","1,85 €",[]],
+    ["Chupito orujo de hierbas","1,85 €",[]],
+    ["Chupito coñac","2,00 €",[]],
+    ["Chupito ron","2,00 €",[]],
+    ["Chupito Baileys","2,65 €",["LE"]],
+    ["Chupito Ballantine's","2,75 €",[]],
+    ["Chupito J&B","2,75 €",[]],
+    ["Chupito Cardhu","3,50 €",[]],
+    ["Chupito Jack Daniel's","3,50 €",[]],
+    ["Chupito Macallan","5,50 €",[]],
+    ["Tubo de orujo de hierbas","3,00 €",[]]
 ];
 
-
-/* =====================================================
-   NORMALIZAR TEXTO
-===================================================== */
+const allergenNames = {
+    GL:"Gluten",
+    CR:"Crustáceos",
+    HU:"Huevos",
+    PE:"Pescado",
+    CA:"Cacahuetes",
+    SO:"Soja",
+    LE:"Leche",
+    FC:"Frutos de cáscara",
+    AP:"Apio",
+    MOS:"Mostaza",
+    SE:"Sésamo",
+    SU:"Sulfitos",
+    AL:"Altramuces",
+    MOL:"Moluscos"
+};
 
 function normalizeText(text){
-
     return text
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g,"");
-
 }
 
+function createAllergens(allergens){
 
-/* =====================================================
-   CREAR PRODUCTOS SIMPLES
-===================================================== */
+    if(!allergens || allergens.length === 0){
+        return "";
+    }
+
+    return `
+        <div class="product-allergens">
+            ${allergens.map(code=>`
+                <span
+                    class="allergen-badge"
+                    title="${allergenNames[code] || code}"
+                >
+                    ${code}
+                </span>
+            `).join("")}
+        </div>
+    `;
+}
 
 function renderProducts(id,products){
 
     const target = document.getElementById(id);
 
-    products.forEach(([name,price])=>{
+    products.forEach(([name,price,allergens])=>{
 
         const article = document.createElement("article");
 
         article.className = "product";
-
         article.dataset.search = normalizeText(name);
 
         article.innerHTML = `
             <div class="product-main">
                 <h3>${name}</h3>
+                ${createAllergens(allergens)}
             </div>
 
             <div class="price">
@@ -1984,21 +2134,21 @@ renderProducts("copas-list",copas);
 renderProducts("chupitos-list",chupitos);
 
 
-/* =====================================================
+/* =========================================
    CATEGORÍAS
-===================================================== */
+========================================= */
 
 const categoryButtons =
-    document.querySelectorAll(".category");
+document.querySelectorAll(".category");
 
 categoryButtons.forEach(button=>{
 
     button.addEventListener("click",()=>{
 
         const target =
-            document.getElementById(
-                button.dataset.section
-            );
+        document.getElementById(
+            button.dataset.section
+        );
 
         if(!target) return;
 
@@ -2018,113 +2168,114 @@ categoryButtons.forEach(button=>{
 });
 
 
-/* =====================================================
-   MARCAR CATEGORÍA AL HACER SCROLL
-===================================================== */
+/* =========================================
+   CATEGORÍA ACTIVA AL HACER SCROLL
+========================================= */
 
 const menuSections =
-    document.querySelectorAll(".menu-section");
+document.querySelectorAll(".menu-section");
 
-const sectionObserver =
-    new IntersectionObserver(entries=>{
+const observer =
+new IntersectionObserver(entries=>{
 
-        entries.forEach(entry=>{
+    entries.forEach(entry=>{
 
-            if(!entry.isIntersecting) return;
+        if(!entry.isIntersecting){
+            return;
+        }
 
-            categoryButtons.forEach(button=>{
+        categoryButtons.forEach(button=>{
 
-                button.classList.toggle(
-                    "active",
-                    button.dataset.section === entry.target.id
-                );
-
-            });
+            button.classList.toggle(
+                "active",
+                button.dataset.section === entry.target.id
+            );
 
         });
 
-    },{
-        rootMargin:"-20% 0px -65% 0px",
-        threshold:0
     });
 
+},{
+    rootMargin:"-20% 0px -65% 0px",
+    threshold:0
+});
+
 menuSections.forEach(section=>{
-    sectionObserver.observe(section);
+    observer.observe(section);
 });
 
 
-/* =====================================================
+/* =========================================
    BUSCADOR
-===================================================== */
+========================================= */
 
 const searchInput =
-    document.getElementById("searchInput");
+document.getElementById("searchInput");
 
 const noResults =
-    document.getElementById("noResults");
+document.getElementById("noResults");
 
 searchInput.addEventListener("input",()=>{
 
     const query =
-        normalizeText(
-            searchInput.value.trim()
-        );
+    normalizeText(
+        searchInput.value.trim()
+    );
 
     const products =
-        document.querySelectorAll(".product");
+    document.querySelectorAll(".product");
 
-    let totalVisible = 0;
+    let visibleCount = 0;
 
     products.forEach(product=>{
 
-        const searchable =
-            normalizeText(
-                product.dataset.search ||
-                product.textContent
-            );
+        const text =
+        normalizeText(
+            product.dataset.search ||
+            product.textContent
+        );
 
         const visible =
-            searchable.includes(query);
+        text.includes(query);
 
         product.style.display =
-            visible ? "" : "none";
+        visible ? "" : "none";
 
         if(visible){
-            totalVisible++;
+            visibleCount++;
         }
 
     });
 
     menuSections.forEach(section=>{
 
-        const sectionProducts =
-            section.querySelectorAll(".product");
+        const products =
+        section.querySelectorAll(".product");
 
-        const hasVisible =
-            [...sectionProducts].some(
-                product =>
-                    product.style.display !== "none"
-            );
+        const visible =
+        [...products].some(product=>
+            product.style.display !== "none"
+        );
 
         section.style.display =
-            hasVisible ? "" : "none";
+        visible ? "" : "none";
 
     });
 
     noResults.style.display =
-        totalVisible === 0
-            ? "block"
-            : "none";
+    visibleCount === 0
+        ? "block"
+        : "none";
 
 });
 
 
-/* =====================================================
-   BOTÓN VOLVER ARRIBA
-===================================================== */
+/* =========================================
+   VOLVER ARRIBA
+========================================= */
 
 const topButton =
-    document.getElementById("topButton");
+document.getElementById("topButton");
 
 window.addEventListener("scroll",()=>{
 
