@@ -3,396 +3,2912 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
 <title>Bar Petit del Mercat | El Original del Mercat</title>
-<meta name="description" content="Bar Petit del Mercat. El original del Mercat. Bocadillo de carne en salsa y bocadillo de pollo estilo Faisán en Sant Boi de Llobregat.">
+
+<meta
+    name="description"
+    content="Bar Petit del Mercat. El original del Mercat. Bocadillo de carne en salsa y bocadillo de pollo estilo Faisán en Sant Boi de Llobregat."
+>
+
 <meta name="theme-color" content="#14100c">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+>
 
 <style>
-:root{--dark:#14100c;--dark2:#1d160f;--cream:#f4ead7;--cream2:#cdbfa8;--paper:#efe4d0;--gold:#e3a82b;--gold2:#f3c45c;--wood:#60381f;--line:rgba(244,234,215,.13);--max:1280px}
-*,*::before,*::after{box-sizing:border-box}
-html{margin:0;padding:0;width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
-body{margin:0;padding:0;width:100%;max-width:100%;min-width:0;overflow-x:hidden;background:var(--dark);color:var(--cream);font-family:"DM Sans",sans-serif}
-body.lock{overflow:hidden}
-main,section,header,footer{width:100%;max-width:100%}
-h1,h2,h3,p{margin-top:0}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-img,svg,video,iframe{display:block;max-width:100%;height:auto}
-::selection{background:var(--gold);color:var(--dark)}
-.container{width:calc(100% - 48px);max-width:var(--max);margin-left:auto;margin-right:auto}
 
-.loader{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--dark);transition:opacity .7s ease,visibility .7s ease}
-.loader.hide{opacity:0;visibility:hidden;pointer-events:none}
-.loader img{width:135px;animation:loaderPulse 1.5s infinite ease-in-out}
-@keyframes loaderPulse{0%,100%{opacity:.45;transform:scale(.96)}50%{opacity:1;transform:scale(1)}}
-
-.progress{position:fixed;top:0;left:0;width:0;height:2px;z-index:10000;background:var(--gold)}
-
-header{position:fixed;top:0;left:0;z-index:1000;transition:.35s ease;border-bottom:1px solid transparent}
-header.scrolled{background:rgba(20,16,12,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-color:var(--line)}
-nav{width:calc(100% - 48px);max-width:var(--max);height:90px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{min-width:0;display:flex;align-items:center;gap:14px;position:relative;z-index:1002;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
-.logo img{width:58px;height:58px;flex:0 0 58px;object-fit:contain;pointer-events:none}
-.logo-text{min-width:0;pointer-events:none}
-.logo strong{display:block;font-family:"Playfair Display",serif;font-size:1rem;font-weight:600;white-space:nowrap}
-.logo small{display:block;margin-top:5px;color:var(--gold);font-size:.58rem;letter-spacing:.19em;text-transform:uppercase}
-.nav-links{margin:0;padding:0;list-style:none;display:flex;align-items:center;gap:30px}
-.nav-links a{color:rgba(244,234,215,.72);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transition:.25s}
-.nav-links a:hover{color:var(--gold)}
-.nav-menu-button{display:none;width:46px;height:46px;padding:0;flex:0 0 46px;border:0;background:transparent;position:relative;z-index:1002;cursor:pointer}
-.nav-menu-button span{display:block;width:27px;height:1px;margin:7px auto;background:var(--cream);transition:.3s}
-.nav-menu-button.active span:first-child{transform:translateY(4px) rotate(45deg)}
-.nav-menu-button.active span:last-child{transform:translateY(-4px) rotate(-45deg)}
-
-.section-label{margin-bottom:22px;color:var(--gold);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase}
-.big-title{margin-bottom:0;font-family:"Playfair Display",serif;font-size:clamp(3rem,5.8vw,6rem);font-weight:500;line-height:.97;letter-spacing:-.04em;overflow-wrap:break-word}
-.big-title em{color:var(--gold);font-weight:500}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-45px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
-.reveal-right{opacity:0;transform:translateX(45px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
-.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
-
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;background:radial-gradient(circle at 78% 45%,rgba(227,168,43,.18),transparent 27%),linear-gradient(120deg,#14100c 0%,#1e160e 62%,#342110 100%)}
-.hero-grid{position:absolute;inset:0;opacity:.09;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:120px 120px;pointer-events:none}
-.hero-ring{position:absolute;width:720px;height:720px;right:-200px;bottom:-230px;border:1px solid rgba(227,168,43,.18);border-radius:50%;animation:slowRotate 30s linear infinite;pointer-events:none}
-.hero-ring::before,.hero-ring::after{content:"";position:absolute;border:1px solid rgba(227,168,43,.09);border-radius:50%}
-.hero-ring::before{inset:100px}
-.hero-ring::after{inset:210px}
-@keyframes slowRotate{to{transform:rotate(360deg)}}
-.hero-inner{width:calc(100% - 48px);max-width:var(--max);margin:auto;padding:150px 0 80px;position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:70px;align-items:end}
-.hero-inner>*{min-width:0}
-.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:25px;color:var(--gold);font-size:.66rem;letter-spacing:.23em;text-transform:uppercase}
-.eyebrow::before{content:"";width:40px;height:1px;flex:0 0 40px;background:var(--gold)}
-.hero h1{width:100%;max-width:900px;margin:0;font-family:"Playfair Display",serif;font-size:clamp(4.5rem,9.5vw,9.7rem);font-weight:500;line-height:.81;letter-spacing:-.06em}
-.hero h1 em{display:block;color:var(--gold);font-weight:500}
-.hero-description{width:100%;max-width:560px;margin-top:36px;margin-bottom:0;color:var(--cream2);font-size:1.05rem;font-weight:300;line-height:1.85}
-.hero-actions{width:100%;display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
-.btn{min-height:54px;padding:0 25px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold);font-size:.67rem;letter-spacing:.14em;text-align:center;text-transform:uppercase;transition:.3s ease}
-.btn-main{background:var(--gold);color:var(--dark)}
-.btn-main:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-3px)}
-.btn-line{border-color:rgba(244,234,215,.25)}
-.btn-line:hover{border-color:var(--cream);transform:translateY(-3px)}
-.hero-aside{min-width:0;padding-left:35px;border-left:1px solid var(--line)}
-.hero-aside span{color:var(--gold);font-family:"Playfair Display",serif;font-size:4rem}
-.hero-aside p{max-width:300px;margin-top:15px;margin-bottom:0;color:var(--cream2);font-size:.9rem;line-height:1.8}
-
-.marquee{width:100%;overflow:hidden;background:var(--gold);color:var(--dark)}
-.marquee-track{width:max-content;display:flex;animation:marqueeMove 25s linear infinite}
-.marquee span{padding:18px 35px;white-space:nowrap;font-family:"Playfair Display",serif;font-size:1.04rem;font-style:italic}
-.marquee span::after{content:"◆";margin-left:70px;font-size:.45rem;vertical-align:middle}
-@keyframes marqueeMove{to{transform:translateX(-50%)}}
-
-.visual-intro{padding:140px 0;overflow:hidden;background:var(--paper);color:var(--dark)}
-.visual-intro-top{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:90px;margin-bottom:80px}
-.visual-intro-top>*{min-width:0}
-.visual-intro .section-label{color:#936019}
-.visual-intro p{max-width:680px;margin-top:30px;margin-bottom:0;color:#635548;font-size:1.06rem;line-height:1.9}
-.photo-layout{width:100%;height:650px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:16px}
-.photo-main,.photo-small{min-width:0;position:relative;overflow:hidden}
-.photo-main{background:radial-gradient(circle at 40% 35%,rgba(227,168,43,.2),transparent 25%),linear-gradient(135deg,#7c4a27,#26170e)}
-.photo-side{min-width:0;display:grid;grid-template-rows:1fr 1fr;gap:16px}
-.photo-small:first-child{background:linear-gradient(135deg,#b57a35,#50301a)}
-.photo-small:last-child{background:linear-gradient(135deg,#382319,#906032)}
-.photo-label{position:absolute;inset:0;padding:20px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.42);font-size:.6rem;letter-spacing:.18em;text-align:center;text-transform:uppercase}
-
-.beef{min-height:100vh;padding:100px 0;position:relative;overflow:hidden;display:flex;align-items:center;background:radial-gradient(circle at 70% 50%,rgba(227,168,43,.22),transparent 25%),linear-gradient(110deg,#14100c,#291a10)}
-.beef-word{position:absolute;right:-40px;bottom:-30px;color:rgba(255,255,255,.025);font-family:"Playfair Display",serif;font-size:20vw;pointer-events:none}
-.beef-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:100px;align-items:center}
-.beef-copy p{max-width:500px;margin-top:30px;margin-bottom:0;color:var(--cream2);line-height:1.9}
-.beef-note{margin-top:38px;padding-left:20px;border-left:2px solid var(--gold);color:var(--gold2);font-family:"Playfair Display",serif;font-size:1.2rem;font-style:italic}
-.sandwich-art{width:100%;min-height:550px;position:relative;overflow:hidden}
-.sandwich-circle{position:absolute;width:480px;height:480px;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid rgba(227,168,43,.18);border-radius:50%}
-.sandwich-circle::before{content:"";position:absolute;inset:65px;border:1px solid rgba(227,168,43,.11);border-radius:50%}
-
-/* IMAGEN REAL DEL BOCADILLO */
-.sandwich-image{position:absolute;z-index:2;width:94%;max-width:680px;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);object-fit:contain;filter:drop-shadow(0 35px 38px rgba(0,0,0,.48));animation:floatSandwich 5s ease-in-out infinite}
-@keyframes floatSandwich{
-0%,100%{transform:translate(-50%,-50%) translateY(0) rotate(-2deg)}
-50%{transform:translate(-50%,-50%) translateY(-16px) rotate(1deg)}
+:root{
+    --dark:#14100c;
+    --dark2:#1d160f;
+    --cream:#f4ead7;
+    --cream2:#cdbfa8;
+    --paper:#efe4d0;
+    --gold:#e3a82b;
+    --gold2:#f3c45c;
+    --wood:#60381f;
+    --line:rgba(244,234,215,.13);
+    --max:1280px;
 }
 
-.chicken{overflow:hidden;background:var(--gold);color:var(--dark)}
-.chicken-grid{width:100%;min-height:760px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.chicken-visual{min-height:650px;position:relative;overflow:hidden;background:linear-gradient(135deg,#392316,#7f5028)}
-.chicken-visual::before{content:"02";position:absolute;left:40px;top:20px;color:rgba(255,255,255,.08);font-family:"Playfair Display",serif;font-size:15rem}
-.chicken-sandwich{position:absolute;width:70%;height:27%;left:15%;top:38%;border-radius:90px 25px 90px 25px;background:linear-gradient(180deg,#e8b45b 0%,#bd792f 35%,#9c602d 37%,#d29446 58%,#e3ae58 100%);box-shadow:0 40px 90px rgba(0,0,0,.4);transform:rotate(5deg)}
-.chicken-copy{padding:100px;display:flex;flex-direction:column;justify-content:center}
-.chicken-copy .section-label{color:#5d3b10}
-.chicken-copy .big-title em{color:#68420f}
-.chicken-copy p{max-width:490px;margin-top:30px;margin-bottom:0;color:#4f3a1c;line-height:1.9}
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
 
-.menu-section{padding:145px 0;overflow:hidden;background:var(--paper);color:var(--dark);text-align:center}
-.menu-access{width:100%;max-width:850px;margin:0 auto}
-.menu-access .section-label{color:#936019}
-.menu-access-text{width:100%;max-width:570px;margin:30px auto 0;color:#66584b;font-size:1rem;line-height:1.9}
-.menu-access-line{width:48px;height:1px;margin:32px auto;background:#936019}
-.menu-access-button{min-height:60px;padding:0 30px;display:inline-flex;align-items:center;justify-content:center;gap:25px;border:1px solid #936019;background:#936019;color:var(--paper);font-size:.67rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:.3s ease}
-.menu-access-button span{font-size:1.15rem;transition:.3s}
-.menu-access-button:hover{background:transparent;color:#936019;transform:translateY(-3px)}
-.menu-access-button:hover span{transform:translateX(5px)}
+html{
+    margin:0;
+    padding:0;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
 
-.story{padding:150px 0;overflow:hidden}
-.story-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:100px;align-items:center}
-.story-photo{min-height:650px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 40%,rgba(227,168,43,.2),transparent 30%),linear-gradient(145deg,#85552f,#281a10)}
-.story-photo::after{content:"Fotografía del Petit";position:absolute;inset:0;padding:20px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:.6rem;letter-spacing:.2em;text-align:center;text-transform:uppercase}
-.story-copy p{max-width:560px;margin-top:28px;margin-bottom:0;color:var(--cream2);line-height:1.95}
-.story-sign{margin-top:40px;color:var(--gold);font-family:"Playfair Display",serif;font-size:1.2rem;font-style:italic}
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow-x:hidden;
 
-.reviews{padding:140px 0;overflow:hidden;background:var(--paper);color:var(--dark)}
-.reviews .section-label{color:#936019}
-.reviews-top{margin-bottom:65px}
-.review-grid{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.review-card{min-width:0;min-height:300px;padding:35px;border:1px solid rgba(0,0,0,.13);transition:.3s ease}
-.review-card:hover{transform:translateY(-8px);background:#e6d6ba}
-.stars{color:#a16a18;letter-spacing:.15em}
-.review-card p{margin-top:35px;margin-bottom:0;color:#615447;line-height:1.8}
-.review-card small{display:block;margin-top:30px;color:#8d7964;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase}
+    background:var(--dark);
+    color:var(--cream);
 
-.visit{padding:145px 0;overflow:hidden}
-.visit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px}
-.visit-data{margin-top:50px}
-.visit-row{width:100%;display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:25px 0;border-top:1px solid var(--line)}
-.visit-row:last-child{border-bottom:1px solid var(--line)}
-.visit-row strong{color:var(--gold);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase}
-.visit-row span{min-width:0;color:var(--cream2);overflow-wrap:anywhere}
-.map{width:100%;min-height:540px;position:relative;overflow:hidden;background:linear-gradient(135deg,#d7c4a5,#ad9674)}
-.map::before{content:"";position:absolute;inset:-20%;transform:rotate(18deg);background:repeating-linear-gradient(90deg,transparent 0,transparent 70px,rgba(60,43,27,.15) 71px,rgba(60,43,27,.15) 74px)}
-.map-center{position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--dark);text-align:center}
-.map-pin{width:18px;height:18px;margin-bottom:25px;border-radius:50%;background:#8d5b1c;box-shadow:0 0 0 13px rgba(141,91,28,.15)}
-.map-center strong{font-family:"Playfair Display",serif;font-size:1.7rem}
-.map-center span{margin-top:8px;color:#665544}
+    font-family:"DM Sans",sans-serif;
+}
 
-.final{min-height:75vh;padding:80px 20px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle,rgba(227,168,43,.16),transparent 34%),#0d0a07}
-.final::before{content:"";position:absolute;width:550px;height:550px;border:1px solid rgba(227,168,43,.13);border-radius:50%}
-.final-inner{width:100%;position:relative;z-index:2}
-.final img{width:175px;margin:0 auto 30px}
-.final h2{margin-bottom:0;font-family:"Playfair Display",serif;font-size:clamp(3rem,6vw,6rem);font-weight:500}
-.final p{margin-top:15px;margin-bottom:0;color:var(--gold);font-family:"Playfair Display",serif;font-size:1.25rem;font-style:italic}
+body.lock{
+    overflow:hidden;
+}
 
-footer{padding:60px 0 30px;overflow:hidden;background:#080604}
-.footer-main{width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:50px;padding-bottom:50px;border-bottom:1px solid var(--line)}
-.footer-logo img{width:90px;margin-bottom:20px}
-.footer-logo strong{font-family:"Playfair Display",serif;font-size:1.3rem;font-weight:500}
-.footer-links{display:flex;flex-wrap:wrap;gap:25px}
-.footer-links a{color:#827568;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
-.footer-links a:hover{color:var(--gold)}
-.footer-bottom{width:100%;display:flex;justify-content:space-between;gap:30px;padding-top:28px;color:#5e554c;font-size:.68rem}
+main,
+section,
+header,
+footer{
+    width:100%;
+    max-width:100%;
+}
 
-.secret{position:fixed;inset:0;width:100%;z-index:50000;padding:25px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,rgba(227,168,43,.14),transparent 35%),rgba(8,6,4,.97);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .6s ease,visibility .6s ease}
-.secret.show{opacity:1;visibility:visible;pointer-events:auto}
-.secret-card{width:100%;max-width:740px;max-height:90vh;overflow-y:auto;position:relative;padding:70px 65px;text-align:center;border:1px solid rgba(227,168,43,.28);background:#14100c;box-shadow:0 40px 120px rgba(0,0,0,.6);transform:scale(.9) translateY(35px);transition:.7s cubic-bezier(.2,.8,.2,1)}
-.secret.show .secret-card{transform:none}
-.secret-card::before{content:"";position:absolute;inset:12px;border:1px solid rgba(227,168,43,.08);pointer-events:none}
-.secret-logo{width:105px;margin:0 auto 28px}
-.secret-small{color:var(--gold);font-size:.61rem;letter-spacing:.24em;text-transform:uppercase}
-.secret-card h2{margin-top:22px;margin-bottom:0;font-family:"Playfair Display",serif;font-size:clamp(2.3rem,5vw,4.1rem);font-weight:500;line-height:1.05}
-.secret-card h2 em{color:var(--gold);font-weight:500}
-.secret-text{max-width:570px;margin:30px auto 0;color:var(--cream2);font-family:"Playfair Display",serif;font-size:1.06rem;line-height:1.9}
-.secret-love{margin-top:32px;color:var(--cream);font-family:"Playfair Display",serif;font-size:1.32rem;font-style:italic;line-height:1.6}
-.secret-signature{margin-top:40px;color:var(--gold);font-size:.64rem;letter-spacing:.19em;text-transform:uppercase;line-height:1.8}
-.secret-close{position:absolute;right:18px;top:15px;width:45px;height:45px;z-index:5;border:0;background:transparent;color:var(--cream);font-size:1.6rem;cursor:pointer}
-.secret-feedback{position:fixed;left:50%;bottom:30px;z-index:40000;max-width:calc(100% - 30px);padding:10px 16px;border:1px solid rgba(227,168,43,.25);background:rgba(20,16,12,.92);color:var(--gold);font-size:.6rem;letter-spacing:.15em;text-align:center;text-transform:uppercase;opacity:0;visibility:hidden;transform:translate(-50%,20px);transition:.3s;pointer-events:none}
-.secret-feedback.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+h1,
+h2,
+h3,
+p{
+    margin-top:0;
+}
 
-.top{position:fixed;right:25px;bottom:25px;width:47px;height:47px;z-index:900;border:1px solid rgba(227,168,43,.4);background:rgba(20,16,12,.85);color:var(--gold);cursor:pointer;opacity:0;visibility:hidden;transition:.3s}
-.top.show{opacity:1;visibility:visible}
-.top:hover{background:var(--gold);color:var(--dark)}
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+img,
+svg,
+video,
+iframe{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+::selection{
+    background:var(--gold);
+    color:var(--dark);
+}
+
+.container{
+    width:calc(100% - 48px);
+    max-width:var(--max);
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--dark);
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.loader img{
+    width:135px;
+    animation:loaderPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes loaderPulse{
+
+    0%,
+    100%{
+        opacity:.45;
+        transform:scale(.96);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:0;
+    height:2px;
+
+    z-index:10000;
+
+    background:var(--gold);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    transition:.35s ease;
+
+    border-bottom:1px solid transparent;
+}
+
+header.scrolled{
+    background:rgba(20,16,12,.92);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-color:var(--line);
+}
+
+nav{
+    width:calc(100% - 48px);
+    max-width:var(--max);
+
+    height:90px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.logo{
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    position:relative;
+    z-index:1002;
+
+    cursor:pointer;
+
+    user-select:none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.logo img{
+    width:58px;
+    height:58px;
+
+    flex:0 0 58px;
+
+    object-fit:contain;
+
+    pointer-events:none;
+}
+
+.logo-text{
+    min-width:0;
+    pointer-events:none;
+}
+
+.logo strong{
+    display:block;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1rem;
+    font-weight:600;
+
+    white-space:nowrap;
+}
+
+.logo small{
+    display:block;
+
+    margin-top:5px;
+
+    color:var(--gold);
+
+    font-size:.58rem;
+    letter-spacing:.19em;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    margin:0;
+    padding:0;
+
+    list-style:none;
+
+    display:flex;
+    align-items:center;
+
+    gap:30px;
+}
+
+.nav-links a{
+    color:rgba(244,234,215,.72);
+
+    font-size:.68rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-menu-button{
+    display:none;
+
+    width:46px;
+    height:46px;
+
+    padding:0;
+
+    flex:0 0 46px;
+
+    border:0;
+    background:transparent;
+
+    position:relative;
+    z-index:1002;
+
+    cursor:pointer;
+}
+
+.nav-menu-button span{
+    display:block;
+
+    width:27px;
+    height:1px;
+
+    margin:7px auto;
+
+    background:var(--cream);
+
+    transition:.3s;
+}
+
+.nav-menu-button.active span:first-child{
+    transform:translateY(4px) rotate(45deg);
+}
+
+.nav-menu-button.active span:last-child{
+    transform:translateY(-4px) rotate(-45deg);
+}
+
+/* =========================================================
+   GENERALES
+========================================================= */
+
+.section-label{
+    margin-bottom:22px;
+
+    color:var(--gold);
+
+    font-size:.65rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.big-title{
+    margin-bottom:0;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(3rem,5.8vw,6rem);
+    font-weight:500;
+
+    line-height:.97;
+
+    letter-spacing:-.04em;
+
+    overflow-wrap:break-word;
+}
+
+.big-title em{
+    color:var(--gold);
+    font-weight:500;
+}
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.reveal-left{
+    opacity:0;
+
+    transform:translateX(-45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal-right{
+    opacity:0;
+
+    transform:translateX(45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal-left.visible,
+.reveal-right.visible{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(227,168,43,.18),
+            transparent 27%
+        ),
+        linear-gradient(
+            120deg,
+            #14100c 0%,
+            #1e160e 62%,
+            #342110 100%
+        );
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+
+    opacity:.09;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.07) 1px,
+            transparent 1px
+        );
+
+    background-size:120px 120px;
+
+    pointer-events:none;
+}
+
+.hero-ring{
+    position:absolute;
+
+    width:720px;
+    height:720px;
+
+    right:-200px;
+    bottom:-230px;
+
+    border:1px solid rgba(227,168,43,.18);
+    border-radius:50%;
+
+    animation:slowRotate 30s linear infinite;
+
+    pointer-events:none;
+}
+
+.hero-ring::before,
+.hero-ring::after{
+    content:"";
+
+    position:absolute;
+
+    border:1px solid rgba(227,168,43,.09);
+    border-radius:50%;
+}
+
+.hero-ring::before{
+    inset:100px;
+}
+
+.hero-ring::after{
+    inset:210px;
+}
+
+@keyframes slowRotate{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.hero-inner{
+    width:calc(100% - 48px);
+    max-width:var(--max);
+
+    margin:auto;
+
+    padding:150px 0 80px;
+
+    position:relative;
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.35fr)
+        minmax(0,.65fr);
+
+    gap:70px;
+
+    align-items:end;
+}
+
+.hero-inner>*{
+    min-width:0;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:25px;
+
+    color:var(--gold);
+
+    font-size:.66rem;
+    letter-spacing:.23em;
+    text-transform:uppercase;
+}
+
+.eyebrow::before{
+    content:"";
+
+    width:40px;
+    height:1px;
+
+    flex:0 0 40px;
+
+    background:var(--gold);
+}
+
+.hero h1{
+    width:100%;
+    max-width:900px;
+
+    margin:0;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(4.5rem,9.5vw,9.7rem);
+    font-weight:500;
+
+    line-height:.81;
+
+    letter-spacing:-.06em;
+}
+
+.hero h1 em{
+    display:block;
+
+    color:var(--gold);
+
+    font-weight:500;
+}
+
+.hero-description{
+    width:100%;
+    max-width:560px;
+
+    margin-top:36px;
+    margin-bottom:0;
+
+    color:var(--cream2);
+
+    font-size:1.05rem;
+    font-weight:300;
+
+    line-height:1.85;
+}
+
+.hero-actions{
+    width:100%;
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:38px;
+}
+
+.btn{
+    min-height:54px;
+
+    padding:0 25px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--gold);
+
+    font-size:.67rem;
+    letter-spacing:.14em;
+
+    text-align:center;
+    text-transform:uppercase;
+
+    transition:.3s ease;
+}
+
+.btn-main{
+    background:var(--gold);
+    color:var(--dark);
+}
+
+.btn-main:hover{
+    background:var(--gold2);
+    border-color:var(--gold2);
+
+    transform:translateY(-3px);
+}
+
+.btn-line{
+    border-color:rgba(244,234,215,.25);
+}
+
+.btn-line:hover{
+    border-color:var(--cream);
+
+    transform:translateY(-3px);
+}
+
+.hero-aside{
+    min-width:0;
+
+    padding-left:35px;
+
+    border-left:1px solid var(--line);
+}
+
+.hero-aside span{
+    color:var(--gold);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:4rem;
+}
+
+.hero-aside p{
+    max-width:300px;
+
+    margin-top:15px;
+    margin-bottom:0;
+
+    color:var(--cream2);
+
+    font-size:.9rem;
+
+    line-height:1.8;
+}
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee{
+    width:100%;
+    overflow:hidden;
+
+    background:var(--gold);
+    color:var(--dark);
+}
+
+.marquee-track{
+    width:max-content;
+
+    display:flex;
+
+    animation:marqueeMove 25s linear infinite;
+}
+
+.marquee span{
+    padding:18px 35px;
+
+    white-space:nowrap;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.04rem;
+    font-style:italic;
+}
+
+.marquee span::after{
+    content:"◆";
+
+    margin-left:70px;
+
+    font-size:.45rem;
+
+    vertical-align:middle;
+}
+
+@keyframes marqueeMove{
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.visual-intro{
+    padding:140px 0;
+
+    overflow:hidden;
+
+    background:var(--paper);
+    color:var(--dark);
+}
+
+.visual-intro-top{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.75fr)
+        minmax(0,1.25fr);
+
+    gap:90px;
+
+    margin-bottom:80px;
+}
+
+.visual-intro-top>*{
+    min-width:0;
+}
+
+.visual-intro .section-label{
+    color:#936019;
+}
+
+.visual-intro p{
+    max-width:680px;
+
+    margin-top:30px;
+    margin-bottom:0;
+
+    color:#635548;
+
+    font-size:1.06rem;
+
+    line-height:1.9;
+}
+
+.photo-layout{
+    width:100%;
+    height:650px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.2fr)
+        minmax(0,.8fr);
+
+    gap:16px;
+}
+
+.photo-main,
+.photo-small{
+    min-width:0;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.photo-main{
+    background:
+        radial-gradient(
+            circle at 40% 35%,
+            rgba(227,168,43,.2),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #7c4a27,
+            #26170e
+        );
+}
+
+.photo-side{
+    min-width:0;
+
+    display:grid;
+
+    grid-template-rows:1fr 1fr;
+
+    gap:16px;
+}
+
+.photo-small:first-child{
+    background:
+        linear-gradient(
+            135deg,
+            #b57a35,
+            #50301a
+        );
+}
+
+.photo-small:last-child{
+    background:
+        linear-gradient(
+            135deg,
+            #382319,
+            #906032
+        );
+}
+
+.photo-label{
+    position:absolute;
+    inset:0;
+
+    padding:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:rgba(255,255,255,.42);
+
+    font-size:.6rem;
+    letter-spacing:.18em;
+
+    text-align:center;
+    text-transform:uppercase;
+}
+
+/* =========================================================
+   CARNE EN SALSA
+========================================================= */
+
+.beef{
+    min-height:100vh;
+
+    padding:100px 0;
+
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(227,168,43,.22),
+            transparent 25%
+        ),
+        linear-gradient(
+            110deg,
+            #14100c,
+            #291a10
+        );
+}
+
+.beef-word{
+    position:absolute;
+
+    right:-40px;
+    bottom:-30px;
+
+    color:rgba(255,255,255,.025);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:20vw;
+
+    pointer-events:none;
+}
+
+.beef-grid{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.9fr)
+        minmax(0,1.1fr);
+
+    gap:100px;
+
+    align-items:center;
+}
+
+.beef-copy p{
+    max-width:500px;
+
+    margin-top:30px;
+    margin-bottom:0;
+
+    color:var(--cream2);
+
+    line-height:1.9;
+}
+
+.beef-note{
+    margin-top:38px;
+
+    padding-left:20px;
+
+    border-left:2px solid var(--gold);
+
+    color:var(--gold2);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.2rem;
+    font-style:italic;
+}
+
+.sandwich-art{
+    width:100%;
+    min-height:550px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.sandwich-circle{
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border:1px solid rgba(227,168,43,.18);
+
+    border-radius:50%;
+}
+
+.sandwich-circle::before{
+    content:"";
+
+    position:absolute;
+
+    inset:65px;
+
+    border:1px solid rgba(227,168,43,.11);
+
+    border-radius:50%;
+}
+
+.sandwich-image{
+    position:absolute;
+
+    z-index:2;
+
+    width:94%;
+    max-width:680px;
+    height:auto;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-2deg);
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 38px rgba(0,0,0,.48)
+        );
+
+    animation:
+        floatSandwich
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes floatSandwich{
+
+    0%,
+    100%{
+        transform:
+            translate(-50%,-50%)
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            translateY(-16px)
+            rotate(1deg);
+    }
+
+}
+
+/* =========================================================
+   POLLO ESTILO FAISÁN
+========================================================= */
+
+.chicken{
+    overflow:hidden;
+
+    background:var(--gold);
+
+    color:var(--dark);
+}
+
+.chicken-grid{
+    width:100%;
+    min-height:760px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+}
+
+.chicken-visual{
+    min-height:650px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.13),
+            transparent 43%
+        ),
+        linear-gradient(
+            135deg,
+            #392316,
+            #7f5028
+        );
+}
+
+.chicken-visual::before{
+    content:"02";
+
+    position:absolute;
+
+    left:40px;
+    top:20px;
+
+    z-index:1;
+
+    color:rgba(255,255,255,.08);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:15rem;
+
+    pointer-events:none;
+}
+
+.chicken-image-circle{
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    border-radius:50%;
+}
+
+.chicken-image-circle::before{
+    content:"";
+
+    position:absolute;
+
+    inset:65px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:50%;
+}
+
+.chicken-image{
+    position:absolute;
+
+    z-index:3;
+
+    width:94%;
+    max-width:680px;
+    height:auto;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(2deg);
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 38px rgba(0,0,0,.42)
+        );
+
+    animation:
+        floatChicken
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes floatChicken{
+
+    0%,
+    100%{
+        transform:
+            translate(-50%,-50%)
+            translateY(0)
+            rotate(2deg);
+    }
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            translateY(-16px)
+            rotate(-1deg);
+    }
+
+}
+
+.chicken-copy{
+    padding:100px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.chicken-copy .section-label{
+    color:#5d3b10;
+}
+
+.chicken-copy .big-title em{
+    color:#68420f;
+}
+
+.chicken-copy p{
+    max-width:490px;
+
+    margin-top:30px;
+    margin-bottom:0;
+
+    color:#4f3a1c;
+
+    line-height:1.9;
+}
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.menu-section{
+    padding:145px 0;
+
+    overflow:hidden;
+
+    background:var(--paper);
+
+    color:var(--dark);
+
+    text-align:center;
+}
+
+.menu-access{
+    width:100%;
+    max-width:850px;
+
+    margin:0 auto;
+}
+
+.menu-access .section-label{
+    color:#936019;
+}
+
+.menu-access-text{
+    width:100%;
+    max-width:570px;
+
+    margin:30px auto 0;
+
+    color:#66584b;
+
+    font-size:1rem;
+
+    line-height:1.9;
+}
+
+.menu-access-line{
+    width:48px;
+    height:1px;
+
+    margin:32px auto;
+
+    background:#936019;
+}
+
+.menu-access-button{
+    min-height:60px;
+
+    padding:0 30px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:25px;
+
+    border:1px solid #936019;
+
+    background:#936019;
+    color:var(--paper);
+
+    font-size:.67rem;
+    font-weight:500;
+
+    letter-spacing:.14em;
+    text-transform:uppercase;
+
+    transition:.3s ease;
+}
+
+.menu-access-button span{
+    font-size:1.15rem;
+
+    transition:.3s ease;
+}
+
+.menu-access-button:hover{
+    background:transparent;
+    color:#936019;
+
+    transform:translateY(-3px);
+}
+
+.menu-access-button:hover span{
+    transform:translateX(5px);
+}
+
+/* =========================================================
+   HISTORIA
+========================================================= */
+
+.story{
+    padding:150px 0;
+
+    overflow:hidden;
+}
+
+.story-grid{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.8fr)
+        minmax(0,1.2fr);
+
+    gap:100px;
+
+    align-items:center;
+}
+
+.story-photo{
+    min-height:650px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(227,168,43,.2),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #85552f,
+            #281a10
+        );
+}
+
+.story-photo::after{
+    content:"Fotografía del Petit";
+
+    position:absolute;
+    inset:0;
+
+    padding:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:rgba(255,255,255,.35);
+
+    font-size:.6rem;
+    letter-spacing:.2em;
+
+    text-align:center;
+    text-transform:uppercase;
+}
+
+.story-copy p{
+    max-width:560px;
+
+    margin-top:28px;
+    margin-bottom:0;
+
+    color:var(--cream2);
+
+    line-height:1.95;
+}
+
+.story-sign{
+    margin-top:40px;
+
+    color:var(--gold);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.2rem;
+    font-style:italic;
+}
+
+/* =========================================================
+   RESEÑAS
+========================================================= */
+
+.reviews{
+    padding:140px 0;
+
+    overflow:hidden;
+
+    background:var(--paper);
+
+    color:var(--dark);
+}
+
+.reviews .section-label{
+    color:#936019;
+}
+
+.reviews-top{
+    margin-bottom:65px;
+}
+
+.review-grid{
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:18px;
+}
+
+.review-card{
+    min-width:0;
+    min-height:300px;
+
+    padding:35px;
+
+    border:
+        1px solid
+        rgba(0,0,0,.13);
+
+    transition:.3s ease;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+
+    background:#e6d6ba;
+}
+
+.stars{
+    color:#a16a18;
+
+    letter-spacing:.15em;
+}
+
+.review-card p{
+    margin-top:35px;
+    margin-bottom:0;
+
+    color:#615447;
+
+    line-height:1.8;
+}
+
+.review-card small{
+    display:block;
+
+    margin-top:30px;
+
+    color:#8d7964;
+
+    font-size:.6rem;
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+/* =========================================================
+   VISÍTANOS
+========================================================= */
+
+.visit{
+    padding:145px 0;
+
+    overflow:hidden;
+}
+
+.visit-grid{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    gap:80px;
+}
+
+.visit-data{
+    margin-top:50px;
+}
+
+.visit-row{
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        150px
+        minmax(0,1fr);
+
+    gap:20px;
+
+    padding:25px 0;
+
+    border-top:1px solid var(--line);
+}
+
+.visit-row:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.visit-row strong{
+    color:var(--gold);
+
+    font-size:.62rem;
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.visit-row span{
+    min-width:0;
+
+    color:var(--cream2);
+
+    overflow-wrap:anywhere;
+}
+
+.map{
+    width:100%;
+    min-height:540px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d7c4a5,
+            #ad9674
+        );
+}
+
+.map::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-20%;
+
+    transform:rotate(18deg);
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 70px,
+            rgba(60,43,27,.15) 71px,
+            rgba(60,43,27,.15) 74px
+        );
+}
+
+.map-center{
+    position:absolute;
+    inset:0;
+
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--dark);
+
+    text-align:center;
+}
+
+.map-pin{
+    width:18px;
+    height:18px;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:#8d5b1c;
+
+    box-shadow:
+        0 0 0 13px
+        rgba(141,91,28,.15);
+}
+
+.map-center strong{
+    font-family:"Playfair Display",serif;
+
+    font-size:1.7rem;
+}
+
+.map-center span{
+    margin-top:8px;
+
+    color:#665544;
+}
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final{
+    min-height:75vh;
+
+    padding:80px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(227,168,43,.16),
+            transparent 34%
+        ),
+        #0d0a07;
+}
+
+.final::before{
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border:
+        1px solid
+        rgba(227,168,43,.13);
+
+    border-radius:50%;
+}
+
+.final-inner{
+    width:100%;
+
+    position:relative;
+    z-index:2;
+}
+
+.final img{
+    width:175px;
+
+    margin:0 auto 30px;
+}
+
+.final h2{
+    margin-bottom:0;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(3rem,6vw,6rem);
+
+    font-weight:500;
+}
+
+.final p{
+    margin-top:15px;
+    margin-bottom:0;
+
+    color:var(--gold);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.25rem;
+    font-style:italic;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:60px 0 30px;
+
+    overflow:hidden;
+
+    background:#080604;
+}
+
+.footer-main{
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    gap:50px;
+
+    padding-bottom:50px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.footer-logo img{
+    width:90px;
+
+    margin-bottom:20px;
+}
+
+.footer-logo strong{
+    font-family:"Playfair Display",serif;
+
+    font-size:1.3rem;
+    font-weight:500;
+}
+
+.footer-links{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:25px;
+}
+
+.footer-links a{
+    color:#827568;
+
+    font-size:.7rem;
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+}
+
+.footer-bottom{
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+
+    gap:30px;
+
+    padding-top:28px;
+
+    color:#5e554c;
+
+    font-size:.68rem;
+}
+
+/* =========================================================
+   SECRETO
+========================================================= */
+
+.secret{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+
+    z-index:50000;
+
+    padding:25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(227,168,43,.14),
+            transparent 35%
+        ),
+        rgba(8,6,4,.97);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    opacity:0;
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity .6s ease,
+        visibility .6s ease;
+}
+
+.secret.show{
+    opacity:1;
+    visibility:visible;
+
+    pointer-events:auto;
+}
+
+.secret-card{
+    width:100%;
+    max-width:740px;
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    position:relative;
+
+    padding:70px 65px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(227,168,43,.28);
+
+    background:#14100c;
+
+    box-shadow:
+        0 40px 120px
+        rgba(0,0,0,.6);
+
+    transform:
+        scale(.9)
+        translateY(35px);
+
+    transition:
+        .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.secret.show .secret-card{
+    transform:none;
+}
+
+.secret-card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:
+        1px solid
+        rgba(227,168,43,.08);
+
+    pointer-events:none;
+}
+
+.secret-logo{
+    width:105px;
+
+    margin:0 auto 28px;
+}
+
+.secret-small{
+    color:var(--gold);
+
+    font-size:.61rem;
+    letter-spacing:.24em;
+
+    text-transform:uppercase;
+}
+
+.secret-card h2{
+    margin-top:22px;
+    margin-bottom:0;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(2.3rem,5vw,4.1rem);
+
+    font-weight:500;
+
+    line-height:1.05;
+}
+
+.secret-card h2 em{
+    color:var(--gold);
+
+    font-weight:500;
+}
+
+.secret-text{
+    max-width:570px;
+
+    margin:30px auto 0;
+
+    color:var(--cream2);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.06rem;
+
+    line-height:1.9;
+}
+
+.secret-love{
+    margin-top:32px;
+
+    color:var(--cream);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.32rem;
+    font-style:italic;
+
+    line-height:1.6;
+}
+
+.secret-signature{
+    margin-top:40px;
+
+    color:var(--gold);
+
+    font-size:.64rem;
+    letter-spacing:.19em;
+
+    text-transform:uppercase;
+
+    line-height:1.8;
+}
+
+.secret-close{
+    position:absolute;
+
+    right:18px;
+    top:15px;
+
+    width:45px;
+    height:45px;
+
+    z-index:5;
+
+    border:0;
+
+    background:transparent;
+    color:var(--cream);
+
+    font-size:1.6rem;
+
+    cursor:pointer;
+}
+
+.secret-feedback{
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    z-index:40000;
+
+    max-width:calc(100% - 30px);
+
+    padding:10px 16px;
+
+    border:
+        1px solid
+        rgba(227,168,43,.25);
+
+    background:rgba(20,16,12,.92);
+
+    color:var(--gold);
+
+    font-size:.6rem;
+    letter-spacing:.15em;
+
+    text-align:center;
+    text-transform:uppercase;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:
+        translate(-50%,20px);
+
+    transition:.3s;
+
+    pointer-events:none;
+}
+
+.secret-feedback.show{
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        translate(-50%,0);
+}
+
+/* =========================================================
+   VOLVER ARRIBA
+========================================================= */
+
+.top{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:47px;
+    height:47px;
+
+    z-index:900;
+
+    border:
+        1px solid
+        rgba(227,168,43,.4);
+
+    background:rgba(20,16,12,.85);
+
+    color:var(--gold);
+
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.top:hover{
+    background:var(--gold);
+    color:var(--dark);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:950px){
-.container{width:calc(100% - 40px)}
-nav{width:calc(100% - 40px);height:78px}
-.hero-inner{width:calc(100% - 40px)}
-.logo img{width:48px;height:48px;flex-basis:48px}
-.nav-menu-button{display:block}
-.nav-links{position:fixed;inset:0;width:100%;height:100vh;margin:0;padding:100px 20px 40px;background:var(--dark);flex-direction:column;justify-content:center;gap:28px;transform:translateX(100%);transition:.4s ease}
-.nav-links.open{transform:translateX(0)}
-.nav-links a{font-family:"Playfair Display",serif;font-size:2rem;letter-spacing:0;text-transform:none}
-.hero-inner{grid-template-columns:1fr;gap:55px;padding-top:140px}
-.visual-intro-top,.beef-grid,.story-grid,.visit-grid{grid-template-columns:1fr}
-.photo-layout{height:auto;grid-template-columns:1fr}
-.photo-main{min-height:450px}
-.photo-side{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:280px}
-.chicken-grid{grid-template-columns:1fr}
-.chicken-copy{padding:80px 40px}
-.review-grid{grid-template-columns:1fr}
-.footer-main{flex-direction:column;align-items:flex-start}
+
+    .container{
+        width:calc(100% - 40px);
+    }
+
+    nav{
+        width:calc(100% - 40px);
+        height:78px;
+    }
+
+    .hero-inner{
+        width:calc(100% - 40px);
+    }
+
+    .logo img{
+        width:48px;
+        height:48px;
+
+        flex-basis:48px;
+    }
+
+    .nav-menu-button{
+        display:block;
+    }
+
+    .nav-links{
+        position:fixed;
+
+        inset:0;
+
+        width:100%;
+        height:100vh;
+
+        margin:0;
+
+        padding:
+            100px 20px 40px;
+
+        background:var(--dark);
+
+        flex-direction:column;
+        justify-content:center;
+
+        gap:28px;
+
+        transform:
+            translateX(100%);
+
+        transition:.4s ease;
+    }
+
+    .nav-links.open{
+        transform:
+            translateX(0);
+    }
+
+    .nav-links a{
+        font-family:
+            "Playfair Display",
+            serif;
+
+        font-size:2rem;
+
+        letter-spacing:0;
+
+        text-transform:none;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+
+        gap:55px;
+
+        padding-top:140px;
+    }
+
+    .visual-intro-top,
+    .beef-grid,
+    .story-grid,
+    .visit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .photo-layout{
+        height:auto;
+
+        grid-template-columns:1fr;
+    }
+
+    .photo-main{
+        min-height:450px;
+    }
+
+    .photo-side{
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(0,1fr);
+
+        grid-template-rows:280px;
+    }
+
+    .chicken-grid{
+        grid-template-columns:1fr;
+    }
+
+    .chicken-copy{
+        padding:80px 40px;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
 }
+
+/* =========================================================
+   MÓVIL
+========================================================= */
 
 @media(max-width:600px){
-html,body{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
-.container{width:auto!important;max-width:none!important;margin-left:20px!important;margin-right:20px!important}
-nav{width:auto!important;max-width:none!important;height:72px;margin-left:20px!important;margin-right:20px!important}
-.hero-inner{width:auto!important;max-width:none!important;margin-left:20px!important;margin-right:20px!important}
-.reveal-left,.reveal-right{opacity:0;transform:translateY(30px)!important;transition:opacity .8s ease,transform .8s ease}
-.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateY(0)!important}
-.logo{max-width:calc(100vw - 105px);gap:10px}
-.logo img{width:46px;height:46px;flex:0 0 46px}
-.logo strong{max-width:100%;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.logo small{display:none}
-.hero{min-height:100svh;overflow:hidden}
-.hero-inner{display:block;padding-top:115px;padding-bottom:60px}
-.hero-grid{background-size:70px 70px}
-.hero-ring{width:300px;height:300px;right:-180px;bottom:30px}
-.hero-ring::before{inset:50px}
-.hero-ring::after{inset:100px}
-.eyebrow{width:100%;gap:10px;margin-bottom:25px;font-size:.57rem;letter-spacing:.17em}
-.eyebrow::before{width:28px;flex-basis:28px}
-.hero h1{width:100%;max-width:100%;margin:0;font-size:clamp(3rem,15vw,4.5rem);line-height:.88;letter-spacing:-.045em;overflow-wrap:normal;word-break:normal}
-.hero-description{width:100%;max-width:100%;margin-top:28px;font-size:.94rem;line-height:1.75}
-.hero-actions{width:100%;margin-top:32px;flex-direction:column}
-.hero-actions .btn{width:100%;max-width:100%;min-height:58px}
-.hero-aside{width:100%;max-width:100%;margin-top:50px;padding-left:20px}
-.hero-aside span{font-size:3.2rem}
-.marquee span{padding:15px 25px;font-size:.9rem}
-.marquee span::after{margin-left:45px}
-.big-title{width:100%;max-width:100%;font-size:clamp(2.6rem,12.5vw,4rem);line-height:1}
-.visual-intro{padding:85px 0}
-.visual-intro-top{display:block;margin-bottom:50px}
-.visual-intro-top>div+div{margin-top:25px}
-.visual-intro p{width:100%;max-width:100%;font-size:.98rem}
-.photo-layout{width:100%;height:auto;display:block}
-.photo-main{width:100%;min-height:350px}
-.photo-side{width:100%;display:block}
-.photo-small{width:100%;min-height:230px;margin-top:12px}
-.beef{min-height:auto;padding:90px 0;overflow:hidden}
-.beef-grid{display:block;width:100%}
-.beef-copy p{width:100%;max-width:100%;font-size:.96rem}
-.beef-word{right:-10px;bottom:10px;font-size:27vw}
-.sandwich-art{width:100%;min-height:330px;margin-top:35px;overflow:hidden}
-.sandwich-circle{width:270px;height:270px}
-.sandwich-circle::before{inset:45px}
-.sandwich-image{width:112%;max-width:none;left:50%;top:50%}
-.chicken-grid{display:flex;flex-direction:column;min-height:0}
-.chicken-visual{width:100%;min-height:360px}
-.chicken-visual::before{left:15px;top:10px;font-size:9rem}
-.chicken-sandwich{width:82%;left:9%;top:38%}
-.chicken-copy{width:100%;padding:65px 20px}
-.menu-section{padding:85px 0}
-.menu-access-text{max-width:100%;font-size:.94rem}
-.menu-access-button{width:100%;max-width:340px;min-height:60px}
-.story{padding:85px 0}
-.story-grid{display:block;width:100%}
-.story-photo{width:100%;min-height:390px;margin-bottom:55px}
-.reviews{padding:85px 0}
-.review-grid{display:block;width:100%}
-.review-card{width:100%;min-height:0;margin-bottom:14px;padding:28px}
-.visit{padding:85px 0}
-.visit-grid{display:block;width:100%}
-.visit-row{width:100%;display:block}
-.visit-row strong{display:block;margin-bottom:9px}
-.map{width:100%;min-height:350px;margin-top:55px}
-.final{min-height:65vh;padding:80px 20px}
-.final::before{width:290px;height:290px}
-.final img{width:130px}
-.footer-main{display:block;padding-bottom:35px}
-.footer-links{margin-top:35px;gap:15px 20px}
-.footer-bottom{display:block;line-height:1.8}
-.secret{padding:12px}
-.secret-card{padding:55px 25px 40px}
-.secret-logo{width:85px}
-.top{right:15px;bottom:15px}
+
+    html,
+    body{
+        width:100%!important;
+        max-width:100%!important;
+
+        margin:0!important;
+        padding:0!important;
+
+        overflow-x:hidden!important;
+    }
+
+    .container{
+        width:auto!important;
+        max-width:none!important;
+
+        margin-left:20px!important;
+        margin-right:20px!important;
+    }
+
+    nav{
+        width:auto!important;
+        max-width:none!important;
+
+        height:72px;
+
+        margin-left:20px!important;
+        margin-right:20px!important;
+    }
+
+    .hero-inner{
+        width:auto!important;
+        max-width:none!important;
+
+        margin-left:20px!important;
+        margin-right:20px!important;
+    }
+
+    .reveal-left,
+    .reveal-right{
+        opacity:0;
+
+        transform:
+            translateY(30px)!important;
+
+        transition:
+            opacity .8s ease,
+            transform .8s ease;
+    }
+
+    .reveal-left.visible,
+    .reveal-right.visible{
+        opacity:1;
+
+        transform:
+            translateY(0)!important;
+    }
+
+    .logo{
+        max-width:
+            calc(100vw - 105px);
+
+        gap:10px;
+    }
+
+    .logo img{
+        width:46px;
+        height:46px;
+
+        flex:0 0 46px;
+    }
+
+    .logo strong{
+        max-width:100%;
+
+        font-size:.82rem;
+
+        white-space:nowrap;
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+    }
+
+    .logo small{
+        display:none;
+    }
+
+    .hero{
+        min-height:100svh;
+
+        overflow:hidden;
+    }
+
+    .hero-inner{
+        display:block;
+
+        padding-top:115px;
+        padding-bottom:60px;
+    }
+
+    .hero-grid{
+        background-size:
+            70px 70px;
+    }
+
+    .hero-ring{
+        width:300px;
+        height:300px;
+
+        right:-180px;
+        bottom:30px;
+    }
+
+    .hero-ring::before{
+        inset:50px;
+    }
+
+    .hero-ring::after{
+        inset:100px;
+    }
+
+    .eyebrow{
+        width:100%;
+
+        gap:10px;
+
+        margin-bottom:25px;
+
+        font-size:.57rem;
+        letter-spacing:.17em;
+    }
+
+    .eyebrow::before{
+        width:28px;
+
+        flex-basis:28px;
+    }
+
+    .hero h1{
+        width:100%;
+        max-width:100%;
+
+        margin:0;
+
+        font-size:
+            clamp(3rem,15vw,4.5rem);
+
+        line-height:.88;
+
+        letter-spacing:-.045em;
+
+        overflow-wrap:normal;
+        word-break:normal;
+    }
+
+    .hero-description{
+        width:100%;
+        max-width:100%;
+
+        margin-top:28px;
+
+        font-size:.94rem;
+
+        line-height:1.75;
+    }
+
+    .hero-actions{
+        width:100%;
+
+        margin-top:32px;
+
+        flex-direction:column;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+        max-width:100%;
+
+        min-height:58px;
+    }
+
+    .hero-aside{
+        width:100%;
+        max-width:100%;
+
+        margin-top:50px;
+
+        padding-left:20px;
+    }
+
+    .hero-aside span{
+        font-size:3.2rem;
+    }
+
+    .marquee span{
+        padding:15px 25px;
+
+        font-size:.9rem;
+    }
+
+    .marquee span::after{
+        margin-left:45px;
+    }
+
+    .big-title{
+        width:100%;
+        max-width:100%;
+
+        font-size:
+            clamp(2.6rem,12.5vw,4rem);
+
+        line-height:1;
+    }
+
+    .visual-intro{
+        padding:85px 0;
+    }
+
+    .visual-intro-top{
+        display:block;
+
+        margin-bottom:50px;
+    }
+
+    .visual-intro-top>div+div{
+        margin-top:25px;
+    }
+
+    .visual-intro p{
+        width:100%;
+        max-width:100%;
+
+        font-size:.98rem;
+    }
+
+    .photo-layout{
+        width:100%;
+        height:auto;
+
+        display:block;
+    }
+
+    .photo-main{
+        width:100%;
+
+        min-height:350px;
+    }
+
+    .photo-side{
+        width:100%;
+
+        display:block;
+    }
+
+    .photo-small{
+        width:100%;
+
+        min-height:230px;
+
+        margin-top:12px;
+    }
+
+    /* CARNE */
+
+    .beef{
+        min-height:auto;
+
+        padding:90px 0;
+
+        overflow:hidden;
+    }
+
+    .beef-grid{
+        display:block;
+
+        width:100%;
+    }
+
+    .beef-copy p{
+        width:100%;
+        max-width:100%;
+
+        font-size:.96rem;
+    }
+
+    .beef-word{
+        right:-10px;
+        bottom:10px;
+
+        font-size:27vw;
+    }
+
+    .sandwich-art{
+        width:100%;
+
+        min-height:330px;
+
+        margin-top:35px;
+
+        overflow:hidden;
+    }
+
+    .sandwich-circle{
+        width:270px;
+        height:270px;
+    }
+
+    .sandwich-circle::before{
+        inset:45px;
+    }
+
+    .sandwich-image{
+        width:112%;
+        max-width:none;
+
+        left:50%;
+        top:50%;
+    }
+
+    /* POLLO FAISÁN */
+
+    .chicken-grid{
+        display:flex;
+        flex-direction:column;
+
+        min-height:0;
+    }
+
+    .chicken-visual{
+        width:100%;
+
+        min-height:360px;
+    }
+
+    .chicken-visual::before{
+        left:15px;
+        top:10px;
+
+        font-size:9rem;
+    }
+
+    .chicken-image-circle{
+        width:270px;
+        height:270px;
+    }
+
+    .chicken-image-circle::before{
+        inset:45px;
+    }
+
+    .chicken-image{
+        width:112%;
+        max-width:none;
+
+        left:50%;
+        top:50%;
+    }
+
+    .chicken-copy{
+        width:100%;
+
+        padding:65px 20px;
+    }
+
+    /* CARTA */
+
+    .menu-section{
+        padding:85px 0;
+    }
+
+    .menu-access-text{
+        max-width:100%;
+
+        font-size:.94rem;
+    }
+
+    .menu-access-button{
+        width:100%;
+        max-width:340px;
+
+        min-height:60px;
+    }
+
+    /* HISTORIA */
+
+    .story{
+        padding:85px 0;
+    }
+
+    .story-grid{
+        display:block;
+
+        width:100%;
+    }
+
+    .story-photo{
+        width:100%;
+
+        min-height:390px;
+
+        margin-bottom:55px;
+    }
+
+    /* RESEÑAS */
+
+    .reviews{
+        padding:85px 0;
+    }
+
+    .review-grid{
+        display:block;
+
+        width:100%;
+    }
+
+    .review-card{
+        width:100%;
+
+        min-height:0;
+
+        margin-bottom:14px;
+
+        padding:28px;
+    }
+
+    /* VISÍTANOS */
+
+    .visit{
+        padding:85px 0;
+    }
+
+    .visit-grid{
+        display:block;
+
+        width:100%;
+    }
+
+    .visit-row{
+        width:100%;
+
+        display:block;
+    }
+
+    .visit-row strong{
+        display:block;
+
+        margin-bottom:9px;
+    }
+
+    .map{
+        width:100%;
+
+        min-height:350px;
+
+        margin-top:55px;
+    }
+
+    .final{
+        min-height:65vh;
+
+        padding:80px 20px;
+    }
+
+    .final::before{
+        width:290px;
+        height:290px;
+    }
+
+    .final img{
+        width:130px;
+    }
+
+    .footer-main{
+        display:block;
+
+        padding-bottom:35px;
+    }
+
+    .footer-links{
+        margin-top:35px;
+
+        gap:15px 20px;
+    }
+
+    .footer-bottom{
+        display:block;
+
+        line-height:1.8;
+    }
+
+    .secret{
+        padding:12px;
+    }
+
+    .secret-card{
+        padding:55px 25px 40px;
+    }
+
+    .secret-logo{
+        width:85px;
+    }
+
+    .top{
+        right:15px;
+        bottom:15px;
+    }
+
 }
 
+/* =========================================================
+   REDUCIR MOVIMIENTO
+========================================================= */
+
 @media(prefers-reduced-motion:reduce){
-*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+
+        scroll-behavior:auto!important;
+
+        transition-duration:.01ms!important;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
 <div class="loader" id="loader">
-<img src="logo.png.png" alt="Bar Petit del Mercat">
+
+    <img
+        src="logo.png.png"
+        alt="Bar Petit del Mercat"
+    >
+
 </div>
 
-<div class="progress" id="progress"></div>
+<div
+    class="progress"
+    id="progress"
+></div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header id="header">
+
 <nav>
 
-<div class="logo" id="secretTrigger">
-<img src="logo.png.png" alt="Bar Petit del Mercat">
-<div class="logo-text">
-<strong>Bar Petit del Mercat</strong>
-<small>El original del Mercat</small>
-</div>
+<div
+    class="logo"
+    id="secretTrigger"
+>
+
+    <img
+        src="logo.png.png"
+        alt="Bar Petit del Mercat"
+    >
+
+    <div class="logo-text">
+
+        <strong>
+            Bar Petit del Mercat
+        </strong>
+
+        <small>
+            El original del Mercat
+        </small>
+
+    </div>
+
 </div>
 
-<ul class="nav-links" id="navLinks">
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#especialidades">Especialidades</a></li>
-<li><a href="carta.html">Carta</a></li>
-<li><a href="#historia">Historia</a></li>
-<li><a href="#visitanos">Visítanos</a></li>
+<ul
+    class="nav-links"
+    id="navLinks"
+>
+
+    <li>
+        <a href="#inicio">
+            Inicio
+        </a>
+    </li>
+
+    <li>
+        <a href="#especialidades">
+            Especialidades
+        </a>
+    </li>
+
+    <li>
+        <a href="carta.html">
+            Carta
+        </a>
+    </li>
+
+    <li>
+        <a href="#historia">
+            Historia
+        </a>
+    </li>
+
+    <li>
+        <a href="#visitanos">
+            Visítanos
+        </a>
+    </li>
+
 </ul>
 
-<button class="nav-menu-button" id="menuButton" aria-label="Abrir menú">
-<span></span>
-<span></span>
+<button
+    class="nav-menu-button"
+    id="menuButton"
+    aria-label="Abrir menú"
+>
+
+    <span></span>
+    <span></span>
+
 </button>
 
 </nav>
+
 </header>
 
 <main>
 
-<section class="hero" id="inicio">
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="inicio"
+>
 
 <div class="hero-grid"></div>
+
 <div class="hero-ring"></div>
 
 <div class="hero-inner">
 
 <div>
-<div class="eyebrow">Bar Petit del Mercat · Sant Boi</div>
 
-<h1>
-EL ORIGINAL
-<em>DEL MERCAT</em>
-</h1>
+    <div class="eyebrow">
+        Bar Petit del Mercat · Sant Boi
+    </div>
 
-<p class="hero-description">
-Un bar de mercado de los de siempre. Bocadillos,
-tapas, desayunos y dos especialidades que forman
-parte de nuestra identidad.
-</p>
+    <h1>
+        EL ORIGINAL
+        <em>
+            DEL MERCAT
+        </em>
+    </h1>
 
-<div class="hero-actions">
-<a href="carta.html" class="btn btn-main">Ver la carta</a>
-<a href="#especialidades" class="btn btn-line">Nuestras especialidades</a>
-</div>
+    <p class="hero-description">
+        Un bar de mercado de los de siempre.
+        Bocadillos, tapas, desayunos y dos
+        especialidades que forman parte de
+        nuestra identidad.
+    </p>
+
+    <div class="hero-actions">
+
+        <a
+            href="carta.html"
+            class="btn btn-main"
+        >
+            Ver la carta
+        </a>
+
+        <a
+            href="#especialidades"
+            class="btn btn-line"
+        >
+            Nuestras especialidades
+        </a>
+
+    </div>
+
 </div>
 
 <div class="hero-aside">
-<span>01</span>
-<p>
-Un rincón del Mercat de Sant Boi donde disfrutar
-de sabores sencillos, reconocibles y hechos para
-volver.
-</p>
+
+    <span>01</span>
+
+    <p>
+        Un rincón del Mercat de Sant Boi
+        donde disfrutar de sabores sencillos,
+        reconocibles y hechos para volver.
+    </p>
+
 </div>
 
 </div>
+
 </section>
 
+<!-- =====================================================
+     MARQUEE
+===================================================== -->
+
 <div class="marquee">
+
 <div class="marquee-track">
-<span>BAR PETIT DEL MERCAT</span>
-<span>EL ORIGINAL DEL MERCAT</span>
-<span>CARNE EN SALSA</span>
-<span>POLLO ESTILO FAISÁN</span>
-<span>SANT BOI DE LLOBREGAT</span>
-<span>BAR PETIT DEL MERCAT</span>
-<span>EL ORIGINAL DEL MERCAT</span>
-<span>CARNE EN SALSA</span>
-<span>POLLO ESTILO FAISÁN</span>
-<span>SANT BOI DE LLOBREGAT</span>
+
+    <span>
+        BAR PETIT DEL MERCAT
+    </span>
+
+    <span>
+        EL ORIGINAL DEL MERCAT
+    </span>
+
+    <span>
+        CARNE EN SALSA
+    </span>
+
+    <span>
+        POLLO ESTILO FAISÁN
+    </span>
+
+    <span>
+        SANT BOI DE LLOBREGAT
+    </span>
+
+    <span>
+        BAR PETIT DEL MERCAT
+    </span>
+
+    <span>
+        EL ORIGINAL DEL MERCAT
+    </span>
+
+    <span>
+        CARNE EN SALSA
+    </span>
+
+    <span>
+        POLLO ESTILO FAISÁN
+    </span>
+
+    <span>
+        SANT BOI DE LLOBREGAT
+    </span>
+
 </div>
+
 </div>
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
 <section class="visual-intro">
 
@@ -401,20 +2917,31 @@ volver.
 <div class="visual-intro-top">
 
 <div class="reveal-left">
-<div class="section-label">El Petit</div>
-<h2 class="big-title">
-Un bar con
-<em>carácter propio.</em>
-</h2>
+
+    <div class="section-label">
+        El Petit
+    </div>
+
+    <h2 class="big-title">
+        Un bar con
+        <em>
+            carácter propio.
+        </em>
+    </h2>
+
 </div>
 
 <div class="reveal-right">
-<p>
-Bar Petit del Mercat es un lugar para desayunar,
-tomar algo, disfrutar de un buen bocadillo y vivir
-el ambiente del mercado. Una cocina cercana,
-sin complicaciones y con personalidad.
-</p>
+
+    <p>
+        Bar Petit del Mercat es un lugar
+        para desayunar, tomar algo,
+        disfrutar de un buen bocadillo
+        y vivir el ambiente del mercado.
+        Una cocina cercana, sin complicaciones
+        y con personalidad.
+    </p>
+
 </div>
 
 </div>
@@ -422,27 +2949,51 @@ sin complicaciones y con personalidad.
 <div class="photo-layout reveal">
 
 <div class="photo-main">
-<div class="photo-label">Fotografía principal del bar</div>
+
+    <div class="photo-label">
+        Fotografía principal del bar
+    </div>
+
 </div>
 
 <div class="photo-side">
 
 <div class="photo-small">
-<div class="photo-label">Fotografía del local</div>
+
+    <div class="photo-label">
+        Fotografía del local
+    </div>
+
 </div>
 
 <div class="photo-small">
-<div class="photo-label">Fotografía de producto</div>
+
+    <div class="photo-label">
+        Fotografía de producto
+    </div>
+
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
 
-<section class="beef" id="especialidades">
+<!-- =====================================================
+     ESPECIALIDAD CARNE EN SALSA
+===================================================== -->
 
-<div class="beef-word">PETIT</div>
+<section
+    class="beef"
+    id="especialidades"
+>
+
+<div class="beef-word">
+    PETIT
+</div>
 
 <div class="container">
 
@@ -450,103 +3001,155 @@ sin complicaciones y con personalidad.
 
 <div class="beef-copy reveal-left">
 
-<div class="section-label">Especialidad 01</div>
+    <div class="section-label">
+        Especialidad 01
+    </div>
 
-<h2 class="big-title">
-Bocadillo de
-<em>carne en salsa.</em>
-</h2>
+    <h2 class="big-title">
+        Bocadillo de
+        <em>
+            carne en salsa.
+        </em>
+    </h2>
 
-<p>
-Una de las especialidades de la casa y uno de
-esos bocadillos que definen al Petit. Sabor,
-salsa y pan en una combinación sencilla y
-contundente.
-</p>
+    <p>
+        Una de las especialidades de la casa
+        y uno de esos bocadillos que definen
+        al Petit. Sabor, salsa y pan en una
+        combinación sencilla y contundente.
+    </p>
 
-<div class="beef-note">
-Una de las señas de identidad del Bar Petit del Mercat.
-</div>
+    <div class="beef-note">
+        Una de las señas de identidad
+        del Bar Petit del Mercat.
+    </div>
 
 </div>
 
 <div class="sandwich-art reveal-right">
-<div class="sandwich-circle"></div>
 
-<img
-class="sandwich-image"
-src="bocadillo-carne-salsa.png.png"
-alt="Bocadillo de carne en salsa del Bar Petit del Mercat"
->
+    <div class="sandwich-circle"></div>
+
+    <img
+        class="sandwich-image"
+        src="bocadillo-carne-salsa.png.png"
+        alt="Bocadillo de carne en salsa del Bar Petit del Mercat"
+    >
 
 </div>
 
 </div>
+
 </div>
+
 </section>
+
+<!-- =====================================================
+     ESPECIALIDAD POLLO ESTILO FAISÁN
+===================================================== -->
 
 <section class="chicken">
 
 <div class="chicken-grid">
 
 <div class="chicken-visual reveal-left">
-<div class="chicken-sandwich"></div>
+
+    <div class="chicken-image-circle"></div>
+
+    <img
+        src="bocadillo-pollo-faisan.png.png"
+        alt="Bocadillo de pollo estilo Faisán del Bar Petit del Mercat"
+        class="chicken-image"
+    >
+
 </div>
 
 <div class="chicken-copy reveal-right">
 
-<div class="section-label">Especialidad 02</div>
+    <div class="section-label">
+        Especialidad 02
+    </div>
 
-<h2 class="big-title">
-Bocadillo de pollo
-<em>estilo Faisán.</em>
-</h2>
+    <h2 class="big-title">
+        Bocadillo de pollo
+        <em>
+            estilo Faisán.
+        </em>
+    </h2>
 
-<p>
-Otra de las especialidades que forman parte de
-la personalidad del Petit. Un bocadillo pensado
-para disfrutar del sabor de la casa y repetir.
-</p>
+    <p>
+        Otra de las especialidades que
+        forman parte de la personalidad
+        del Petit. Un bocadillo pensado
+        para disfrutar del sabor de la
+        casa y repetir.
+    </p>
 
 </div>
+
 </div>
+
 </section>
 
-<section class="menu-section" id="carta">
+<!-- =====================================================
+     CARTA
+===================================================== -->
+
+<section
+    class="menu-section"
+    id="carta"
+>
 
 <div class="container">
 
 <div class="menu-access reveal">
 
-<div class="section-label">
-Bar Petit del Mercat
+    <div class="section-label">
+        Bar Petit del Mercat
+    </div>
+
+    <h2 class="big-title">
+        Esta es
+        <em>
+            nuestra carta.
+        </em>
+    </h2>
+
+    <div class="menu-access-line"></div>
+
+    <p class="menu-access-text">
+        Bocadillos, tapas, tortillas,
+        desayunos, cafés, bebidas y mucho más.
+        Descubre todos nuestros productos,
+        precios y especialidades.
+    </p>
+
+    <div style="margin-top:38px;">
+
+        <a
+            href="carta.html"
+            class="menu-access-button"
+        >
+            Ver nuestra carta
+            <span>→</span>
+        </a>
+
+    </div>
+
 </div>
 
-<h2 class="big-title">
-Esta es
-<em>nuestra carta.</em>
-</h2>
-
-<div class="menu-access-line"></div>
-
-<p class="menu-access-text">
-Bocadillos, tapas, tortillas, desayunos, cafés,
-bebidas y mucho más. Descubre todos nuestros
-productos, precios y especialidades.
-</p>
-
-<div style="margin-top:38px">
-<a href="carta.html" class="menu-access-button">
-VER NUESTRA CARTA
-<span>→</span>
-</a>
 </div>
 
-</div>
-</div>
 </section>
 
-<section class="story" id="historia">
+<!-- =====================================================
+     HISTORIA
+===================================================== -->
+
+<section
+    class="story"
+    id="historia"
+>
 
 <div class="container">
 
@@ -556,83 +3159,140 @@ VER NUESTRA CARTA
 
 <div class="story-copy reveal-right">
 
-<div class="section-label">Nuestra historia</div>
+    <div class="section-label">
+        Nuestra historia
+    </div>
 
-<h2 class="big-title">
-Mucho más que
-<em>un bar.</em>
-</h2>
+    <h2 class="big-title">
+        Mucho más que
+        <em>
+            un bar.
+        </em>
+    </h2>
 
-<p>
-El Petit forma parte del día a día del mercado.
-Un lugar cercano, sencillo y familiar donde cada
-jornada empieza detrás de la barra y continúa
-con cada persona que se sienta, desayuna,
-come o simplemente viene a tomar algo.
-</p>
+    <p>
+        El Petit forma parte del día a día
+        del mercado. Un lugar cercano,
+        sencillo y familiar donde cada jornada
+        empieza detrás de la barra y continúa
+        con cada persona que se sienta,
+        desayuna, come o simplemente viene
+        a tomar algo.
+    </p>
 
-<p>
-Aquí importan las cosas pequeñas: preparar un
-bocadillo como toca, servir un café y hacer que
-quien entra se sienta a gusto.
-</p>
+    <p>
+        Aquí importan las cosas pequeñas:
+        preparar un bocadillo como toca,
+        servir un café y hacer que quien
+        entra se sienta a gusto.
+    </p>
 
-<div class="story-sign">
-Bar Petit del Mercat
+    <div class="story-sign">
+        Bar Petit del Mercat
+    </div>
+
 </div>
 
 </div>
+
 </div>
-</div>
+
 </section>
+
+<!-- =====================================================
+     RESEÑAS
+===================================================== -->
 
 <section class="reviews">
 
 <div class="container">
 
 <div class="reviews-top reveal">
-<div class="section-label">Opiniones</div>
 
-<h2 class="big-title">
-Lo que dicen
-<em>del Petit.</em>
-</h2>
+    <div class="section-label">
+        Opiniones
+    </div>
+
+    <h2 class="big-title">
+        Lo que dicen
+        <em>
+            del Petit.
+        </em>
+    </h2>
+
 </div>
 
 <div class="review-grid">
 
 <article class="review-card reveal">
-<div class="stars">★★★★★</div>
-<p>
-Espacio reservado para una reseña real de un cliente
-del Bar Petit del Mercat.
-</p>
-<small>Reseña de Google</small>
+
+    <div class="stars">
+        ★★★★★
+    </div>
+
+    <p>
+        Espacio reservado para una reseña
+        real de un cliente del
+        Bar Petit del Mercat.
+    </p>
+
+    <small>
+        Reseña de Google
+    </small>
+
 </article>
 
 <article class="review-card reveal">
-<div class="stars">★★★★★</div>
-<p>
-Aquí podrás mostrar otra opinión real cuando tengamos
-el enlace de las reseñas del negocio.
-</p>
-<small>Reseña de Google</small>
+
+    <div class="stars">
+        ★★★★★
+    </div>
+
+    <p>
+        Aquí podrás mostrar otra opinión
+        real cuando tengamos el enlace
+        de las reseñas del negocio.
+    </p>
+
+    <small>
+        Reseña de Google
+    </small>
+
 </article>
 
 <article class="review-card reveal">
-<div class="stars">★★★★★</div>
-<p>
-Una tercera reseña permitirá enseñar de forma visual
-la experiencia de quienes visitan el Petit.
-</p>
-<small>Reseña de Google</small>
+
+    <div class="stars">
+        ★★★★★
+    </div>
+
+    <p>
+        Una tercera reseña permitirá
+        enseñar de forma visual la
+        experiencia de quienes visitan
+        el Petit.
+    </p>
+
+    <small>
+        Reseña de Google
+    </small>
+
 </article>
 
 </div>
+
 </div>
+
 </section>
 
-<section class="visit" id="visitanos">
+<!-- =====================================================
+     VISÍTANOS
+===================================================== -->
+
+<section
+    class="visit"
+    id="visitanos"
+>
 
 <div class="container">
 
@@ -640,60 +3300,116 @@ la experiencia de quienes visitan el Petit.
 
 <div class="reveal-left">
 
-<div class="section-label">Visítanos</div>
+    <div class="section-label">
+        Visítanos
+    </div>
 
-<h2 class="big-title">
-Nos vemos
-<em>en el Mercat.</em>
-</h2>
+    <h2 class="big-title">
+        Nos vemos
+        <em>
+            en el Mercat.
+        </em>
+    </h2>
 
-<div class="visit-data">
+    <div class="visit-data">
 
-<div class="visit-row">
-<strong>Ubicación</strong>
-<span>Mercat de Sant Boi · Sant Boi de Llobregat</span>
-</div>
+        <div class="visit-row">
 
-<div class="visit-row">
-<strong>Horario</strong>
-<span>Consulta el horario actual del establecimiento.</span>
-</div>
+            <strong>
+                Ubicación
+            </strong>
 
-<div class="visit-row">
-<strong>Contacto</strong>
-<span>Información de contacto próximamente.</span>
-</div>
+            <span>
+                Mercat de Sant Boi ·
+                Sant Boi de Llobregat
+            </span>
 
-</div>
+        </div>
+
+        <div class="visit-row">
+
+            <strong>
+                Horario
+            </strong>
+
+            <span>
+                Consulta el horario actual
+                del establecimiento.
+            </span>
+
+        </div>
+
+        <div class="visit-row">
+
+            <strong>
+                Contacto
+            </strong>
+
+            <span>
+                Información de contacto
+                próximamente.
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
 
 <div class="map reveal-right">
 
-<div class="map-center">
-<div class="map-pin"></div>
-<strong>Bar Petit del Mercat</strong>
-<span>Sant Boi de Llobregat</span>
+    <div class="map-center">
+
+        <div class="map-pin"></div>
+
+        <strong>
+            Bar Petit del Mercat
+        </strong>
+
+        <span>
+            Sant Boi de Llobregat
+        </span>
+
+    </div>
+
 </div>
 
 </div>
+
 </div>
-</div>
+
 </section>
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
 
 <section class="final">
 
 <div class="final-inner reveal">
 
-<img src="logo.png.png" alt="Bar Petit del Mercat">
+    <img
+        src="logo.png.png"
+        alt="Bar Petit del Mercat"
+    >
 
-<h2>Bar Petit del Mercat</h2>
+    <h2>
+        Bar Petit del Mercat
+    </h2>
 
-<p>El original del Mercat</p>
+    <p>
+        El original del Mercat
+    </p>
 
 </div>
+
 </section>
 
 </main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -702,252 +3418,506 @@ Nos vemos
 <div class="footer-main">
 
 <div class="footer-logo">
-<img src="logo.png.png" alt="Bar Petit del Mercat">
-<strong>Bar Petit del Mercat</strong>
+
+    <img
+        src="logo.png.png"
+        alt="Bar Petit del Mercat"
+    >
+
+    <strong>
+        Bar Petit del Mercat
+    </strong>
+
 </div>
 
 <div class="footer-links">
-<a href="#inicio">Inicio</a>
-<a href="#especialidades">Especialidades</a>
-<a href="carta.html">Carta</a>
-<a href="#historia">Historia</a>
-<a href="#visitanos">Visítanos</a>
+
+    <a href="#inicio">
+        Inicio
+    </a>
+
+    <a href="#especialidades">
+        Especialidades
+    </a>
+
+    <a href="carta.html">
+        Carta
+    </a>
+
+    <a href="#historia">
+        Historia
+    </a>
+
+    <a href="#visitanos">
+        Visítanos
+    </a>
+
 </div>
 
 </div>
 
 <div class="footer-bottom">
-<span>Bar Petit del Mercat</span>
-<span>El original del Mercat · Sant Boi de Llobregat</span>
+
+    <span>
+        Bar Petit del Mercat
+    </span>
+
+    <span>
+        El original del Mercat ·
+        Sant Boi de Llobregat
+    </span>
+
 </div>
 
 </div>
+
 </footer>
 
-<div class="secret" id="secret">
+<!-- =====================================================
+     MENSAJE SECRETO
+===================================================== -->
+
+<div
+    class="secret"
+    id="secret"
+>
 
 <div class="secret-card">
 
-<button class="secret-close" id="secretClose" aria-label="Cerrar">×</button>
+    <button
+        class="secret-close"
+        id="secretClose"
+        aria-label="Cerrar"
+    >
+        ×
+    </button>
 
-<img class="secret-logo" src="logo.png.png" alt="Bar Petit del Mercat">
+    <img
+        class="secret-logo"
+        src="logo.png.png"
+        alt="Bar Petit del Mercat"
+    >
 
-<div class="secret-small">
-Un mensaje especial
+    <div class="secret-small">
+        Un mensaje especial
+    </div>
+
+    <h2>
+        Para la persona que
+        <em>
+            hace posible el Petit.
+        </em>
+    </h2>
+
+    <div class="secret-text">
+
+        <p>
+            Mamá, detrás de esta página
+            hay algo mucho más importante
+            que un bar.
+        </p>
+
+        <p>
+            Está todo el esfuerzo que haces
+            cada día para sacar este negocio
+            adelante tú sola, todas las horas
+            detrás de la barra y todas las
+            veces que sigues adelante incluso
+            cuando las cosas no son fáciles.
+        </p>
+
+        <p>
+            Puede que muchas veces no te lo
+            diga, pero veo todo ese esfuerzo
+            y estoy muy orgulloso de ti y
+            de todo lo que has conseguido.
+        </p>
+
+    </div>
+
+    <div class="secret-love">
+        Te quiero mucho y espero que esta
+        página sea una pequeña forma de
+        demostrarte lo orgulloso que estoy
+        de ti.
+    </div>
+
+    <div class="secret-signature">
+        Asier
+        <br>
+        Equipo Nexora
+    </div>
+
 </div>
 
-<h2>
-Para la persona que
-<em>hace posible el Petit.</em>
-</h2>
-
-<div class="secret-text">
-
-<p>
-Mamá, detrás de esta página hay algo mucho más
-importante que un bar.
-</p>
-
-<p>
-Está todo el esfuerzo que haces cada día para
-sacar este negocio adelante tú sola, todas las
-horas detrás de la barra y todas las veces que
-sigues adelante incluso cuando las cosas no son
-fáciles.
-</p>
-
-<p>
-Puede que muchas veces no te lo diga, pero veo
-todo ese esfuerzo y estoy muy orgulloso de ti y
-de todo lo que has conseguido.
-</p>
-
 </div>
 
-<div class="secret-love">
-Te quiero mucho y espero que esta página sea
-una pequeña forma de demostrarte lo orgulloso
-que estoy de ti.
+<div
+    class="secret-feedback"
+    id="secretFeedback"
+>
+    Un pequeño secreto...
 </div>
 
-<div class="secret-signature">
-Asier<br>
-Equipo Nexora
-</div>
+<button
+    class="top"
+    id="topButton"
+    aria-label="Volver arriba"
+>
+    ↑
+</button>
 
-</div>
-</div>
-
-<div class="secret-feedback" id="secretFeedback">
-Un pequeño secreto...
-</div>
-
-<button class="top" id="topButton" aria-label="Volver arriba">↑</button>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
-const loader=document.getElementById("loader");
 
-window.addEventListener("load",()=>{
-setTimeout(()=>{
-loader.classList.add("hide");
-},500);
-});
+const loader =
+    document.getElementById("loader");
 
-const header=document.getElementById("header");
-const progress=document.getElementById("progress");
-const topButton=document.getElementById("topButton");
+window.addEventListener(
+    "load",
+    () => {
+
+        setTimeout(
+            () => {
+                loader.classList.add("hide");
+            },
+            500
+        );
+
+    }
+);
+
+const header =
+    document.getElementById("header");
+
+const progress =
+    document.getElementById("progress");
+
+const topButton =
+    document.getElementById("topButton");
 
 function updateScroll(){
 
-const y=window.scrollY;
+    const y =
+        window.scrollY;
 
-if(y>30){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
+    if(y > 30){
+
+        header.classList.add(
+            "scrolled"
+        );
+
+    }else{
+
+        header.classList.remove(
+            "scrolled"
+        );
+
+    }
+
+    if(y > 500){
+
+        topButton.classList.add(
+            "show"
+        );
+
+    }else{
+
+        topButton.classList.remove(
+            "show"
+        );
+
+    }
+
+    const documentHeight =
+        document.documentElement.scrollHeight
+        -
+        window.innerHeight;
+
+    const percentage =
+        documentHeight > 0
+        ?
+        (y / documentHeight) * 100
+        :
+        0;
+
+    progress.style.width =
+        percentage + "%";
+
 }
 
-if(y>500){
-topButton.classList.add("show");
-}else{
-topButton.classList.remove("show");
-}
-
-const documentHeight=
-document.documentElement.scrollHeight-
-window.innerHeight;
-
-const percentage=
-documentHeight>0
-?(y/documentHeight)*100
-:0;
-
-progress.style.width=percentage+"%";
-}
-
-window.addEventListener("scroll",updateScroll,{passive:true});
-updateScroll();
-
-const menuButton=document.getElementById("menuButton");
-const navLinks=document.getElementById("navLinks");
-
-menuButton.addEventListener("click",()=>{
-
-menuButton.classList.toggle("active");
-navLinks.classList.toggle("open");
-document.body.classList.toggle("lock");
-
-});
-
-navLinks.querySelectorAll("a").forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-menuButton.classList.remove("active");
-navLinks.classList.remove("open");
-document.body.classList.remove("lock");
-
-});
-
-});
-
-const revealElements=document.querySelectorAll(
-".reveal,.reveal-left,.reveal-right"
+window.addEventListener(
+    "scroll",
+    updateScroll,
+    {
+        passive:true
+    }
 );
 
-const observer=new IntersectionObserver(entries=>{
+updateScroll();
 
-entries.forEach(entry=>{
+const menuButton =
+    document.getElementById(
+        "menuButton"
+    );
 
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-observer.unobserve(entry.target);
-}
+const navLinks =
+    document.getElementById(
+        "navLinks"
+    );
 
-});
+menuButton.addEventListener(
+    "click",
+    () => {
 
-},{
-threshold:.12
-});
+        menuButton.classList.toggle(
+            "active"
+        );
 
-revealElements.forEach(element=>{
-observer.observe(element);
-});
+        navLinks.classList.toggle(
+            "open"
+        );
 
-topButton.addEventListener("click",()=>{
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-});
+        document.body.classList.toggle(
+            "lock"
+        );
 
-const secretTrigger=document.getElementById("secretTrigger");
-const secret=document.getElementById("secret");
-const secretClose=document.getElementById("secretClose");
-const secretFeedback=document.getElementById("secretFeedback");
+    }
+);
 
-let secretClicks=0;
+navLinks
+.querySelectorAll("a")
+.forEach(
+    link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                menuButton
+                    .classList
+                    .remove("active");
+
+                navLinks
+                    .classList
+                    .remove("open");
+
+                document.body
+                    .classList
+                    .remove("lock");
+
+            }
+        );
+
+    }
+);
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal,.reveal-left,.reveal-right"
+    );
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry
+                            .target
+                            .classList
+                            .add("visible");
+
+                        observer
+                            .unobserve(
+                                entry.target
+                            );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+revealElements.forEach(
+    element => {
+
+        observer.observe(
+            element
+        );
+
+    }
+);
+
+topButton.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo(
+            {
+                top:0,
+                behavior:"smooth"
+            }
+        );
+
+    }
+);
+
+/* =========================================================
+   MENSAJE SECRETO
+========================================================= */
+
+const secretTrigger =
+    document.getElementById(
+        "secretTrigger"
+    );
+
+const secret =
+    document.getElementById(
+        "secret"
+    );
+
+const secretClose =
+    document.getElementById(
+        "secretClose"
+    );
+
+const secretFeedback =
+    document.getElementById(
+        "secretFeedback"
+    );
+
+let secretClicks = 0;
+
 let secretTimer;
 
 function showSecret(){
 
-secret.classList.add("show");
-document.body.classList.add("lock");
+    secret.classList.add(
+        "show"
+    );
+
+    document.body.classList.add(
+        "lock"
+    );
 
 }
 
 function hideSecret(){
 
-secret.classList.remove("show");
-document.body.classList.remove("lock");
+    secret.classList.remove(
+        "show"
+    );
+
+    document.body.classList.remove(
+        "lock"
+    );
 
 }
 
 function showFeedback(){
 
-secretFeedback.classList.add("show");
+    secretFeedback
+        .classList
+        .add("show");
 
-clearTimeout(secretTimer);
+    clearTimeout(
+        secretTimer
+    );
 
-secretTimer=setTimeout(()=>{
-secretFeedback.classList.remove("show");
-},1800);
+    secretTimer =
+        setTimeout(
+            () => {
+
+                secretFeedback
+                    .classList
+                    .remove("show");
+
+            },
+            1800
+        );
 
 }
 
-secretTrigger.addEventListener("click",()=>{
+secretTrigger.addEventListener(
+    "click",
+    () => {
 
-secretClicks++;
+        secretClicks++;
 
-if(secretClicks===3){
-showFeedback();
-}
+        if(secretClicks === 3){
 
-if(secretClicks>=5){
-secretClicks=0;
-secretFeedback.classList.remove("show");
-showSecret();
-}
+            showFeedback();
 
-});
+        }
 
-secretClose.addEventListener("click",hideSecret);
+        if(secretClicks >= 5){
 
-secret.addEventListener("click",event=>{
+            secretClicks = 0;
 
-if(event.target===secret){
-hideSecret();
-}
+            secretFeedback
+                .classList
+                .remove("show");
 
-});
+            showSecret();
 
-document.addEventListener("keydown",event=>{
+        }
 
-if(event.key==="Escape"&&secret.classList.contains("show")){
-hideSecret();
-}
+    }
+);
 
-});
+secretClose.addEventListener(
+    "click",
+    hideSecret
+);
+
+secret.addEventListener(
+    "click",
+    event => {
+
+        if(
+            event.target === secret
+        ){
+
+            hideSecret();
+
+        }
+
+    }
+);
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Escape"
+            &&
+            secret.classList.contains(
+                "show"
+            )
+        ){
+
+            hideSecret();
+
+        }
+
+    }
+);
+
 </script>
 
 </body>
