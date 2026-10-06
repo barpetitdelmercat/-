@@ -7,7 +7,7 @@
 <title>Carta | Bar Petit del Mercat</title>
 
 <meta name="description" content="Carta digital de Bar Petit del Mercat. Bocadillos, tapas, tortillas, desayunos, cafés y bebidas.">
-<meta name="theme-color" content="#0d0b09">
+<meta name="theme-color" content="#0b0907">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,23 +15,17 @@
 
 <style>
 :root{
-    --bg:#0d0b09;
-    --bg2:#12100d;
-    --bg3:#18140f;
-    --card:#17130f;
-    --card2:#1d1812;
-
-    --gold:#c79342;
-    --gold2:#e0b568;
-    --gold-soft:rgba(199,147,66,.12);
-
-    --cream:#eee3d2;
-    --cream2:#c9bba7;
-    --muted:#948675;
-
-    --line:rgba(224,181,104,.16);
-    --line2:rgba(238,227,210,.08);
-
+    --bg:#0b0907;
+    --bg2:#100d0a;
+    --bg3:#17120e;
+    --gold:#b98332;
+    --gold2:#dda955;
+    --gold3:#efc77f;
+    --cream:#f0e6d8;
+    --cream2:#c6b8a5;
+    --muted:#8d8070;
+    --line:rgba(221,169,85,.16);
+    --line-soft:rgba(240,230,216,.075);
     --max:980px;
 }
 
@@ -56,9 +50,7 @@ body{
     margin:0;
     padding:0;
     overflow-x:hidden;
-    background:
-        radial-gradient(circle at 80% 5%,rgba(199,147,66,.06),transparent 25%),
-        var(--bg);
+    background:var(--bg);
     color:var(--cream);
     font-family:"DM Sans",sans-serif;
     -webkit-font-smoothing:antialiased;
@@ -89,40 +81,38 @@ img{
     margin:0 auto;
 }
 
-/* =========================================
-   HERO
-========================================= */
+/* HERO */
 
 .hero{
     position:relative;
-    min-height:560px;
+    min-height:570px;
     overflow:hidden;
-    border-bottom:1px solid var(--line);
     background:
-        radial-gradient(circle at 80% 25%,rgba(199,147,66,.13),transparent 28%),
-        radial-gradient(circle at 10% 100%,rgba(199,147,66,.05),transparent 30%),
-        linear-gradient(145deg,#090806,#15110d 55%,#21170e);
+        radial-gradient(circle at 82% 25%,rgba(185,131,50,.15),transparent 28%),
+        radial-gradient(circle at 15% 100%,rgba(185,131,50,.05),transparent 28%),
+        linear-gradient(145deg,#080705 0%,#120e0b 52%,#21170e 100%);
+    border-bottom:1px solid var(--line);
 }
 
 .hero::before{
     content:"";
     position:absolute;
-    width:580px;
-    height:580px;
-    right:-290px;
-    bottom:-320px;
-    border:1px solid rgba(224,181,104,.12);
+    width:600px;
+    height:600px;
+    right:-310px;
+    bottom:-340px;
+    border:1px solid rgba(221,169,85,.12);
     border-radius:50%;
 }
 
 .hero::after{
     content:"";
     position:absolute;
-    width:390px;
-    height:390px;
-    right:-200px;
-    bottom:-220px;
-    border:1px solid rgba(224,181,104,.08);
+    width:410px;
+    height:410px;
+    right:-210px;
+    bottom:-225px;
+    border:1px solid rgba(221,169,85,.07);
     border-radius:50%;
 }
 
@@ -169,7 +159,7 @@ img{
 .back{
     flex:0 0 auto;
     padding:12px 17px;
-    border:1px solid rgba(238,227,210,.17);
+    border:1px solid rgba(240,230,216,.17);
     color:var(--cream2);
     font-size:.57rem;
     letter-spacing:.16em;
@@ -179,13 +169,13 @@ img{
 
 .back:hover{
     border-color:var(--gold);
-    color:var(--gold2);
+    color:var(--gold3);
 }
 
 .hero-content{
     position:relative;
     z-index:3;
-    padding:100px 0 95px;
+    padding:105px 0 95px;
 }
 
 .eyebrow{
@@ -230,9 +220,7 @@ img{
     line-height:1.9;
 }
 
-/* =========================================
-   BUSCADOR
-========================================= */
+/* BUSCADOR */
 
 .tools{
     padding:28px 0 18px;
@@ -273,12 +261,10 @@ img{
     height:59px;
     padding:0 20px 0 55px;
     border:1px solid var(--line);
-    border-radius:0;
     outline:none;
-    background:#100e0b;
+    background:#0d0b09;
     color:var(--cream);
     font-size:.89rem;
-    transition:.25s ease;
 }
 
 .search input::placeholder{
@@ -286,21 +272,18 @@ img{
 }
 
 .search input:focus{
-    border-color:rgba(224,181,104,.5);
-    background:#14110d;
+    border-color:rgba(221,169,85,.5);
 }
 
-/* =========================================
-   CATEGORÍAS
-========================================= */
+/* CATEGORÍAS */
 
 .category-bar{
     position:sticky;
     top:0;
     z-index:100;
-    border-top:1px solid var(--line2);
+    border-top:1px solid var(--line-soft);
     border-bottom:1px solid var(--line);
-    background:rgba(13,11,9,.96);
+    background:rgba(11,9,7,.96);
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
 }
@@ -330,7 +313,6 @@ img{
     letter-spacing:.14em;
     text-transform:uppercase;
     white-space:nowrap;
-    transition:.2s ease;
 }
 
 .category:hover,
@@ -339,14 +321,13 @@ img{
     border-bottom-color:var(--gold);
 }
 
-/* =========================================
-   CARTA
-========================================= */
+/* CARTA */
 
 .menu{
     padding:72px 0 110px;
     background:
-        linear-gradient(180deg,#0d0b09 0%,#110e0b 55%,#0c0a08 100%);
+        radial-gradient(circle at 10% 30%,rgba(185,131,50,.025),transparent 25%),
+        linear-gradient(180deg,#0b0907,#100d0a 55%,#090806);
 }
 
 .menu-section{
@@ -361,7 +342,7 @@ img{
     gap:20px;
     margin-bottom:9px;
     padding-bottom:23px;
-    border-bottom:1px solid rgba(224,181,104,.27);
+    border-bottom:1px solid rgba(221,169,85,.27);
 }
 
 .section-head small{
@@ -383,14 +364,12 @@ img{
 }
 
 .section-number{
-    color:rgba(224,181,104,.35);
+    color:rgba(221,169,85,.35);
     font-family:"Playfair Display",serif;
     font-size:1.1rem;
 }
 
-/* =========================================
-   PRODUCTO
-========================================= */
+/* PRODUCTOS */
 
 .product{
     display:grid;
@@ -398,7 +377,7 @@ img{
     gap:25px;
     align-items:start;
     padding:20px 0;
-    border-bottom:1px solid var(--line2);
+    border-bottom:1px solid var(--line-soft);
 }
 
 .product-main{
@@ -442,17 +421,14 @@ img{
     font-weight:500;
 }
 
-/* =========================================
-   ESPECIALIDADES
-========================================= */
+/* ESPECIALIDADES */
 
 .special{
     position:relative;
     margin:15px 0;
     padding:25px 22px;
-    border:1px solid rgba(199,147,66,.24);
-    background:
-        linear-gradient(110deg,rgba(199,147,66,.09),rgba(199,147,66,.015));
+    border:1px solid rgba(185,131,50,.24);
+    background:linear-gradient(110deg,rgba(185,131,50,.09),rgba(185,131,50,.015));
 }
 
 .special::before{
@@ -479,9 +455,7 @@ img{
     font-size:1.34rem;
 }
 
-/* =========================================
-   ALÉRGENOS DE PRODUCTOS
-========================================= */
+/* ALÉRGENOS */
 
 .product-allergens{
     display:flex;
@@ -492,28 +466,26 @@ img{
 }
 
 .allergen-badge{
-    min-width:31px;
+    min-width:32px;
     height:24px;
     padding:0 7px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    border:1px solid rgba(199,147,66,.3);
-    background:rgba(199,147,66,.07);
-    color:#d7aa62;
+    border:1px solid rgba(185,131,50,.34);
+    background:rgba(185,131,50,.07);
+    color:#deb36e;
     font-size:.5rem;
     font-weight:600;
     letter-spacing:.03em;
+    cursor:help;
 }
 
 .allergen-badge:hover{
-    border-color:var(--gold);
-    background:rgba(199,147,66,.13);
+    border-color:var(--gold2);
+    background:rgba(185,131,50,.14);
+    color:var(--gold3);
 }
-
-/* =========================================
-   SIN RESULTADOS
-========================================= */
 
 .no-results{
     display:none;
@@ -533,19 +505,17 @@ img{
     color:var(--muted);
 }
 
-/* =========================================
-   INFORMACIÓN ALÉRGENOS
-========================================= */
+/* LEYENDA */
 
 .allergen-information{
     position:relative;
     margin-top:50px;
     padding:50px;
     overflow:hidden;
-    border:1px solid rgba(199,147,66,.23);
+    border:1px solid rgba(185,131,50,.23);
     background:
-        radial-gradient(circle at 100% 0%,rgba(199,147,66,.09),transparent 35%),
-        #15110d;
+        radial-gradient(circle at 100% 0%,rgba(185,131,50,.09),transparent 35%),
+        #14110d;
 }
 
 .allergen-information::after{
@@ -553,7 +523,7 @@ img{
     position:absolute;
     right:-12px;
     bottom:-65px;
-    color:rgba(224,181,104,.035);
+    color:rgba(221,169,85,.035);
     font-family:"Playfair Display",serif;
     font-size:14rem;
     pointer-events:none;
@@ -571,7 +541,6 @@ img{
     font-family:"Playfair Display",serif;
     font-size:2.55rem;
     font-weight:500;
-    letter-spacing:-.03em;
 }
 
 .allergen-information > p{
@@ -598,7 +567,7 @@ img{
     align-items:center;
     gap:12px;
     padding:12px 0;
-    border-bottom:1px solid var(--line2);
+    border-bottom:1px solid var(--line-soft);
     color:#a99b8a;
     font-size:.73rem;
 }
@@ -610,27 +579,23 @@ img{
     font-size:.61rem;
 }
 
-/* =========================================
-   AVISO
-========================================= */
-
 .allergen-warning{
+    position:relative;
+    z-index:2;
     margin-top:25px;
     padding-top:20px;
-    border-top:1px solid rgba(199,147,66,.18);
+    border-top:1px solid rgba(185,131,50,.18);
     color:#857868;
     font-size:.7rem;
     line-height:1.7;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 
 footer{
     padding:62px 0;
     border-top:1px solid var(--line);
-    background:#080705;
+    background:#070604;
 }
 
 .footer-inner{
@@ -677,10 +642,6 @@ footer{
     color:var(--gold2);
 }
 
-/* =========================================
-   VOLVER ARRIBA
-========================================= */
-
 .top-button{
     position:fixed;
     right:18px;
@@ -688,8 +649,8 @@ footer{
     z-index:150;
     width:46px;
     height:46px;
-    border:1px solid rgba(199,147,66,.32);
-    background:rgba(13,11,9,.94);
+    border:1px solid rgba(185,131,50,.32);
+    background:rgba(11,9,7,.94);
     color:var(--gold2);
     opacity:0;
     visibility:hidden;
@@ -701,9 +662,7 @@ footer{
     visibility:visible;
 }
 
-/* =========================================
-   MÓVIL
-========================================= */
+/* MÓVIL */
 
 @media(max-width:650px){
 
@@ -821,21 +780,12 @@ footer{
         padding:20px 17px;
     }
 
-    .special h3{
-        font-size:1.19rem;
-    }
-
     .allergen-information{
         padding:33px 22px;
     }
 
-    .allergen-information h2{
-        font-size:2.05rem;
-    }
-
     .allergen-list{
         grid-template-columns:1fr;
-        gap:0;
     }
 
     .footer-inner{
@@ -846,11 +796,9 @@ footer{
         display:inline-block;
         margin-top:28px;
     }
-
 }
 
 @media(max-width:370px){
-
     .product{
         display:block;
     }
@@ -858,17 +806,8 @@ footer{
     .price{
         margin-top:7px;
     }
-
 }
 
-@media(prefers-reduced-motion:reduce){
-
-    *{
-        scroll-behavior:auto!important;
-        transition:none!important;
-    }
-
-}
 </style>
 </head>
 
@@ -881,14 +820,12 @@ footer{
 <div class="topbar">
 
 <a href="index.html" class="brand">
-
 <img src="logo.png.png" alt="Bar Petit del Mercat">
 
 <div>
 <strong>Bar Petit del Mercat</strong>
 <small>El original del Mercat</small>
 </div>
-
 </a>
 
 <a href="index.html" class="back">
@@ -986,238 +923,298 @@ aria-label="Buscar en la carta"
 
 <article class="product special" data-search="carne salsa bocadillo">
 <div class="product-main">
+
 <span class="special-tag">Especialidad de la casa</span>
+
 <h3>Bocadillo de carne en salsa</h3>
+
 <div class="variants">
 <span class="variant">Pequeño <strong>5,50 €</strong></span>
 <span class="variant">Mediano <strong>6,80 €</strong></span>
 <span class="variant">Grande <strong>8,70 €</strong></span>
 <span class="variant">Súper <strong>16,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Apio">AP</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="bacon">
 <div class="product-main">
+
 <h3>Bacon</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,20 €</strong></span>
 <span class="variant">Grande <strong>6,75 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="lomo">
 <div class="product-main">
+
 <h3>Lomo</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,25 €</strong></span>
 <span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product special" data-search="pollo faisan faisán">
 <div class="product-main">
+
 <span class="special-tag">Especialidad de la casa</span>
+
 <h3>Bocadillo de pollo estilo Faisán</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>6,40 €</strong></span>
 <span class="variant">Grande <strong>8,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Huevos">HU</span>
-<span class="allergen-badge" title="Mostaza">MOS</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="panceta">
 <div class="product-main">
+
 <h3>Panceta</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,80 €</strong></span>
 <span class="variant">Grande <strong>7,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="salchicha pais país">
 <div class="product-main">
+
 <h3>Salchicha del país</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,20 €</strong></span>
 <span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Sulfitos">SU</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="atun atún">
 <div class="product-main">
+
 <h3>Atún</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>4,10 €</strong></span>
 <span class="variant">Grande <strong>6,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 <span class="allergen-badge" title="Pescado">PE</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="chorizo">
 <div class="product-main">
+
 <h3>Chorizo</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>4,00 €</strong></span>
 <span class="variant">Grande <strong>5,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Sulfitos">SU</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="fuet">
 <div class="product-main">
+
 <h3>Fuet</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>4,00 €</strong></span>
 <span class="variant">Grande <strong>6,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Leche">LE</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="jamon serrano jamón">
 <div class="product-main">
+
 <h3>Jamón serrano</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>4,00 €</strong></span>
 <span class="variant">Grande <strong>6,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="jamon dulce jamón">
 <div class="product-main">
+
 <h3>Jamón dulce</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>3,80 €</strong></span>
 <span class="variant">Grande <strong>4,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="queso manchego">
 <div class="product-main">
+
 <h3>Queso manchego</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>4,50 €</strong></span>
 <span class="variant">Grande <strong>5,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 <span class="allergen-badge" title="Leche">LE</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="salchichon salchichón">
 <div class="product-main">
+
 <h3>Salchichón</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>3,70 €</strong></span>
 <span class="variant">Grande <strong>5,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Leche">LE</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="tortilla espinacas">
 <div class="product-main">
+
 <h3>Tortilla de espinacas</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,75 €</strong></span>
 <span class="variant">Grande <strong>7,50 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 <span class="allergen-badge" title="Huevos">HU</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="pinchos">
 <div class="product-main">
+
 <h3>Pinchos</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,20 €</strong></span>
 <span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="pechuga pollo">
 <div class="product-main">
+
 <h3>Pechuga de pollo</h3>
+
 <div class="variants">
 <span class="variant">Medio <strong>5,90 €</strong></span>
 <span class="variant">Grande <strong>7,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 </div>
+
 </div>
 </article>
 
@@ -1227,7 +1224,6 @@ aria-label="Buscar en la carta"
 <h3>Butifarra</h3>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Sulfitos">SU</span>
 </div>
 </div>
 <div class="price">7,50 €</div>
@@ -1239,7 +1235,6 @@ aria-label="Buscar en la carta"
 <h3>Frankfurt</h3>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Mostaza">MOS</span>
 </div>
 </div>
 <div class="price">4,50 €</div>
@@ -1251,7 +1246,6 @@ aria-label="Buscar en la carta"
 <h3>Mallorquín</h3>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Leche">LE</span>
 </div>
 </div>
 <div class="price">7,00 €</div>
@@ -1263,7 +1257,6 @@ aria-label="Buscar en la carta"
 <h3>Vegetal de atún</h3>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Huevos">HU</span>
 <span class="allergen-badge" title="Pescado">PE</span>
 </div>
 </div>
@@ -1276,14 +1269,13 @@ aria-label="Buscar en la carta"
 <h3>Chistorra</h3>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Sulfitos">SU</span>
 </div>
 </div>
 <div class="price">7,00 €</div>
 </article>
 
 
-<article class="product" data-search="oreja bocadillo">
+<article class="product" data-search="bocadillo oreja">
 <div class="product-main">
 <h3>Bocadillo de oreja</h3>
 <div class="product-allergens">
@@ -1348,46 +1340,52 @@ aria-label="Buscar en la carta"
 
 <article class="product" data-search="ensaladilla alemana mostaza">
 <div class="product-main">
+
 <h3>Ensaladilla alemana</h3>
+
 <div class="variants">
 <span class="variant">Media ración <strong>4,20 €</strong></span>
 <span class="variant">Ración <strong>6,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
-<span class="allergen-badge" title="Huevos">HU</span>
 <span class="allergen-badge" title="Mostaza">MOS</span>
 </div>
+
 </div>
 </article>
 
 
 <article class="product" data-search="ensaladilla rusa">
 <div class="product-main">
+
 <h3>Ensaladilla rusa</h3>
+
 <div class="variants">
 <span class="variant">Media ración <strong>4,30 €</strong></span>
 <span class="variant">Ración <strong>6,00 €</strong></span>
 </div>
-<div class="product-allergens">
-<span class="allergen-badge" title="Huevos">HU</span>
-<span class="allergen-badge" title="Pescado">PE</span>
-</div>
+
 </div>
 </article>
 
 
 <article class="product special" data-search="pollo estilo faisan faisán">
 <div class="product-main">
+
 <span class="special-tag">Especialidad de la casa</span>
+
 <h3>Pollo estilo Faisán</h3>
+
 <div class="variants">
 <span class="variant">Media ración <strong>6,70 €</strong></span>
 <span class="variant">Ración <strong>9,00 €</strong></span>
 </div>
+
 <div class="product-allergens">
-<span class="allergen-badge" title="Huevos">HU</span>
-<span class="allergen-badge" title="Mostaza">MOS</span>
+<span class="allergen-badge" title="Sulfitos">SU</span>
 </div>
+
 </div>
 </article>
 
@@ -1405,15 +1403,16 @@ aria-label="Buscar en la carta"
 
 <article class="product special" data-search="carne salsa">
 <div class="product-main">
+
 <span class="special-tag">Especialidad de la casa</span>
+
 <h3>Carne en salsa</h3>
+
 <div class="variants">
 <span class="variant">Media ración <strong>7,50 €</strong></span>
 <span class="variant">Para llevar <strong>13,00 €</strong></span>
 </div>
-<div class="product-allergens">
-<span class="allergen-badge" title="Apio">AP</span>
-</div>
+
 </div>
 </article>
 
@@ -1421,10 +1420,6 @@ aria-label="Buscar en la carta"
 <article class="product" data-search="callos">
 <div class="product-main">
 <h3>Callos</h3>
-<div class="product-allergens">
-<span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Sulfitos">SU</span>
-</div>
 </div>
 <div class="price">9,00 €</div>
 </article>
@@ -1493,6 +1488,7 @@ aria-label="Buscar en la carta"
 <span class="section-number">03</span>
 </div>
 
+
 <article class="product" data-search="tortilla patata">
 <div class="product-main">
 <h3>Tortilla de patata</h3>
@@ -1502,6 +1498,7 @@ aria-label="Buscar en la carta"
 </div>
 <div class="price">7,00 €</div>
 </article>
+
 
 <article class="product" data-search="tortilla alcachofas">
 <div class="product-main">
@@ -1513,6 +1510,7 @@ aria-label="Buscar en la carta"
 <div class="price">7,50 €</div>
 </article>
 
+
 <article class="product" data-search="tortilla ajos tiernos">
 <div class="product-main">
 <h3>Tortilla de ajos tiernos</h3>
@@ -1523,6 +1521,7 @@ aria-label="Buscar en la carta"
 <div class="price">7,50 €</div>
 </article>
 
+
 <article class="product" data-search="tortilla francesa">
 <div class="product-main">
 <h3>Tortilla francesa</h3>
@@ -1532,6 +1531,7 @@ aria-label="Buscar en la carta"
 </div>
 <div class="price">6,50 €</div>
 </article>
+
 
 <article class="product" data-search="medio bocadillo tortilla patata">
 <div class="product-main">
@@ -1544,6 +1544,7 @@ aria-label="Buscar en la carta"
 <div class="price">5,50 €</div>
 </article>
 
+
 <article class="product" data-search="medio bocadillo tortilla francesa">
 <div class="product-main">
 <h3>Medio bocadillo de tortilla francesa</h3>
@@ -1555,6 +1556,7 @@ aria-label="Buscar en la carta"
 <div class="price">5,00 €</div>
 </article>
 
+
 <article class="product" data-search="pincho tortilla patata">
 <div class="product-main">
 <h3>Pincho de tortilla de patata</h3>
@@ -1565,6 +1567,7 @@ aria-label="Buscar en la carta"
 <div class="price">6,00 €</div>
 </article>
 
+
 <article class="product" data-search="pincho tortilla variada">
 <div class="product-main">
 <h3>Pincho de tortilla variada</h3>
@@ -1574,6 +1577,7 @@ aria-label="Buscar en la carta"
 </div>
 <div class="price">6,10 €</div>
 </article>
+
 
 <article class="product" data-search="medio pincho tortilla">
 <div class="product-main">
@@ -1600,6 +1604,7 @@ aria-label="Buscar en la carta"
 <span class="section-number">04</span>
 </div>
 
+
 <article class="product" data-search="tostada pan">
 <div class="product-main">
 <h3>Tostada de pan</h3>
@@ -1613,6 +1618,7 @@ aria-label="Buscar en la carta"
 </div>
 </article>
 
+
 <article class="product" data-search="tostada bimbo">
 <div class="product-main">
 <h3>Tostada Bimbo</h3>
@@ -1622,22 +1628,21 @@ aria-label="Buscar en la carta"
 </div>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Soja">SO</span>
 </div>
 </div>
 </article>
+
 
 <article class="product" data-search="croissant">
 <div class="product-main">
 <h3>Croissant</h3>
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
-<span class="allergen-badge" title="Huevos">HU</span>
-<span class="allergen-badge" title="Leche">LE</span>
 </div>
 </div>
 <div class="price">1,80 €</div>
 </article>
+
 
 <article class="product" data-search="magdalena">
 <div class="product-main">
@@ -1645,11 +1650,11 @@ aria-label="Buscar en la carta"
 <div class="product-allergens">
 <span class="allergen-badge" title="Gluten">GL</span>
 <span class="allergen-badge" title="Huevos">HU</span>
-<span class="allergen-badge" title="Leche">LE</span>
 </div>
 </div>
 <div class="price">1,70 €</div>
 </article>
+
 
 <article class="product" data-search="mantequilla">
 <div class="product-main">
@@ -1661,8 +1666,11 @@ aria-label="Buscar en la carta"
 <div class="price">0,50 €</div>
 </article>
 
+
 <article class="product" data-search="mermelada">
-<div class="product-main"><h3>Mermelada</h3></div>
+<div class="product-main">
+<h3>Mermelada</h3>
+</div>
 <div class="price">0,50 €</div>
 </article>
 
@@ -1715,28 +1723,41 @@ aria-label="Buscar en la carta"
 <span class="section-number">07</span>
 </div>
 
+
 <article class="product" data-search="zumo melocoton melocotón">
-<div class="product-main"><h3>Zumo de melocotón</h3></div>
+<div class="product-main">
+<h3>Zumo de melocotón</h3>
+</div>
 <div class="price">2,60 €</div>
 </article>
+
 
 <article class="product" data-search="zumo piña">
-<div class="product-main"><h3>Zumo de piña</h3></div>
+<div class="product-main">
+<h3>Zumo de piña</h3>
+</div>
 <div class="price">2,60 €</div>
 </article>
 
+
 <article class="product" data-search="zumo naranja">
-<div class="product-main"><h3>Zumo de naranja</h3></div>
+<div class="product-main">
+<h3>Zumo de naranja</h3>
+</div>
 <div class="price">2,60 €</div>
 </article>
+
 
 <article class="product" data-search="zumo naranja natural">
 <div class="product-main">
+
 <h3>Zumo de naranja natural</h3>
+
 <div class="variants">
 <span class="variant">Pequeño <strong>3,00 €</strong></span>
 <span class="variant">Grande <strong>3,50 €</strong></span>
 </div>
+
 </div>
 </article>
 
@@ -1817,7 +1838,7 @@ aria-label="Buscar en la carta"
 </div>
 
 
-<!-- INFORMACIÓN ALÉRGENOS -->
+<!-- ALÉRGENOS -->
 
 <section class="allergen-information" id="alergenos">
 
@@ -1828,10 +1849,10 @@ Información sobre alérgenos
 <h2>Alérgenos</h2>
 
 <p>
+Los códigos situados junto a los productos identifican
+los alérgenos indicados en esta carta.
 Si tienes alguna alergia o intolerancia alimentaria,
 consulta con nuestro personal antes de realizar tu pedido.
-Los códigos situados debajo de los productos identifican
-los principales alérgenos indicados en esta carta.
 </p>
 
 <div class="allergen-list">
@@ -1909,15 +1930,14 @@ los principales alérgenos indicados en esta carta.
 </div>
 
 <div class="allergen-warning">
-La presencia de alérgenos puede variar en función de la marca,
-ingredientes utilizados, preparación y posibles contaminaciones
-cruzadas. En caso de alergia o intolerancia, consulta siempre
-con el personal del establecimiento.
+Si tienes alguna alergia o intolerancia alimentaria,
+consulta con nuestro personal antes de realizar tu pedido.
 </div>
 
 </section>
 
 </div>
+
 </main>
 
 
@@ -1960,9 +1980,7 @@ aria-label="Volver arriba"
 
 <script>
 
-/* =========================================
-   PRODUCTOS GENERADOS
-========================================= */
+/* PRODUCTOS GENERADOS */
 
 const cafes = [
     ["Café solo","1,50 €",[]],
@@ -1970,15 +1988,15 @@ const cafes = [
     ["Café con hielo","1,60 €",[]],
     ["Americano","1,70 €",[]],
     ["Café con leche","1,70 €",["LE"]],
-    ["Cortado vegetal","1,70 €",["SO"]],
+    ["Cortado vegetal","1,70 €",[]],
     ["Café bombón","1,80 €",["LE"]],
-    ["Café con leche vegetal","1,80 €",["SO"]],
+    ["Café con leche vegetal","1,80 €",[]],
     ["Café biberón","2,00 €",["LE"]],
     ["Carajillo","2,00 €",[]],
     ["Carajillo whisky","2,30 €",[]],
     ["Trifásico","2,30 €",["LE"]],
     ["Trifásico whisky","2,60 €",["LE"]],
-    ["ColaCao","2,60 €",["LE","SO"]],
+    ["ColaCao","2,60 €",["LE"]],
     ["Infusiones","1,80 €",[]]
 ];
 
@@ -2107,12 +2125,16 @@ function renderProducts(id,products){
         const article = document.createElement("article");
 
         article.className = "product";
+
         article.dataset.search = normalizeText(name);
 
         article.innerHTML = `
             <div class="product-main">
+
                 <h3>${name}</h3>
+
                 ${createAllergens(allergens)}
+
             </div>
 
             <div class="price">
@@ -2134,9 +2156,7 @@ renderProducts("copas-list",copas);
 renderProducts("chupitos-list",chupitos);
 
 
-/* =========================================
-   CATEGORÍAS
-========================================= */
+/* CATEGORÍAS */
 
 const categoryButtons =
 document.querySelectorAll(".category");
@@ -2150,7 +2170,9 @@ categoryButtons.forEach(button=>{
             button.dataset.section
         );
 
-        if(!target) return;
+        if(!target){
+            return;
+        }
 
         target.scrollIntoView({
             behavior:"smooth",
@@ -2168,9 +2190,7 @@ categoryButtons.forEach(button=>{
 });
 
 
-/* =========================================
-   CATEGORÍA ACTIVA AL HACER SCROLL
-========================================= */
+/* CATEGORÍA ACTIVA */
 
 const menuSections =
 document.querySelectorAll(".menu-section");
@@ -2205,9 +2225,7 @@ menuSections.forEach(section=>{
 });
 
 
-/* =========================================
-   BUSCADOR
-========================================= */
+/* BUSCADOR */
 
 const searchInput =
 document.getElementById("searchInput");
@@ -2263,16 +2281,14 @@ searchInput.addEventListener("input",()=>{
     });
 
     noResults.style.display =
-    visibleCount === 0
+        visibleCount === 0
         ? "block"
         : "none";
 
 });
 
 
-/* =========================================
-   VOLVER ARRIBA
-========================================= */
+/* VOLVER ARRIBA */
 
 const topButton =
 document.getElementById("topButton");
